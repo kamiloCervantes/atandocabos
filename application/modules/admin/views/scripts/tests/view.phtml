@@ -1,0 +1,72 @@
+<style>
+    .estadistica{
+        color: #fff; 
+        background: #006dcc; 
+        width:90%; 
+        height: auto; 
+        text-align: center; 
+        padding: 10px
+    }
+</style>
+<section id="tests">
+    <h2>Ver detalle del test: <?php echo $this->test[0]['nombre'] ?></h2>
+    <hr/>
+    <div class="acciones">
+        <a href="/admin/tests/play/id/<?php echo $this->test[0]['token'] ?>" class="btn"><i class="fa fa-play"></i> Iniciar test</a>
+        <a href="#" class="btn"><i class="fa fa-trash"></i> Eliminar test</a>
+    </div>
+    <br/>
+    <table class="table table-striped">
+        <tr>
+            <th>Criterio de parada: </th>
+            <td><?php echo $this->test[0]['tipo_criterio_parada'] ?> : <?php echo $this->test[0]['criterio_parada'] ?></td>
+        </tr>
+        <tr>
+            <th>Fecha de creación: </th>
+            <td><?php echo $this->test[0]['fechacreacion']->format('Y-m-d h:i') ?></td>
+        </tr>
+        <tr>
+            <th>Creador: </th>
+            <td><?php echo $this->test[0]['creador']['nombre'] ?> <?php echo $this->test[0]['creador']['apellido'] ?></td>
+        </tr>
+        <tr>
+            <th>Código de acceso: </th>
+            <td><?php echo $this->test[0]['codigo_inicio'] ?></td>
+        </tr>
+        <tr>
+            <th>Competencia evaluada: </th>
+            <td><?php echo $this->test[0]['categoria']['nombre'] ?></td>
+        </tr>
+        <tr>
+            <th>Grupo evaluado: </th>
+            <td><a href="/admin/grupos/view/id/<?php echo $this->test[0]['grupo']['id'] ?>"><?php echo $this->test[0]['grupo']['nombre'] ?></a></td>
+        </tr>
+    </table>
+    <h3>Estadísticas del test</h3>
+    <div class="row">
+        <div class="span3">
+            <div class="estadistica" style="">
+                <i class="fa fa-user" style="font-size: 9em"></i><br/>
+                <span style="font-size: 3em;padding: 10px;display:block"><?php echo $this->resultados ?>/<?php echo count($this->test[0]['grupo']['estudiantes']) ?></span>
+                <p>Individuos han respondido</p>
+            </div>
+        </div>
+        <div class="span3">
+            <div class="estadistica" style="">
+                <i class="fa fa-question" style="font-size: 9em"></i><br/>
+                <span style="font-size: 3em;padding: 10px;display:block"><?php echo $this->items ?></span>
+                <p>Ítems disponibles</p>
+            </div>
+        </div>
+        <div class="span3">
+            <div class="estadistica" style="">
+                <i class="fa fa-star" style="font-size: 9em"></i><br/>
+                <span style="font-size: 3em;padding: 10px;display:block"><?php echo $this->max > 0 ? $this->max : '-' ?></span>
+                <p>Máximo nivel final</p>
+            </div>
+        </div>
+ 
+    </div>
+    <br/>
+    <br/>   
+</section>

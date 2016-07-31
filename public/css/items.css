@@ -1,0 +1,11 @@
+/* this CSS is not part of the widget, it is here just as an example of the demo page styling.... Don't copy this one, roll your own. One
+ * of the key things about the widget is that it allows you to do your own styling!
+ */
+
+ #items-form-add textarea{
+     margin-bottom: 10px;
+ }
+ 
+
+
+

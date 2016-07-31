@@ -1,0 +1,53 @@
+[  
+  {  
+    "key":"Hombre",
+    "values":[  
+      {  
+        "axis":"De acuerdo",
+        "value":0.22
+      },
+      {  
+        "axis":"Completamente de acuerdo",
+        "value":0.28
+      },
+      {  
+        "axis":"En desacuerdo",
+        "value":0.29
+      },
+      {  
+        "axis":"Completamente en desacuerdo",
+        "value":0.17
+      },
+      {  
+        "axis":"Le es indiferente",
+        "value":0.22
+      }
+    ]
+  },
+  
+  {  
+    "key":"Mujer",
+    "values":[  
+      {  
+        "axis":"De acuerdo",
+        "value":0.26
+      },
+      {  
+        "axis":"Completamente de acuerdo",
+        "value":0.10
+      },
+      {  
+        "axis":"En desacuerdo",
+        "value":0.30
+      },
+      {  
+        "axis":"Completamente en desacuerdo",
+        "value":0.14
+      },
+      {  
+        "axis":"Le es indiferente",
+        "value":0.22
+      }
+    ]
+  }
+]

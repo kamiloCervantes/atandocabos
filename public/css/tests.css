@@ -1,0 +1,21 @@
+#tests-list{
+    margin: 0;
+    padding: 0;
+}
+
+#tests-list li{
+    list-style: none;
+}
+
+#token{
+    width: 50%;
+    font-family:  "Courier New", Courier, monospace;
+}
+
+.test-item{
+    height: 90px;
+    width: auto;
+    background: #eee;
+    padding: 15px;
+    border-bottom: 1px solid #ccc;
+}

@@ -1,0 +1,8 @@
+
+@font-face {
+  font-family: 'CronosPro-Bold';
+  src: url('CronosPro-Bold.eot?#iefix') format('embedded-opentype'),  url('CronosPro-Bold.otf')  format('opentype'),
+	     url('CronosPro-Bold.woff') format('woff'), url('CronosPro-Bold.ttf')  format('truetype'), url('CronosPro-Bold.svg#CronosPro-Bold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

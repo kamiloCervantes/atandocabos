@@ -1,0 +1,201 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Atando Cabos - Living Together</title>
+<!-- Bootstrap -->
+<link href="/lt/css/bootstrap.css" rel="stylesheet">
+<link href="/lt/css/bootstrap-theme.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/lt/css/estilos-living.css">
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+<link href='https://fonts.googleapis.com/css?family=Caveat:700|Source+Sans+Pro:300,700,400italic,700italic,300italic,400|Quicksand:700,400' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
+<link rel="stylesheet" href="/lt/css/bootstrap-select.css">
+<link rel="stylesheet" type="text/css" href="/lt/css/living-flexbox.css">
+<link rel="stylesheet" type="text/css" href="/ltf/css/atando-cabos-flex.css">
+<!--
+========
+Hoja de estilos y script ques solo son necesarios en esta página:
+========
+-->
+<!--<link rel="stylesheet" type="text/css" href="/lt/css/elastislide.css" />
+<script src="/lt/js/modernizr.custom.17475.js"></script>-->
+<!---->
+</head>
+<body class="lt-pg-atandoCabos">
+<div class="lt-gran-contenedor">
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid"> 
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#lt-mainMenu"><span class="sr-only">Desplegar navegación</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span><span class="lt-tit-navbar-menu">MENÚ</span></button>
+        <a class="navbar-brand lt-nav-icono" href="index.html"><span>Inicio</span> <i class="fa fa-home" aria-hidden="true"></i></a></div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="lt-mainMenu">
+        <ul class="nav navbar-nav lt-nav-items">
+          <li><a href="living-together.html">Living Together</a></li>
+          <li><a href="#">¿Cuál es tu papel?</a></li>
+          <li class="active"><a href="#">Atando Cabos <span class="sr-only">(actual)</span></a></li>
+          <li><a href="lego-taak-1.html">Lego Takk!</a></li>
+          <li><a href="wisdom-house-1.html">The Wisdom House</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a class="lt-nav-icono" href="#"><span>Facebook</span><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+          <li><a class="lt-nav-icono" href="#"><span>Twitter</span><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse --> 
+    </div>
+    <!-- /.container-fluid --> 
+  </nav>
+  <header><img class="img-responsive center-block" src="/lt/img/franja-atando-cabos.png" alt="Atando Cabos" title="Atando Cabos"/>
+    <h1 class="sr-only">Atando Cabos</h1>
+  </header>
+  <!-- Inicio Sección 1 -->
+  <div class="lt-contenedor-main">
+    <section>
+      <div class="lt-contenedor">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              <h2 class="text-center">¿Y cómo están las islas?</h2>
+              <h4 class="text-center">EN TÉRMINOS DE</h4>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-8 col-md-offset-2 lt-tipo-violencia">
+              <form id="lt-atando-form">
+                <label>
+                  <input type="radio" id="liv-vif" value="Violencia intrafamiliar" name="liv-violencia" data-id="2">
+                  <span>Violencia <br>
+                  Intrafamiliar</span> </label>
+                <label>
+                  <input type="radio" id="liv-vip" value="Violencia interpersonal" name="liv-violencia" data-id="1">
+                  <span>Violencia <br>
+                  Interpersonal</span> </label>
+              </form>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-8 col-md-offset-2 lt-tematica hide">
+              <select class="selectpicker" id="selector_tematicas" form="lt-atando-form" required>
+                <option value="" disabled selected>Escoje una temática</option>
+                
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <div id="lt-indFlex" class="col-xs-12 lt-indicadores">
+                <p class="lt-txt-ind">Selecciona uno o varios indicadores y haz click en OK:</p>
+                <ul id="carousel-tpl" class="hide">
+                    <li>
+                        <label>
+                          <input type="checkbox" name="indicador1" form="lt-atando-form"><span></span> 
+                        </label>
+                    </li>
+                </ul>
+              <ul id="carousel" class="indFlex" style="visibility: hidden">
+                <li>
+                <label>
+                    <input type="checkbox" value="indicador" name="indicador2" form="lt-atando-form"><span>Indicador</span> 
+                </label>
+                </li>
+                <li>
+                <label>
+                    <input type="checkbox" value="indicador" name="indicador2" form="lt-atando-form"><span>Indicador</span> 
+                </label>
+                </li>
+                <li>
+                <label>
+                    <input type="checkbox" value="indicador" name="indicador2" form="lt-atando-form"><span>Indicador</span> 
+                </label>
+                </li>
+                <li>
+                <label>
+                    <input type="checkbox" value="indicador" name="indicador2" form="lt-atando-form"><span>Indicador</span> 
+                </label>
+                </li>
+                <li>
+                <label>
+                    <input type="checkbox" value="indicador" name="indicador2" form="lt-atando-form"><span>Indicador</span> 
+                </label>
+                </li>
+                <li>
+                <label>
+                    <input type="checkbox" value="indicador" name="indicador2" form="lt-atando-form"><span>Indicador</span> 
+                </label>
+                </li>
+                <li>
+                <label>
+                    <input type="checkbox" value="indicador" name="indicador2" form="lt-atando-form"><span>Indicador</span> 
+                </label>
+                </li>
+                <li>
+                <label>
+                    <input type="checkbox" value="indicador" name="indicador2" form="lt-atando-form"><span>Indicador</span> 
+                </label>
+                </li>
+                <li>
+                <label>
+                    <input type="checkbox" value="indicador" name="indicador2" form="lt-atando-form"><span>Indicador</span> 
+                </label>
+                </li>
+                <li>
+                <label>
+                    <input type="checkbox" value="indicador" name="indicador2" form="lt-atando-form"><span>Indicador</span> 
+                </label>
+                </li>
+                <li>
+                <label>
+                    <input type="checkbox" value="indicador" name="indicador2" form="lt-atando-form"><span>Indicador</span> 
+                </label>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-8 col-md-offset-2 lt-atando-submit hide">
+              <input form="lt-atando-form" class="btn btn-default center-block" id="ver_graficas" type="submit" value="OK">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <footer>
+    <div class="lt-contenedor">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <p>Corpovisionarios - 2016</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="/lt/js/jquery-1.12.3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/lt/js/bootstrap.js"></script>
+<script type="text/javascript" src="/lt/js/jquerypp.custom.js"></script>
+<script type="text/javascript" src="/lt/js/jquery.elastislide.js"></script>
+
+<!--
+========
+Script exclusivo de esta página:
+========
+-->
+<script type="text/javascript" src="/lt/js/atandocabos.js"></script>
+</body>
+</html>

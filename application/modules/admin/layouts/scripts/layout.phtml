@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title>Adaptike, sistema de información para la administración de tests adaptativos informatizados</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="/js/utils/fontawesome/css/font-awesome.min.css"> 
+    <style>
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+    </style>
+    <link href="/css/bootstrap-responsive.css" rel="stylesheet">
+    <?php echo $this->headLink(); ?>
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png">
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">Adaptike</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li><a href="/admin">Inicio</a></li>
+              <li><a href="/admin/docs">Documentación</a></li>
+              <li><a href="/logout">Cerrar sesión</a></li>    
+            </ul>
+            <ul class="nav pull-right" id="perfil">
+                <li class="pull-right">    
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-user icon-white"></i>&nbsp;<b class="caret"></b></a>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                        <li><a href="/admin/profile">Ver estadísticas</a></li>
+                    </ul>
+                </li>
+            </ul>
+          </div><!--/.nav-collapse -->
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="span3">
+                <ul class="nav nav-list">
+                    <li class="nav-header">Contexto</li>
+                </ul>
+                <table class="table" style="font-size: 12px; width: 80%">
+                    <tr>
+                        <td><b>Nombre:</b> <?php echo $this->nombre_completo?></td>
+                    </tr>
+                    <tr>
+                        <td><b>Programa:</b> <?php echo $this->programa?>, <?php echo $this->institucion?></td>
+                    </tr>
+                    <tr>
+                        <td><b>Rol:</b> <?php echo $this->tipo_usuario?></td>
+                    </tr>
+                </table>
+                <ul class="nav nav-list">
+                    <li class="nav-header">Secciones</li>
+                    <li><a href="/admin">Inicio</a></li>
+                    <li><a href="/admin/items">Items</a></li>
+                    <li><a href="/admin/categorias">Competencias</a></li>
+                    <li><a href="/admin/tests">Tests</a></li>
+                    <li><a href="/admin/grupos">Usuarios & Grupos</a></li>
+                </ul>
+            </div>
+            <div class="span9">
+                <?php echo $this->layout()->content; ?>
+            </div>
+        </div>
+      
+    </div> <!-- /container -->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    
+    <?php echo $this->headScript(); ?>
+    <script src="/js/admin/accesoperfil.js"></script>
+    <!--
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap-transition.js"></script>
+    <script src="js/bootstrap-alert.js"></script>
+    <script src="js/bootstrap-modal.js"></script>
+    <script src="js/bootstrap-dropdown.js"></script>
+    <script src="js/bootstrap-scrollspy.js"></script>
+    <script src="js/bootstrap-tab.js"></script>
+    <script src="js/bootstrap-tooltip.js"></script>
+    <script src="js/bootstrap-popover.js"></script>
+    <script src="js/bootstrap-button.js"></script>
+    <script src="js/bootstrap-collapse.js"></script>
+    <script src="js/bootstrap-carousel.js"></script>
+    <script src="js/bootstrap-typeahead.js"></script>
+    -->
+  </body>
+</html>
+

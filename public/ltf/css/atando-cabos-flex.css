@@ -1,0 +1,44 @@
+@charset "UTF-8";
+/* CSS Document */
+#lt-indFlex ul {
+    list-style-type: none;
+    padding: 0;
+    display: block;
+}
+#lt-indFlex .lt-txt-ind {
+    text-align: center;
+    font-family: 'Gotham Rounded', 'GothamRounded', 'Quicksans', sans-serif;
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    margin: 10px 0 5px;
+}
+#lt-indFlex ul > li {
+    padding: 4px;
+    width: 33.333%;
+    float: left;
+}
+#lt-indFlex ul {
+    display: flex;
+    display: -webkit-flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+#lt-indFlex ul > li {
+    flex-grow: 1;
+    -webkit-flex-grow: 1;
+}
+@media screen and (max-width: 767px) {
+    #lt-indFlex ul > li {
+      width: 100%;
+      
+    }
+    #lt-indFlex ul > li span {
+        height: initial;
+        padding-bottom: 55px;
+    }
+    .lt-pg-atandoCabos .lt-indicadores [type="checkbox"] + span {
+	font-size: 1.3rem;
+    }
+}

@@ -1,0 +1,40 @@
+[{
+	"id": "#lt-1-1-gnrl-san",
+	"indicador": "lt-ind1",
+	"subindicador": "alcoholicos",
+	"territorio": "San Andres",
+	"datos": [{
+		"respuesta": "Le es indiferente",
+		"valor": 0.30
+	}, {
+		"respuesta": "No le gustaría",
+		"valor": 0.70
+	}]
+
+}, {
+	"id": "#lt-1-1-gnrl-psc",
+	"indicador": "lt-ind1",
+	"subindicador": "alcoholicos",
+	"territorio": "Providencia",
+	"datos": [{
+		"respuesta": "Le es indiferente",
+		"valor": 0.66
+	}, {
+		"respuesta": "No le gustaría",
+		"valor": 0.34
+	}]
+
+}, {
+	"id": "#lt-1-1-gnrl-nal",
+	"indicador": "lt-ind1",
+	"subindicador": "alcoholicos",
+	"territorio": "Nacional",
+	"datos": [{
+		"respuesta": "Le es indiferente",
+		"valor": 0.48
+	}, {
+		"respuesta": "No le gustaría",
+		"valor": 1
+	}]
+
+}]

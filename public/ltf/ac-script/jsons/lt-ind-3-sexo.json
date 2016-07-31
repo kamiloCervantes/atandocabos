@@ -1,0 +1,127 @@
+[{
+	"indicador": "3",
+	"territorio": "San Andres",
+	"sexo": "Masculino",
+	"datos": [{
+		"respuesta": "De acuerdo",
+		"valor": 0.5
+	}, {
+		"respuesta": "Completamente de acuerdo",
+		"valor": 0.58
+	}, {
+		"respuesta": "En desacuerdo",
+		"valor": 0.29
+	}, {
+		"respuesta": "Completamente en desacuerdo",
+		"valor": 0.17
+	}, {
+		"respuesta": "Le es indiferente",
+		"valor": 0.22
+	}]
+
+}, {
+	"indicador": "3",
+	"territorio": "San Andres",
+	"sexo": "Femenino",
+	"datos": [{
+		"respuesta": "De acuerdo",
+		"valor": 0.22
+	}, {
+		"respuesta": "Completamente de acuerdo",
+		"valor": 0.18
+	}, {
+		"respuesta": "En desacuerdo",
+		"valor": 0.9
+	}, {
+		"respuesta": "Completamente en desacuerdo",
+		"valor": 0.7
+	}, {
+		"respuesta": "Le es indiferente",
+		"valor": 0.25
+	}]
+
+}, {
+	"indicador": "3",
+	"territorio": "Providencia",
+	"sexo": "Masculino",
+	"datos": [{
+		"respuesta": "De acuerdo",
+		"valor": 0.72
+	}, {
+		"respuesta": "Completamente de acuerdo",
+		"valor": 0.2
+	}, {
+		"respuesta": "En desacuerdo",
+		"valor": 0.9
+	}, {
+		"respuesta": "Completamente en desacuerdo",
+		"valor": 0.47
+	}, {
+		"respuesta": "Le es indiferente",
+		"valor": 0.2
+	}]
+
+}, {
+	"indicador": "3",
+	"territorio": "Providencia",
+	"sexo": "Femenino",
+	"datos": [{
+		"respuesta": "De acuerdo",
+		"valor": 0.52
+	}, {
+		"respuesta": "Completamente de acuerdo",
+		"valor": 0.8
+	}, {
+		"respuesta": "En desacuerdo",
+		"valor": 0.3
+	}, {
+		"respuesta": "Completamente en desacuerdo",
+		"valor": 0.1
+	}, {
+		"respuesta": "Le es indiferente",
+		"valor": 0.3
+	}]
+
+}, {
+	"indicador": "3",
+	"territorio": "Nacional",
+	"sexo": "Masculino",
+	"datos": [{
+		"respuesta": "De acuerdo",
+		"valor": 0.22
+	}, {
+		"respuesta": "Completamente de acuerdo",
+		"valor": 0.1
+	}, {
+		"respuesta": "En desacuerdo",
+		"valor": 0.93
+	}, {
+		"respuesta": "Completamente en desacuerdo",
+		"valor": 0.36
+	}, {
+		"respuesta": "Le es indiferente",
+		"valor": 0.72
+	}]
+
+}, {
+	"indicador": "3",
+	"territorio": "Nacional",
+	"sexo": "Femenino",
+	"datos": [{
+		"respuesta": "De acuerdo",
+		"valor": 0.22
+	}, {
+		"respuesta": "Completamente de acuerdo",
+		"valor": 0.28
+	}, {
+		"respuesta": "En desacuerdo",
+		"valor": 0.7
+	}, {
+		"respuesta": "Completamente en desacuerdo",
+		"valor": 0.5
+	}, {
+		"respuesta": "Le es indiferente",
+		"valor": 0.2
+	}]
+
+}]

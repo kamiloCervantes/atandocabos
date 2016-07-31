@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Atando Cabos Detalle - Living Together</title>
+<!-- Bootstrap -->
+<link href="/lt/css/bootstrap.css" rel="stylesheet">
+<link href="/lt/css/bootstrap-theme.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/lt/css/estilos-living.css">
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+<link href='https://fonts.googleapis.com/css?family=Caveat:700|Source+Sans+Pro:300,700,400italic,700italic,300italic,400|Quicksand:700,400' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="/lt/css/living-flexbox.css">
+<!--ESTILOS PARA ESTAS PÁGINAS ÚNICAMENTE-->
+<!--Estilo para navegación vertical-->
+<link rel="stylesheet" type="text/css" href="/lt/css/nav-vertical.css" />
+<!--Estilos para Atando Cabos-->
+<link rel="stylesheet" type="text/css" href="/lt/css/atando-cabos.css" />
+<!-- D3.js -->
+<script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+</head>
+<body class="lt-pg-ind">
+<div class="lt-gran-contenedor">
+<!-- Puntos verticales -->
+  <nav id="lt-nav-vertical" class="cd-vertical-nav">
+    <ul>
+    </ul>
+  </nav>
+  <!-- Menú superior -->
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#lt-mainMenu"><span class="sr-only">Desplegar navegación</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span><span class="lt-tit-navbar-menu">MENÚ</span></button>
+        <a class="navbar-brand lt-nav-icono" href="index.html"><span>Inicio</span> <i class="fa fa-home" aria-hidden="true"></i></a></div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="lt-mainMenu">
+        <ul class="nav navbar-nav lt-nav-items">
+          <li><a href="living-together.html">Living Together</a></li>
+          <li><a href="#">¿Cuál es tu papel?</a></li>
+          <li class="active"><a href="#">Atando Cabos <span class="sr-only">(actual)</span></a></li>
+          <li><a href="lego-taak-1.html">Lego Takk!</a></li>
+          <li><a href="wisdom-house-1.html">The Wisdom House</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a class="lt-nav-icono" href="#"><span>Facebook</span><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+          <li><a class="lt-nav-icono" href="#"><span>Twitter</span><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+  </nav>
+  <!-- INFORMACIÓN DE TEMÁTICA -->
+  <header class="lt-sidebar-tematica"> <img class="img-responsive center-block" src="/lt/img/franja-atando-cabos.png" alt="Atando Cabos" title="Atando Cabos"/>
+    <h1 class="sr-only">Atando Cabos</h1>
+    <div class="lt-info-tematica"> <img class="img-responsive center-block" src="/lt/img/img-atando-tematica.png" alt="Ilustración temática" title="Ilustración temática"/>
+        <h4>Violencia <strong>interpersonal</strong></h4>
+      <h2>Tolerancia y reconocimiento del otro</h2>
+      <p>En general, se buscó recopilar y adaptar metodologías de actividades ya llevadas a cabo por Corpovisionarios para la reducción de las violencias interpersonal e intrafamiliar (especialmente de pareja), con el ánimo de construir sobre lo construido.</p>
+    </div>
+    <a class="lt-botonCirc lt-btn-cerrar" href="/atandocabos" title="Nueva búsqueda"><i class="fa fa-times" aria-hidden="true"></i></a> </header>
+  <!-- Inicio Sección, una sección contiene todos los indicadores seleccionados en al pantalla de búsqueda-->
+  <section class="lt-grupo-indicadores">
+      
+    <!-- Inicio de indicador, cada indicador es un article-->
+    <!-- Agregar ID y data-graf a article según indicador y tipo de gráfica-->
+    <?php foreach($this->data_indicador as $d){  ?>
+    <article id="lt-ind-<?php echo $d[0]["idIndicador"]?>" class="lt-ind cd-section" data-indicador="<?php echo $d[0]["idIndicador"]?>" data-graf="<?php echo $this->tipo_graficas[$d[0]["tipo_grafica"]]?>">
+      <div>
+        <div class="container">
+          <!-- Título del indicador-->
+          <div class="row">
+            <div class="col-xs-12 lt-tit-ind">
+              <?php if($d[0]["tipo_grafica"] == 3){ ?>
+                <h2><?php echo $d[0]["nombre_indicador"]?></h2>
+              <?php } else { ?>
+                <h2><?php echo $d[0]["nombre_indicador"]?></h2>
+                <h2><?php echo $d["pregunta"]?></h2>
+              <?php }  ?>
+              
+            </div>
+          </div>
+          <div class="row lt-nav-ind">
+            <div class="col-xs-12">
+                 <?php if($d[0]["tipo_grafica"] != 3){ ?>
+              <div class="lt-subtit-ind">
+                <input type="hidden" class="flecha_idx" value="0">
+                <a href="#" class="btn-anterior nav-indicadores"><i class="fa fa-chevron-left" aria-hidden="true"></i><span>Anterior</span></a>
+                <h3><?php
+//                var_dump($d["subpreguntas"][0]["descripcion"]);
+                echo $d["subpreguntas"][0]["descripcion"] == 'NA' ? '' : $d["subpreguntas"][0]["descripcion"] ?></h3>
+                <a href="#" class="btn-siguiente nav-indicadores"><i class="fa fa-chevron-right" aria-hidden="true"></i><span>Siguiente</span></a>
+              </div>
+                <?php }  ?>
+              <div class="lt-nav-desagregar">
+                <input class="lt-btn-desagregar lt-btn-desagregar-sexo btn" name="botonSexo" type="button" value="sexo" />
+                <input class="lt-btn-desagregar lt-btn-desagregar-gnrl lt-btn-desagregar-gnrl-<?php echo $d[0]["idIndicador"]?> btn" name="botonGnrl" type="button" value="general" />     
+                <input class="lt-btn-desagregar lt-btn-desagregar-edad btn" name="botonEdad" type="button" value="edad" />
+
+              </div>
+            </div>
+          </div>
+          <div class="row lt-cuerpo-ind">
+            <div class="col-xs-12">
+              <!--Inicio de gráficas-->
+              <div class="lt-cont-grafs">
+                <!--AQUÍ SE CARGAN LAS GRÁFICAS-->
+              </div>
+              <br/>
+            <div class="row lt-graf-descarga">
+          	<div class="col-xs-12">
+            	<a class="lt-botonCirc lt-btn-descargar center-block" href="/reportes/multiple/i/<?php echo $d[0]["idIndicador"]?>/t/<?php echo $this->tipo_graficas[$d[0]["tipo_grafica"]]?>" title="Descargar" download><i class="fa fa-download" aria-hidden="true"></i></a>
+            </div>                      
+          </div> 
+              <br/>
+            </div>
+          </div>
+          <?php if($d[0]["idIndicador"] == 38){ ?>
+          <br/>
+          <p style="font-size: 12px">Fuente: Policia Nacional de Colombia. Centro de Investigaciones Criminologicas – CICRI. Datos disponibles en: http://oasportal.policia.gov.co/imagenes_ponal/dijin/observatorio/cicri/cifras0.html</p>
+          <?php }  ?>
+          <?php if($d[0]["idIndicador"] == 48 || $d[0]["idIndicador"] == 49  || $d[0]["idIndicador"] == 47){ ?>
+          <br/>
+          <p style="font-size: 12px">Instituto Nacional de Medicina Legal y Ciencias Forenses. Histórico publicación Forensis: Datos oficiales sobre la violencia en Colombia. Disponible en: http://www.medicinalegal.gov.co/forensis</p>
+          <?php }  ?>
+        </div>
+      </div>
+    </article>
+    <!--Fin de indicador-->
+    <?php } ?>
+    
+  
+  </section>
+  <!--Fin de sección-->
+  <footer>
+    <div class="lt-contenedor">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <p>Info del footer</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+<script src="/lt/js/jquery-1.12.3.min.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script> 
+
+<!-- Include all compiled plugins (below), or include individual files as needed --> 
+<script src="/lt/js/bootstrap.js"></script>
+<!--Script para generar puntos-->
+<script type="text/javascript">
+	$(document).ready(function(){
+		var vNav = $('#lt-nav-vertical').find('ul');
+		
+		var articles = $('article').map(function(){return this.id;}).get();
+		
+		for(i = 0; i < articles.length; i++){
+			vNav.append('<li><a href="#'+articles[i]+'"></a></li>');
+		}
+	});
+</script>
+<!--Script para navegación vertical-->
+<script src="/lt/js/nav-vertical.js"></script>
+<script src="/lt/ac-script/atando-cabos.js"></script>
+<!--Script para gráficas tipo estrella -->
+<script src="/lt/ac-script/bases/estrellas-base.js"></script>
+<script src="/lt/ac-script/bases/tolerancia-base.js"></script>
+<script src="/lt/ac-script/bases/linea-base.js"></script>
+<script src="/lt/ac-script/bases/bolas-base.js"></script>
+<!--Scripts para gráficar -->
+<script src="/lt/ac-script/graficarGeneral.js"></script>
+<script src="/lt/ac-script/graficarSexo.js"></script>
+<script src="/lt/ac-script/graficarEdad.js"></script>
+<!--Iniciar botones-->
+<script type="text/javascript">
+	$('.lt-nav-desagregar').on('click', '.lt-btn-desagregar-gnrl', cargarGeneral);
+	$('.lt-nav-desagregar').on('click', '.lt-btn-desagregar-sexo', cargarSexo);
+	$('.lt-nav-desagregar').on('click', '.lt-btn-desagregar-edad', cargarEdad);
+	$('.lt-btn-desagregar-gnrl').trigger('click');
+        
+        $('.nav-indicadores').on('click', function(e){
+            e.preventDefault(); 
+            var self = this;
+            var indicador = $(this).closest('article').data('indicador');
+            var actual = $(this).parent().find('.flecha_idx').val();
+            var direccion = 'siguiente';
+            if($(this).hasClass('btn-anterior')){
+                direccion = 'anterior';
+            }
+            console.log(actual);
+            var jqxhr = $.get('/servicios/getsubpreguntaidx', {
+                actual : actual,
+                direccion : direccion,
+                indicador : indicador
+            });
+            
+            jqxhr.done(function(data){
+                console.log(data);
+                $(self).parent().find('.flecha_idx').val(data.index);
+                if(data.subpregunta.descripcion != 'NA'){
+                    $(self).parent().find('h3').html(data.subpregunta.descripcion); 
+                }
+                    
+                console.log($(self).closest('article')[0]);
+                $(self).closest('article').attr('data-subpregunta', data.subpregunta.idsubpregunta);
+                $(self).closest('article').data('subpregunta', data.subpregunta.idsubpregunta);
+                console.log($(self).closest('article')[0]);
+                $('.lt-btn-desagregar-gnrl-'+indicador).trigger('click');
+            });
+        });
+</script>
+</body>
+</html>

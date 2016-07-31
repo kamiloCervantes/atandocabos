@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Atando Cabos Detalle - Living Together</title>
+<!-- Bootstrap -->
+<link href="/lt/css/bootstrap.css" rel="stylesheet">
+<link href="/lt/css/bootstrap-theme.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/lt/css/estilos-living.css">
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+<link href='https://fonts.googleapis.com/css?family=Caveat:700|Source+Sans+Pro:300,700,400italic,700italic,300italic,400|Quicksand:700,400' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
+
+<link rel="stylesheet" type="text/css" href="/lt/css/living-flexbox.css">
+<!--ESTILOS PARA ESTAS PÁGINAS ÚNICAMENTE-->
+<!--Estilo para páginas divididas
+<link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />-->
+<!--Estilos para Atando Cabos-->
+<link rel="stylesheet" type="text/css" href="/lt/css/atando-cabos.css" />
+<!-- D3.js -->
+<script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+
+<style>
+    .current-link{
+        color: #999;
+        font-weight: bold;
+    }
+</style>
+
+</head>
+<body class="lt-pg-ind">
+<div class="lt-gran-contenedor">
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid"> 
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#lt-mainMenu"><span class="sr-only">Desplegar navegación</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span><span class="lt-tit-navbar-menu">MENÚ</span></button>
+        <a class="navbar-brand lt-nav-icono" href="index.html"><span>Inicio</span> <i class="fa fa-home" aria-hidden="true"></i></a></div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="lt-mainMenu">
+        <ul class="nav navbar-nav lt-nav-items">
+          <li><a href="living-together.html">Living Together</a></li>
+          <li><a href="#">¿Cuál es tu papel?</a></li>
+          <li class="active"><a href="#">Atando Cabos <span class="sr-only">(actual)</span></a></li>
+          <li><a href="lego-taak-1.html">Lego Takk!</a></li>
+          <li><a href="wisdom-house-1.html">The Wisdom House</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a class="lt-nav-icono" href="#"><span>Facebook</span><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+          <li><a class="lt-nav-icono" href="#"><span>Twitter</span><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse --> 
+    </div>
+    <!-- /.container-fluid --> 
+  </nav>
+  <!-- INFORMACIÓN DE TEMÁTICA -->
+  <header class="lt-sidebar-tematica"> <img class="img-responsive center-block" src="/lt/img/franja-atando-cabos.png" alt="Atando Cabos" title="Atando Cabos"/>
+    <h1 class="sr-only">Atando Cabos</h1>
+    <div class="lt-info-tematica"> <img class="img-responsive center-block" src="/lt/img/img-atando-tematica.png" alt="Ilustración temática" title="Ilustración temática"/>
+      <h4>Violencia <strong>interpersonal</strong></h4>
+      <h2>Tolerancia y reconocimiento del otro</h2>
+      <p>En general, se buscó recopilar y adaptar metodologías de actividades ya llevadas a cabo por Corpovisionarios para la reducción de las violencias interpersonal e intrafamiliar (especialmente de pareja), con el ánimo de construir sobre lo construido.</p>
+    </div>
+    <a class="lt-botonCirc lt-btn-cerrar" href="wisdom-house-1.html" title="Nueva búsqueda"><i class="fa fa-times" aria-hidden="true"></i></a> </header>
+  <!-- Inicio Sección 1-->
+  
+  <section id="fullpage" class="lt-grupo-indicadores">
+      <input type="hidden" id="indicadordata" value="<?php echo $this->indicador; ?>">
+    <?php // var_dump($this->data_indicador) ?>
+    <article id="lt-ind1" class="lt-ind lt-ind-estrella">
+    	<!-- Título del indicador-->
+       <div class="lt-tit-ind">
+      	     <h2>¿<?php echo $this->data_indicador[0]['pregunta'] ?>?</h2>
+                  
+     </div>
+        <!-- Cuerpo de indicador-->
+        <div class="lt-cuerpo-ind">
+        <?php foreach($this->data_indicador as $d){ ?>
+        <!-- Subindicador, por ejemplo afirmaciones-->
+        <div id="lt-ind1-sub1" class="lt-subind container">
+        <div class="row lt-cabeza-subind">
+          <div class="col-xs-12">
+            
+              <div class="lt-nav-subind">
+              	<a href="#" class="btn-anterior"><i class="fa fa-chevron-left" aria-hidden="true"></i><span>Anterior</span></a>
+                <h3><?php echo $d['descripcion'] ?></h3>
+                <a href="#" class="btn-siguiente"><i class="fa fa-chevron-right" aria-hidden="true"></i><span>Siguiente</span></a>
+              </div>
+              <div class="lt-nav-desagregar"> 
+                  <a href="#" class="lt-btn-desagregar lt-btn-desagregar-sexo btn" data-acbtn="sexo">SEXO</a>
+                  <a href="#" class="lt-btn-desagregar lt-btn-desagregar-gnrl btn" data-acbtn="gnrl">GENERAL</a>
+                  <a href="#" class="lt-btn-desagregar lt-btn-desagregar-edad btn" data-acbtn="edad">EDAD</a>
+              </div>
+            
+          </div>
+        </div>
+        <div class="row lt-cuerpo-subind">
+          <div class="col-xs-12">
+            <!--Inicio de gráficas-->
+              <div class="lt-estrellas"> 
+                <!--Vista general-->
+                <div class="lt-gnrl lt-vista">
+                  <div class="row lt-3-graf">
+                    <div class="col-sm-4">
+                    <h5 class="lt-tit-territorio">SAN ANDRÉS</h5>
+                      <div id="lt-1-1-gnrl-san" class="lt-graf lt-1-1-gnrl-san" data-subpregunta="<?php echo $d['idsubpregunta'] ?>"> </div>
+                    </div>
+                    <div class="col-sm-4">
+                    <h5 class="lt-tit-territorio">PROVIDENCIA Y SANTA CATALINA</h5>
+                      <div id="lt-1-1-gnrl-psc" class="lt-graf lt-1-1-gnrl-psc" data-subpregunta="<?php echo $d['idsubpregunta'] ?>"> </div>
+                    </div>
+                    <div class="col-sm-4">
+                    <h5 class="lt-tit-territorio">NACIONAL</h5>
+                      <div id="lt-1-1-gnrl-nal" class="lt-graf lt-1-1-gnrl-nal" data-subpregunta="<?php echo $d['idsubpregunta'] ?>"> </div>
+                    </div>
+                  </div>
+                  <div class="lt-convenciones">
+                    <?php foreach ($this->escala as $e) { ?>
+                  	<span><?php echo $e['opcion'] ?></span>
+                    <?php } ?>
+                  </div>
+                </div>
+                <!--Fin Vista general--> 
+                <!--Vista Sexo-->
+                <div class="lt-sexo lt-vista">
+                <div class="lt-nav-sexo" data-subpregunta="<?php echo $d['idsubpregunta'] ?>">
+                	<a href="#" class="lt-btn-desagregar-check" data-acsexo="Femenino">MUJER</a>
+              		<a href="#" class="lt-btn-desagregar-check" data-acsexo="Masculino">HOMBRE</a>
+              		<a href="#" class="lt-btn-desagregar-check current-link" data-acsexo="Todos">TODOS</a>
+                </div>
+                  <div class="row lt-3-graf">
+                    <div class="col-sm-4">
+                    <h5 class="lt-tit-territorio">SAN ANDRÉS</h5>
+                      <div id="lt-1-1-sexo-san" class="lt-graf"> </div>
+                    </div>
+                    <div class="col-sm-4">
+                    <h5 class="lt-tit-territorio">PROVIDENCIA Y SANTA CATALINA</h5>
+                      <div id="lt-1-1-sexo-psc" class="lt-graf"> </div>
+                    </div>
+                    <div class="col-sm-4">
+                    <h5 class="lt-tit-territorio">NACIONAL</h5>
+                      <div id="lt-1-1-sexo-nal" class="lt-graf"> </div>
+                    </div>
+                  </div>
+                  <div class="lt-convenciones">
+                  	<?php foreach ($this->escala as $e) { ?>
+                  	<span><?php echo $e['opcion'] ?></span>
+                    <?php } ?>
+                  </div>
+                </div>
+                <!--Fin Vista Sexo--> 
+                <!--Vista Edad-->
+                <div class="lt-edad lt-vista"> 
+                <div class="lt-nav-edad">
+                	<a href="#" class="lt-btn-desagregar-check " data-acedad="edad-g1">- 18</a>
+              		<a href="#" class="lt-btn-desagregar-check " data-acedad="edad-g2">18 - 25</a>
+              		<a href="#" class="lt-btn-desagregar-check " data-acedad="edad-g3">26 - 35</a>
+                    <a href="#" class="lt-btn-desagregar-check " data-acedad="edad-g4">36 - 45</a>
+                    <a href="#" class="lt-btn-desagregar-check " data-acedad="edad-g5">46 - 55</a>
+                    <a href="#" class="lt-btn-desagregar-check " data-acedad="edad-g6">+ 55</a>
+                </div>
+                  <!--Fila Edad 1-->
+                  <div class="lt-fila-edad" id="lt-1-1-edad-g1">
+                  <div class="row lt-edad-g-tit">
+                    <div class="col-xs-12">
+                    	<span class="lt-g-edad-label">- 18</span>
+                    </div>
+                  </div>
+                  <div class="row lt-3-graf">
+                    <div class="col-sm-4">
+                      <div id="lt-1-1-edad-g1-san" class="lt-graf lt-1-1-edad-g1-san" data-subpregunta="<?php echo $d['idsubpregunta'] ?>"> </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div id="lt-1-1-edad-g1-psc" class="lt-graf lt-1-1-edad-g1-psc" data-subpregunta="<?php echo $d['idsubpregunta'] ?>"> </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div id="lt-1-1-edad-g1-nal" class="lt-graf lt-1-1-edad-g1-nal" data-subpregunta="<?php echo $d['idsubpregunta'] ?>"> </div>
+                    </div>
+                  </div>
+                  </div>
+                  <!--Fila Edad 2-->
+                  <div  class="lt-fila-edad" id="lt-1-1-edad-g2">
+                  <div class="row lt-edad-g-tit">
+                    <div class="col-xs-12">
+                    	<span class="lt-g-edad-label">18 - 25</span>
+                    </div>
+                  </div>
+                  <div class="row lt-3-graf">
+                    <div class="col-sm-4">
+                      <div id="lt-1-1-edad-g2-san" class="lt-graf lt-1-1-edad-g2-san" data-subpregunta="<?php echo $d['idsubpregunta'] ?>"> </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div id="lt-1-1-edad-g2-psc" class="lt-graf lt-1-1-edad-g2-psc" data-subpregunta="<?php echo $d['idsubpregunta'] ?>"> </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div id="lt-1-1-edad-g2-nal" class="lt-graf lt-1-1-edad-g2-nal" data-subpregunta="<?php echo $d['idsubpregunta'] ?>"> </div>
+                    </div>
+                  </div>
+                  </div>
+                  <!--Fila Edad 3-->
+                  <div class="lt-fila-edad" id="lt-1-1-edad-g3">
+                  <div class="row lt-edad-g-tit">
+                    <div class="col-xs-12">
+                    	<span class="lt-g-edad-label">26 - 35</span>
+                    </div>
+                  </div>
+                  <div class="row lt-3-graf">
+                    <div class="col-sm-4">
+                      <div id="lt-1-1-edad-g3-san" class="lt-graf lt-1-1-edad-g3-san" data-subpregunta="<?php echo $d['idsubpregunta'] ?>"> </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div id="lt-1-1-edad-g3-psc" class="lt-graf lt-1-1-edad-g3-psc" data-subpregunta="<?php echo $d['idsubpregunta'] ?>"> </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div id="lt-1-1-edad-g3-nal" class="lt-graf lt-1-1-edad-g3-nal" data-subpregunta="<?php echo $d['idsubpregunta'] ?>"> </div>
+                    </div>
+                  </div>
+                  </div>
+                  <!--Fila Edad 4-->
+                  <div class="lt-fila-edad"  id="lt-1-1-edad-g4">
+                  <div class="row lt-edad-g-tit">
+                    <div class="col-xs-12">
+                    	<span class="lt-g-edad-label">36 - 45</span>
+                    </div>
+                  </div>
+                  <div class="row lt-3-graf">
+                    <div class="col-sm-4">
+                      <div id="lt-1-1-edad-g4-san" class="lt-graf lt-1-1-edad-g4-san" data-subpregunta="<?php echo $d['idsubpregunta'] ?>"> </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div id="lt-1-1-edad-g4-psc" class="lt-graf lt-1-1-edad-g4-psc" data-subpregunta="<?php echo $d['idsubpregunta'] ?>"> </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div id="lt-1-1-edad-g4-nal" class="lt-graf lt-1-1-edad-g4-nal" data-subpregunta="<?php echo $d['idsubpregunta'] ?>"> </div>
+                    </div>
+                  </div>
+                  </div>
+                  <!--Fila Edad 5-->
+                  <div class="lt-fila-edad"  id="lt-1-1-edad-g5">
+                  <div class="row lt-edad-g-tit">
+                    <div class="col-xs-12">
+                    	<span class="lt-g-edad-label">46 - 55</span>
+                    </div>
+                  </div>
+                  <div class="row lt-3-graf">
+                    <div class="col-sm-4">
+                      <div id="lt-1-1-edad-g5-san" class="lt-graf lt-1-1-edad-g5-san" data-subpregunta="<?php echo $d['idsubpregunta'] ?>"> </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div id="lt-1-1-edad-g5-psc" class="lt-graf lt-1-1-edad-g5-psc" data-subpregunta="<?php echo $d['idsubpregunta'] ?>"> </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div id="lt-1-1-edad-g5-nal" class="lt-graf lt-1-1-edad-g5-nal" data-subpregunta="<?php echo $d['idsubpregunta'] ?>"> </div>
+                    </div>
+                  </div>
+                </div>
+                 <!--Fila Edad 6-->
+                  <div class="lt-fila-edad"  id="lt-1-1-edad-g6">
+                  <div class="row lt-edad-g-tit">
+                    <div class="col-xs-12">
+                    	<span class="lt-g-edad-label">+ 55</span>
+                    </div>
+                  </div>
+                  <div class="row lt-3-graf">
+                    <div class="col-sm-4">
+                      <div id="lt-1-1-edad-g6-san" class="lt-graf lt-1-1-edad-g6-san" data-subpregunta="<?php echo $d['idsubpregunta'] ?>"> </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div id="lt-1-1-edad-g6-psc" class="lt-graf lt-1-1-edad-g6-psc" data-subpregunta="<?php echo $d['idsubpregunta'] ?>"> </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div id="lt-1-1-edad-g6-nal" class="lt-graf lt-1-1-edad-g6-nal" data-subpregunta="<?php echo $d['idsubpregunta'] ?>"> </div>
+                    </div>
+                  </div>
+                </div>
+                </div>
+                <!--Fin Vista Edad--> 
+              </div>
+              <!--Fin de gráficas estrellas--> 
+           
+          </div>
+          <!--Fin Col--> 
+        </div>
+        <!--Fin de cuerpo subindicador -->
+        </div>
+        <!--Fin de subindicador-->
+         <?php } ?>
+      </div>
+      <!--Fin de Contenedor de grupos de gráficas-->
+    </article>
+      
+  </section>
+  <footer>
+    <div class="lt-contenedor">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <p>Info del footer</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div> 
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+<script src="/lt/js/jquery-1.12.3.min.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script> 
+
+<!-- Include all compiled plugins (below), or include individual files as needed --> 
+<script src="/lt/js/bootstrap.js"></script> 
+ 
+<!--Script para gráficas tipo estrella --> 
+<script src="/lt/ac-script/estrellas/estrellas-pJson.js"></script> 
+<!--Script para gráficas tipo estrella --> 
+<script src="/lt/ac-script/estrellas/estrellas-graf-pJson_1.js"></script> 
+<!--Interactividad General Atando Cabos --> 
+<script src="/lt/ac-script/atando-cabos.js"></script>
+
+</body>
+</html>

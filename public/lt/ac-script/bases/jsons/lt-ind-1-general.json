@@ -1,0 +1,61 @@
+[{
+	"indicador": "1",
+	"territorio": "San Andres",
+	"datos": [{
+		"respuesta": "De acuerdo",
+		"valor": 0.82
+	}, {
+		"respuesta": "Completamente de acuerdo",
+		"valor": 0.58
+	}, {
+		"respuesta": "En desacuerdo",
+		"valor": 0.29
+	}, {
+		"respuesta": "Completamente en desacuerdo",
+		"valor": 0.17
+	}, {
+		"respuesta": "Le es indiferente",
+		"valor": 0.22
+	}]
+
+}, {
+	"indicador": "1",
+	"territorio": "Providencia",
+	"datos": [{
+		"respuesta": "De acuerdo",
+		"valor": 0.22
+	}, {
+		"respuesta": "Completamente de acuerdo",
+		"valor": 0.38
+	}, {
+		"respuesta": "En desacuerdo",
+		"valor": 0.43
+	}, {
+		"respuesta": "Completamente en desacuerdo",
+		"valor": 0.37
+	}, {
+		"respuesta": "Le es indiferente",
+		"valor": 0.72
+	}]
+
+}, {
+	"indicador": "1",
+	"territorio": "Nacional",
+	"datos": [{
+		"respuesta": "De acuerdo",
+		"valor": 0.52
+	}, {
+		"respuesta": "Completamente de acuerdo",
+		"valor": 0.18
+	}, {
+		"respuesta": "En desacuerdo",
+		"valor": 0.23
+	}, {
+		"respuesta": "Completamente en desacuerdo",
+		"valor": 0.16
+	}, {
+		"respuesta": "Le es indiferente",
+		"valor": 0.42
+	}]
+
+}]

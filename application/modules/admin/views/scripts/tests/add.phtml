@@ -1,0 +1,45 @@
+<section id="tests">
+    <h2>Crear test</h2>
+    <hr/>
+    <form id="test-form-add">
+        <p>
+        <div class="row">
+            <div class="span4">
+                <label for="nombre">Nombre del test:</label>  
+                <input type="text" id="nombre" name="nombre" />
+                <label for="fecha">Fecha:</label>  
+                <input type="text" id="fecha" name="fecha" />
+                <label for="hora">Hora:</label>  
+                <input type="text" id="hora" name="hora" />
+                <label for="codigo">Código de inicio:</label>  
+                <input type="text" id="codigo" name="codigo" />
+            </div>
+            <div class="span4">
+                <label for="categoria">Competencia:</label>
+                <select id="categoria">
+                    <option value="0">Seleccione una competencia...</option>
+                </select>
+                <label for="grupo">Grupo a evaluar:</label>
+                <select id="grupo">
+                    <option value="0">Seleccione un grupo...</option>
+                    <?php foreach($this->grupos as $g){ ?>
+                        <option value="<?php echo $g['id']?>"><?php echo $g['nombre']?></option>
+                    <?php } ?>
+                </select>
+                <label for="tipo_criterio_parada">Criterio de parada:</label>
+                <select id="tipo_criterio_parada">
+                    <option value="0">Seleccione un criterio...</option>
+                    <option value="1">Número de items fijo</option>
+                    <option value="2">Nivel de conocimiento límite</option>
+                </select>
+                <label for="valor_criterio_parada">Valor criterio de parada:</label>  
+                <input type="text" id="valor_criterio_parada" name="valor_criterio_parada" />
+            </div>
+        </div>
+        
+        
+        </p>
+        <a href="#" class="btn btn-primary" id="test-add">Crear test</a>
+        <a href="/admin/categorias" class="btn">Cancelar</a>
+    </form>
+</section>

@@ -1,0 +1,61 @@
+[{
+	"id": "#lt-1-1-sexo-h-san",
+	"datos": [{
+		"respuesta": "Le es indiferente",
+		"valor": 0.30
+	}, {
+		"respuesta": "No le gustaría",
+		"valor": 0.70
+	}]
+
+}, {
+	"id": "#lt-1-1-sexo-m-san",
+	"datos": [{
+		"respuesta": "Le es indiferente",
+		"valor": 0.66
+	}, {
+		"respuesta": "No le gustaría",
+		"valor": 0.34
+	}]
+
+}, {
+	"id": "#lt-1-1-sexo-h-psc",
+	"datos": [{
+		"respuesta": "Le es indiferente",
+		"valor": 0.48
+	}, {
+		"respuesta": "No le gustaría",
+		"valor": 1
+	}]
+
+}, {
+	"id": "#lt-1-1-sexo-m-psc",
+	"datos": [{
+		"respuesta": "Le es indiferente",
+		"valor": 0.30
+	}, {
+		"respuesta": "No le gustaría",
+		"valor": 0.50
+	}]
+
+}, {
+	"id": "#lt-1-1-sexo-h-nal",
+	"datos": [{
+		"respuesta": "Le es indiferente",
+		"valor": 0.66
+	}, {
+		"respuesta": "No le gustaría",
+		"valor": 0.24
+	}]
+
+}, {
+	"id": "#lt-1-1-sexo-m-nal",
+	"datos": [{
+		"respuesta": "Le es indiferente",
+		"valor": 0.48
+	}, {
+		"respuesta": "No le gustaría",
+		"valor": 0.1
+	}]
+
+}]

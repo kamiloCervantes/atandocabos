@@ -1,0 +1,31 @@
+<section id="tests">
+    <h2>Listado de Tests</h2>
+    <hr/>
+    <div id="controls">
+        <a href="/admin/tests/add" class="btn"><i class="icon-plus"></i> Crear test</a>
+    </div>
+    <br/>
+<!--    <ul id="tests-list">
+        
+    </ul>-->
+    <table class="table">
+        <tr>
+            <th>Nombre</th>
+            <th>Fecha de creación</th>
+            <th>Competencia</th>
+            <th>Criterio de parada</th>
+            <th>Creador</th>
+            <th>&nbsp;</th>
+        </tr>
+        <?php foreach($this->tests as $t){ ?>
+        <tr>
+            <td><?php echo $t['nombre'] ?></td>
+            <td><?php echo $t['fecha_creacion'] ?></td>
+            <td><?php echo $t['categoria'] ?></td>
+            <td><?php echo $t['criterio_parada'] ?> : <?php echo $t['valor_criterio'] ?></td>
+            <td><?php echo $t['creador'] ?></td>
+            <td><a href="/admin/tests/view/id/<?php echo $t['id'] ?>"><i class="fa fa-search"></i></a></td>
+        </tr>
+        <?php } ?>
+    </table>
+</section>

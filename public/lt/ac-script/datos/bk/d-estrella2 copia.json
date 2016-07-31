@@ -1,0 +1,1653 @@
+{
+	"subindicador": 1,
+	"contenido": [{
+			"vista": "general",
+			"contenido": [{
+					"territorio": "San Andres",
+					"datos": [{
+						"respuesta": "De acuerdo",
+						"valor": 0.22
+					}, {
+						"respuesta": "Completamente de acuerdo",
+						"valor": 0.28
+					}, {
+						"respuesta": "En desacuerdo",
+						"valor": 0.29
+					}, {
+						"respuesta": "Completamente en desacuerdo",
+						"valor": 0.17
+					}, {
+						"respuesta": "Le es indiferente",
+						"valor": 0.22
+					}]
+
+				}, {
+					"territorio": "Providencia",
+					"datos": [{
+						"respuesta": "De acuerdo",
+						"valor": 0.22
+					}, {
+						"respuesta": "Completamente de acuerdo",
+						"valor": 0.28
+					}, {
+						"respuesta": "En desacuerdo",
+						"valor": 0.29
+					}, {
+						"respuesta": "Completamente en desacuerdo",
+						"valor": 0.17
+					}, {
+						"respuesta": "Le es indiferente",
+						"valor": 0.22
+					}]
+
+				}, {
+					"territorio": "Nacional",
+					"datos": [{
+						"respuesta": "De acuerdo",
+						"valor": 0.22
+					}, {
+						"respuesta": "Completamente de acuerdo",
+						"valor": 0.28
+					}, {
+						"respuesta": "En desacuerdo",
+						"valor": 0.29
+					}, {
+						"respuesta": "Completamente en desacuerdo",
+						"valor": 0.17
+					}, {
+						"respuesta": "Le es indiferente",
+						"valor": 0.22
+					}]
+
+				}
+
+			]
+		}, {
+			"vista": "sexo",
+			"contenido": [{
+				"territorio": "San Andres",
+				"contenido": [{
+					"sexo": "mujer",
+					"datos": [{
+						"respuesta": "De acuerdo",
+						"valor": 0.22
+					}, {
+						"respuesta": "Completamente de acuerdo",
+						"valor": 0.28
+					}, {
+						"respuesta": "En desacuerdo",
+						"valor": 0.29
+					}, {
+						"respuesta": "Completamente en desacuerdo",
+						"valor": 0.17
+					}, {
+						"respuesta": "Le es indiferente",
+						"valor": 0.22
+					}]
+				}, {
+					"sexo": "hombre",
+					"datos": [{
+						"respuesta": "De acuerdo",
+						"valor": 0.22
+					}, {
+						"respuesta": "Completamente de acuerdo",
+						"valor": 0.28
+					}, {
+						"respuesta": "En desacuerdo",
+						"valor": 0.29
+					}, {
+						"respuesta": "Completamente en desacuerdo",
+						"valor": 0.17
+					}, {
+						"respuesta": "Le es indiferente",
+						"valor": 0.22
+					}]
+				}]
+			}, {
+				"territorio": "Providencia",
+				"contenido": [{
+					"sexo": "mujer",
+					"datos": [{
+						"respuesta": "De acuerdo",
+						"valor": 0.22
+					}, {
+						"respuesta": "Completamente de acuerdo",
+						"valor": 0.28
+					}, {
+						"respuesta": "En desacuerdo",
+						"valor": 0.29
+					}, {
+						"respuesta": "Completamente en desacuerdo",
+						"valor": 0.17
+					}, {
+						"respuesta": "Le es indiferente",
+						"valor": 0.22
+					}]
+				}, {
+					"sexo": "hombre",
+					"datos": [{
+						"respuesta": "De acuerdo",
+						"valor": 0.22
+					}, {
+						"respuesta": "Completamente de acuerdo",
+						"valor": 0.28
+					}, {
+						"respuesta": "En desacuerdo",
+						"valor": 0.29
+					}, {
+						"respuesta": "Completamente en desacuerdo",
+						"valor": 0.17
+					}, {
+						"respuesta": "Le es indiferente",
+						"valor": 0.22
+					}]
+				}]
+			}, {
+				"territorio": "Nacional",
+				"contenido": [{
+					"sexo": "mujer",
+					"datos": [{
+						"respuesta": "De acuerdo",
+						"valor": 0.22
+					}, {
+						"respuesta": "Completamente de acuerdo",
+						"valor": 0.28
+					}, {
+						"respuesta": "En desacuerdo",
+						"valor": 0.29
+					}, {
+						"respuesta": "Completamente en desacuerdo",
+						"valor": 0.17
+					}, {
+						"respuesta": "Le es indiferente",
+						"valor": 0.22
+					}]
+				}, {
+					"sexo": "hombre",
+					"datos": [{
+						"respuesta": "De acuerdo",
+						"valor": 0.22
+					}, {
+						"respuesta": "Completamente de acuerdo",
+						"valor": 0.28
+					}, {
+						"respuesta": "En desacuerdo",
+						"valor": 0.29
+					}, {
+						"respuesta": "Completamente en desacuerdo",
+						"valor": 0.17
+					}, {
+						"respuesta": "Le es indiferente",
+						"valor": 0.22
+					}]
+				}]
+			}]
+		}, {
+			"vista": "edad",
+			"contenido": [{
+				"grupoedad": "-18",
+				"contenido": [{
+					"territorio": "San Andres",
+					"datos": [{
+						"respuesta": "De acuerdo",
+						"valor": 0.22
+					}, {
+						"respuesta": "Completamente de acuerdo",
+						"valor": 0.28
+					}, {
+						"respuesta": "En desacuerdo",
+						"valor": 0.29
+					}, {
+						"respuesta": "Completamente en desacuerdo",
+						"valor": 0.17
+					}, {
+						"respuesta": "Le es indiferente",
+						"valor": 0.22
+					}]
+
+				}, {
+					"territorio": "Providencia",
+					"datos": [{
+						"respuesta": "De acuerdo",
+						"valor": 0.22
+					}, {
+						"respuesta": "Completamente de acuerdo",
+						"valor": 0.28
+					}, {
+						"respuesta": "En desacuerdo",
+						"valor": 0.29
+					}, {
+						"respuesta": "Completamente en desacuerdo",
+						"valor": 0.17
+					}, {
+						"respuesta": "Le es indiferente",
+						"valor": 0.22
+					}]
+
+				}, {
+					"territorio": "Nacional",
+					"datos": [{
+						"respuesta": "De acuerdo",
+						"valor": 0.22
+					}, {
+						"respuesta": "Completamente de acuerdo",
+						"valor": 0.28
+					}, {
+						"respuesta": "En desacuerdo",
+						"valor": 0.29
+					}, {
+						"respuesta": "Completamente en desacuerdo",
+						"valor": 0.17
+					}, {
+						"respuesta": "Le es indiferente",
+						"valor": 0.22
+					}]
+
+				}]
+			}, {
+				"grupoedad": "18-25",
+				"contenido": [{
+					"territorio": "San Andres",
+					"datos": [{
+						"respuesta": "De acuerdo",
+						"valor": 0.22
+					}, {
+						"respuesta": "Completamente de acuerdo",
+						"valor": 0.28
+					}, {
+						"respuesta": "En desacuerdo",
+						"valor": 0.29
+					}, {
+						"respuesta": "Completamente en desacuerdo",
+						"valor": 0.17
+					}, {
+						"respuesta": "Le es indiferente",
+						"valor": 0.22
+					}]
+
+				}, {
+					"territorio": "Providencia",
+					"datos": [{
+						"respuesta": "De acuerdo",
+						"valor": 0.22
+					}, {
+						"respuesta": "Completamente de acuerdo",
+						"valor": 0.28
+					}, {
+						"respuesta": "En desacuerdo",
+						"valor": 0.29
+					}, {
+						"respuesta": "Completamente en desacuerdo",
+						"valor": 0.17
+					}, {
+						"respuesta": "Le es indiferente",
+						"valor": 0.22
+					}]
+
+				}, {
+					"territorio": "Nacional",
+					"datos": [{
+						"respuesta": "De acuerdo",
+						"valor": 0.22
+					}, {
+						"respuesta": "Completamente de acuerdo",
+						"valor": 0.28
+					}, {
+						"respuesta": "En desacuerdo",
+						"valor": 0.29
+					}, {
+						"respuesta": "Completamente en desacuerdo",
+						"valor": 0.17
+					}, {
+						"respuesta": "Le es indiferente",
+						"valor": 0.22
+					}]
+
+				}]
+			}, {
+				"grupoedad": "26-35",
+				"contenido": [{
+					"territorio": "San Andres",
+					"datos": [{
+						"respuesta": "De acuerdo",
+						"valor": 0.22
+					}, {
+						"respuesta": "Completamente de acuerdo",
+						"valor": 0.28
+					}, {
+						"respuesta": "En desacuerdo",
+						"valor": 0.29
+					}, {
+						"respuesta": "Completamente en desacuerdo",
+						"valor": 0.17
+					}, {
+						"respuesta": "Le es indiferente",
+						"valor": 0.22
+					}]
+
+				}, {
+					"territorio": "Providencia",
+					"datos": [{
+						"respuesta": "De acuerdo",
+						"valor": 0.22
+					}, {
+						"respuesta": "Completamente de acuerdo",
+						"valor": 0.28
+					}, {
+						"respuesta": "En desacuerdo",
+						"valor": 0.29
+					}, {
+						"respuesta": "Completamente en desacuerdo",
+						"valor": 0.17
+					}, {
+						"respuesta": "Le es indiferente",
+						"valor": 0.22
+					}]
+
+				}, {
+					"territorio": "Nacional",
+					"datos": [{
+						"respuesta": "De acuerdo",
+						"valor": 0.22
+					}, {
+						"respuesta": "Completamente de acuerdo",
+						"valor": 0.28
+					}, {
+						"respuesta": "En desacuerdo",
+						"valor": 0.29
+					}, {
+						"respuesta": "Completamente en desacuerdo",
+						"valor": 0.17
+					}, {
+						"respuesta": "Le es indiferente",
+						"valor": 0.22
+					}]
+
+				}]
+			}, {
+				"grupoedad": "36-45",
+				"contenido": [{
+					"territorio": "San Andres",
+					"datos": [{
+						"respuesta": "De acuerdo",
+						"valor": 0.22
+					}, {
+						"respuesta": "Completamente de acuerdo",
+						"valor": 0.28
+					}, {
+						"respuesta": "En desacuerdo",
+						"valor": 0.29
+					}, {
+						"respuesta": "Completamente en desacuerdo",
+						"valor": 0.17
+					}, {
+						"respuesta": "Le es indiferente",
+						"valor": 0.22
+					}]
+
+				}, {
+					"territorio": "Providencia",
+					"datos": [{
+						"respuesta": "De acuerdo",
+						"valor": 0.22
+					}, {
+						"respuesta": "Completamente de acuerdo",
+						"valor": 0.28
+					}, {
+						"respuesta": "En desacuerdo",
+						"valor": 0.29
+					}, {
+						"respuesta": "Completamente en desacuerdo",
+						"valor": 0.17
+					}, {
+						"respuesta": "Le es indiferente",
+						"valor": 0.22
+					}]
+
+				}, {
+					"territorio": "Nacional",
+					"datos": [{
+						"respuesta": "De acuerdo",
+						"valor": 0.22
+					}, {
+						"respuesta": "Completamente de acuerdo",
+						"valor": 0.28
+					}, {
+						"respuesta": "En desacuerdo",
+						"valor": 0.29
+					}, {
+						"respuesta": "Completamente en desacuerdo",
+						"valor": 0.17
+					}, {
+						"respuesta": "Le es indiferente",
+						"valor": 0.22
+					}]
+
+				}]
+			}, {
+				"grupoedad": "46-55",
+				"contenido": [{
+					"territorio": "San Andres",
+					"datos": [{
+						"respuesta": "De acuerdo",
+						"valor": 0.22
+					}, {
+						"respuesta": "Completamente de acuerdo",
+						"valor": 0.28
+					}, {
+						"respuesta": "En desacuerdo",
+						"valor": 0.29
+					}, {
+						"respuesta": "Completamente en desacuerdo",
+						"valor": 0.17
+					}, {
+						"respuesta": "Le es indiferente",
+						"valor": 0.22
+					}]
+
+				}, {
+					"territorio": "Providencia",
+					"datos": [{
+						"respuesta": "De acuerdo",
+						"valor": 0.22
+					}, {
+						"respuesta": "Completamente de acuerdo",
+						"valor": 0.28
+					}, {
+						"respuesta": "En desacuerdo",
+						"valor": 0.29
+					}, {
+						"respuesta": "Completamente en desacuerdo",
+						"valor": 0.17
+					}, {
+						"respuesta": "Le es indiferente",
+						"valor": 0.22
+					}]
+
+				}, {
+					"territorio": "Nacional",
+					"datos": [{
+						"respuesta": "De acuerdo",
+						"valor": 0.22
+					}, {
+						"respuesta": "Completamente de acuerdo",
+						"valor": 0.28
+					}, {
+						"respuesta": "En desacuerdo",
+						"valor": 0.29
+					}, {
+						"respuesta": "Completamente en desacuerdo",
+						"valor": 0.17
+					}, {
+						"respuesta": "Le es indiferente",
+						"valor": 0.22
+					}]
+
+				}]
+			}, {
+				"grupoedad": "+55",
+				"contenido": [{
+					"territorio": "San Andres",
+					"datos": [{
+						"respuesta": "De acuerdo",
+						"valor": 0.22
+					}, {
+						"respuesta": "Completamente de acuerdo",
+						"valor": 0.28
+					}, {
+						"respuesta": "En desacuerdo",
+						"valor": 0.29
+					}, {
+						"respuesta": "Completamente en desacuerdo",
+						"valor": 0.17
+					}, {
+						"respuesta": "Le es indiferente",
+						"valor": 0.22
+					}]
+
+				}, {
+					"territorio": "Providencia",
+					"datos": [{
+						"respuesta": "De acuerdo",
+						"valor": 0.22
+					}, {
+						"respuesta": "Completamente de acuerdo",
+						"valor": 0.28
+					}, {
+						"respuesta": "En desacuerdo",
+						"valor": 0.29
+					}, {
+						"respuesta": "Completamente en desacuerdo",
+						"valor": 0.17
+					}, {
+						"respuesta": "Le es indiferente",
+						"valor": 0.22
+					}]
+
+				}, {
+					"territorio": "Nacional",
+					"datos": [{
+						"respuesta": "De acuerdo",
+						"valor": 0.22
+					}, {
+						"respuesta": "Completamente de acuerdo",
+						"valor": 0.28
+					}, {
+						"respuesta": "En desacuerdo",
+						"valor": 0.29
+					}, {
+						"respuesta": "Completamente en desacuerdo",
+						"valor": 0.17
+					}, {
+						"respuesta": "Le es indiferente",
+						"valor": 0.22
+					}]
+
+				}]
+			}]
+		}
+
+	]
+},
+{
+	"subindicador": 2,
+	"contenido": [{
+			"vista": "general",
+			"contenido": [{
+					"territorio": "San Andres",
+					"datos": [{
+						"respuesta": "De acuerdo",
+						"valor": 0.22
+					}, {
+						"respuesta": "Completamente de acuerdo",
+						"valor": 0.28
+					}, {
+						"respuesta": "En desacuerdo",
+						"valor": 0.29
+					}, {
+						"respuesta": "Completamente en desacuerdo",
+						"valor": 0.17
+					}, {
+						"respuesta": "Le es indiferente",
+						"valor": 0.22
+					}]
+
+				}, {
+					"territorio": "Providencia",
+					"datos": [{
+						"respuesta": "De acuerdo",
+						"valor": 0.22
+					}, {
+						"respuesta": "Completamente de acuerdo",
+						"valor": 0.28
+					}, {
+						"respuesta": "En desacuerdo",
+						"valor": 0.29
+					}, {
+						"respuesta": "Completamente en desacuerdo",
+						"valor": 0.17
+					}, {
+						"respuesta": "Le es indiferente",
+						"valor": 0.22
+					}]
+
+				}, {
+					"territorio": "Nacional",
+					"datos": [{
+						"respuesta": "De acuerdo",
+						"valor": 0.22
+					}, {
+						"respuesta": "Completamente de acuerdo",
+						"valor": 0.28
+					}, {
+						"respuesta": "En desacuerdo",
+						"valor": 0.29
+					}, {
+						"respuesta": "Completamente en desacuerdo",
+						"valor": 0.17
+					}, {
+						"respuesta": "Le es indiferente",
+						"valor": 0.22
+					}]
+
+				}
+
+			]
+		}, {
+			"vista": "sexo",
+			"contenido": [{
+				"territorio": "San Andres",
+				"contenido": [{
+					"sexo": "mujer",
+					"datos": [{
+						"respuesta": "De acuerdo",
+						"valor": 0.22
+					}, {
+						"respuesta": "Completamente de acuerdo",
+						"valor": 0.28
+					}, {
+						"respuesta": "En desacuerdo",
+						"valor": 0.29
+					}, {
+						"respuesta": "Completamente en desacuerdo",
+						"valor": 0.17
+					}, {
+						"respuesta": "Le es indiferente",
+						"valor": 0.22
+					}]
+				}, {
+					"sexo": "hombre",
+					"datos": [{
+						"respuesta": "De acuerdo",
+						"valor": 0.22
+					}, {
+						"respuesta": "Completamente de acuerdo",
+						"valor": 0.28
+					}, {
+						"respuesta": "En desacuerdo",
+						"valor": 0.29
+					}, {
+						"respuesta": "Completamente en desacuerdo",
+						"valor": 0.17
+					}, {
+						"respuesta": "Le es indiferente",
+						"valor": 0.22
+					}]
+				}]
+			}, {
+				"territorio": "Providencia",
+				"contenido": [{
+					"sexo": "mujer",
+					"datos": [{
+						"respuesta": "De acuerdo",
+						"valor": 0.22
+					}, {
+						"respuesta": "Completamente de acuerdo",
+						"valor": 0.28
+					}, {
+						"respuesta": "En desacuerdo",
+						"valor": 0.29
+					}, {
+						"respuesta": "Completamente en desacuerdo",
+						"valor": 0.17
+					}, {
+						"respuesta": "Le es indiferente",
+						"valor": 0.22
+					}]
+				}, {
+					"sexo": "hombre",
+					"datos": [{
+						"respuesta": "De acuerdo",
+						"valor": 0.22
+					}, {
+						"respuesta": "Completamente de acuerdo",
+						"valor": 0.28
+					}, {
+						"respuesta": "En desacuerdo",
+						"valor": 0.29
+					}, {
+						"respuesta": "Completamente en desacuerdo",
+						"valor": 0.17
+					}, {
+						"respuesta": "Le es indiferente",
+						"valor": 0.22
+					}]
+				}]
+			}, {
+				"territorio": "Nacional",
+				"contenido": [{
+					"sexo": "mujer",
+					"datos": [{
+						"respuesta": "De acuerdo",
+						"valor": 0.22
+					}, {
+						"respuesta": "Completamente de acuerdo",
+						"valor": 0.28
+					}, {
+						"respuesta": "En desacuerdo",
+						"valor": 0.29
+					}, {
+						"respuesta": "Completamente en desacuerdo",
+						"valor": 0.17
+					}, {
+						"respuesta": "Le es indiferente",
+						"valor": 0.22
+					}]
+				}, {
+					"sexo": "hombre",
+					"datos": [{
+						"respuesta": "De acuerdo",
+						"valor": 0.22
+					}, {
+						"respuesta": "Completamente de acuerdo",
+						"valor": 0.28
+					}, {
+						"respuesta": "En desacuerdo",
+						"valor": 0.29
+					}, {
+						"respuesta": "Completamente en desacuerdo",
+						"valor": 0.17
+					}, {
+						"respuesta": "Le es indiferente",
+						"valor": 0.22
+					}]
+				}]
+			}]
+		}, {
+			"vista": "edad",
+			"contenido": [{
+				"grupoedad": "-18",
+				"contenido": [{
+					"territorio": "San Andres",
+					"datos": [{
+						"respuesta": "De acuerdo",
+						"valor": 0.22
+					}, {
+						"respuesta": "Completamente de acuerdo",
+						"valor": 0.28
+					}, {
+						"respuesta": "En desacuerdo",
+						"valor": 0.29
+					}, {
+						"respuesta": "Completamente en desacuerdo",
+						"valor": 0.17
+					}, {
+						"respuesta": "Le es indiferente",
+						"valor": 0.22
+					}]
+
+				}, {
+					"territorio": "Providencia",
+					"datos": [{
+						"respuesta": "De acuerdo",
+						"valor": 0.22
+					}, {
+						"respuesta": "Completamente de acuerdo",
+						"valor": 0.28
+					}, {
+						"respuesta": "En desacuerdo",
+						"valor": 0.29
+					}, {
+						"respuesta": "Completamente en desacuerdo",
+						"valor": 0.17
+					}, {
+						"respuesta": "Le es indiferente",
+						"valor": 0.22
+					}]
+
+				}, {
+					"territorio": "Nacional",
+					"datos": [{
+						"respuesta": "De acuerdo",
+						"valor": 0.22
+					}, {
+						"respuesta": "Completamente de acuerdo",
+						"valor": 0.28
+					}, {
+						"respuesta": "En desacuerdo",
+						"valor": 0.29
+					}, {
+						"respuesta": "Completamente en desacuerdo",
+						"valor": 0.17
+					}, {
+						"respuesta": "Le es indiferente",
+						"valor": 0.22
+					}]
+
+				}]
+			}, {
+				"grupoedad": "18-25",
+				"contenido": [{
+					"territorio": "San Andres",
+					"datos": [{
+						"respuesta": "De acuerdo",
+						"valor": 0.22
+					}, {
+						"respuesta": "Completamente de acuerdo",
+						"valor": 0.28
+					}, {
+						"respuesta": "En desacuerdo",
+						"valor": 0.29
+					}, {
+						"respuesta": "Completamente en desacuerdo",
+						"valor": 0.17
+					}, {
+						"respuesta": "Le es indiferente",
+						"valor": 0.22
+					}]
+
+				}, {
+					"territorio": "Providencia",
+					"datos": [{
+						"respuesta": "De acuerdo",
+						"valor": 0.22
+					}, {
+						"respuesta": "Completamente de acuerdo",
+						"valor": 0.28
+					}, {
+						"respuesta": "En desacuerdo",
+						"valor": 0.29
+					}, {
+						"respuesta": "Completamente en desacuerdo",
+						"valor": 0.17
+					}, {
+						"respuesta": "Le es indiferente",
+						"valor": 0.22
+					}]
+
+				}, {
+					"territorio": "Nacional",
+					"datos": [{
+						"respuesta": "De acuerdo",
+						"valor": 0.22
+					}, {
+						"respuesta": "Completamente de acuerdo",
+						"valor": 0.28
+					}, {
+						"respuesta": "En desacuerdo",
+						"valor": 0.29
+					}, {
+						"respuesta": "Completamente en desacuerdo",
+						"valor": 0.17
+					}, {
+						"respuesta": "Le es indiferente",
+						"valor": 0.22
+					}]
+
+				}]
+			}, {
+				"grupoedad": "26-35",
+				"contenido": [{
+					"territorio": "San Andres",
+					"datos": [{
+						"respuesta": "De acuerdo",
+						"valor": 0.22
+					}, {
+						"respuesta": "Completamente de acuerdo",
+						"valor": 0.28
+					}, {
+						"respuesta": "En desacuerdo",
+						"valor": 0.29
+					}, {
+						"respuesta": "Completamente en desacuerdo",
+						"valor": 0.17
+					}, {
+						"respuesta": "Le es indiferente",
+						"valor": 0.22
+					}]
+
+				}, {
+					"territorio": "Providencia",
+					"datos": [{
+						"respuesta": "De acuerdo",
+						"valor": 0.22
+					}, {
+						"respuesta": "Completamente de acuerdo",
+						"valor": 0.28
+					}, {
+						"respuesta": "En desacuerdo",
+						"valor": 0.29
+					}, {
+						"respuesta": "Completamente en desacuerdo",
+						"valor": 0.17
+					}, {
+						"respuesta": "Le es indiferente",
+						"valor": 0.22
+					}]
+
+				}, {
+					"territorio": "Nacional",
+					"datos": [{
+						"respuesta": "De acuerdo",
+						"valor": 0.22
+					}, {
+						"respuesta": "Completamente de acuerdo",
+						"valor": 0.28
+					}, {
+						"respuesta": "En desacuerdo",
+						"valor": 0.29
+					}, {
+						"respuesta": "Completamente en desacuerdo",
+						"valor": 0.17
+					}, {
+						"respuesta": "Le es indiferente",
+						"valor": 0.22
+					}]
+
+				}]
+			}, {
+				"grupoedad": "36-45",
+				"contenido": [{
+					"territorio": "San Andres",
+					"datos": [{
+						"respuesta": "De acuerdo",
+						"valor": 0.22
+					}, {
+						"respuesta": "Completamente de acuerdo",
+						"valor": 0.28
+					}, {
+						"respuesta": "En desacuerdo",
+						"valor": 0.29
+					}, {
+						"respuesta": "Completamente en desacuerdo",
+						"valor": 0.17
+					}, {
+						"respuesta": "Le es indiferente",
+						"valor": 0.22
+					}]
+
+				}, {
+					"territorio": "Providencia",
+					"datos": [{
+						"respuesta": "De acuerdo",
+						"valor": 0.22
+					}, {
+						"respuesta": "Completamente de acuerdo",
+						"valor": 0.28
+					}, {
+						"respuesta": "En desacuerdo",
+						"valor": 0.29
+					}, {
+						"respuesta": "Completamente en desacuerdo",
+						"valor": 0.17
+					}, {
+						"respuesta": "Le es indiferente",
+						"valor": 0.22
+					}]
+
+				}, {
+					"territorio": "Nacional",
+					"datos": [{
+						"respuesta": "De acuerdo",
+						"valor": 0.22
+					}, {
+						"respuesta": "Completamente de acuerdo",
+						"valor": 0.28
+					}, {
+						"respuesta": "En desacuerdo",
+						"valor": 0.29
+					}, {
+						"respuesta": "Completamente en desacuerdo",
+						"valor": 0.17
+					}, {
+						"respuesta": "Le es indiferente",
+						"valor": 0.22
+					}]
+
+				}]
+			}, {
+				"grupoedad": "46-55",
+				"contenido": [{
+					"territorio": "San Andres",
+					"datos": [{
+						"respuesta": "De acuerdo",
+						"valor": 0.22
+					}, {
+						"respuesta": "Completamente de acuerdo",
+						"valor": 0.28
+					}, {
+						"respuesta": "En desacuerdo",
+						"valor": 0.29
+					}, {
+						"respuesta": "Completamente en desacuerdo",
+						"valor": 0.17
+					}, {
+						"respuesta": "Le es indiferente",
+						"valor": 0.22
+					}]
+
+				}, {
+					"territorio": "Providencia",
+					"datos": [{
+						"respuesta": "De acuerdo",
+						"valor": 0.22
+					}, {
+						"respuesta": "Completamente de acuerdo",
+						"valor": 0.28
+					}, {
+						"respuesta": "En desacuerdo",
+						"valor": 0.29
+					}, {
+						"respuesta": "Completamente en desacuerdo",
+						"valor": 0.17
+					}, {
+						"respuesta": "Le es indiferente",
+						"valor": 0.22
+					}]
+
+				}, {
+					"territorio": "Nacional",
+					"datos": [{
+						"respuesta": "De acuerdo",
+						"valor": 0.22
+					}, {
+						"respuesta": "Completamente de acuerdo",
+						"valor": 0.28
+					}, {
+						"respuesta": "En desacuerdo",
+						"valor": 0.29
+					}, {
+						"respuesta": "Completamente en desacuerdo",
+						"valor": 0.17
+					}, {
+						"respuesta": "Le es indiferente",
+						"valor": 0.22
+					}]
+
+				}]
+			}, {
+				"grupoedad": "+55",
+				"contenido": [{
+					"territorio": "San Andres",
+					"datos": [{
+						"respuesta": "De acuerdo",
+						"valor": 0.22
+					}, {
+						"respuesta": "Completamente de acuerdo",
+						"valor": 0.28
+					}, {
+						"respuesta": "En desacuerdo",
+						"valor": 0.29
+					}, {
+						"respuesta": "Completamente en desacuerdo",
+						"valor": 0.17
+					}, {
+						"respuesta": "Le es indiferente",
+						"valor": 0.22
+					}]
+
+				}, {
+					"territorio": "Providencia",
+					"datos": [{
+						"respuesta": "De acuerdo",
+						"valor": 0.22
+					}, {
+						"respuesta": "Completamente de acuerdo",
+						"valor": 0.28
+					}, {
+						"respuesta": "En desacuerdo",
+						"valor": 0.29
+					}, {
+						"respuesta": "Completamente en desacuerdo",
+						"valor": 0.17
+					}, {
+						"respuesta": "Le es indiferente",
+						"valor": 0.22
+					}]
+
+				}, {
+					"territorio": "Nacional",
+					"datos": [{
+						"respuesta": "De acuerdo",
+						"valor": 0.22
+					}, {
+						"respuesta": "Completamente de acuerdo",
+						"valor": 0.28
+					}, {
+						"respuesta": "En desacuerdo",
+						"valor": 0.29
+					}, {
+						"respuesta": "Completamente en desacuerdo",
+						"valor": 0.17
+					}, {
+						"respuesta": "Le es indiferente",
+						"valor": 0.22
+					}]
+
+				}]
+			}]
+		}
+
+	]
+},
+{
+	"subindicador": 3,
+	"contenido": [{
+			"vista": "general",
+			"contenido": [{
+					"territorio": "San Andres",
+					"datos": [{
+						"respuesta": "De acuerdo",
+						"valor": 0.22
+					}, {
+						"respuesta": "Completamente de acuerdo",
+						"valor": 0.28
+					}, {
+						"respuesta": "En desacuerdo",
+						"valor": 0.29
+					}, {
+						"respuesta": "Completamente en desacuerdo",
+						"valor": 0.17
+					}, {
+						"respuesta": "Le es indiferente",
+						"valor": 0.22
+					}]
+
+				}, {
+					"territorio": "Providencia",
+					"datos": [{
+						"respuesta": "De acuerdo",
+						"valor": 0.22
+					}, {
+						"respuesta": "Completamente de acuerdo",
+						"valor": 0.28
+					}, {
+						"respuesta": "En desacuerdo",
+						"valor": 0.29
+					}, {
+						"respuesta": "Completamente en desacuerdo",
+						"valor": 0.17
+					}, {
+						"respuesta": "Le es indiferente",
+						"valor": 0.22
+					}]
+
+				}, {
+					"territorio": "Nacional",
+					"datos": [{
+						"respuesta": "De acuerdo",
+						"valor": 0.22
+					}, {
+						"respuesta": "Completamente de acuerdo",
+						"valor": 0.28
+					}, {
+						"respuesta": "En desacuerdo",
+						"valor": 0.29
+					}, {
+						"respuesta": "Completamente en desacuerdo",
+						"valor": 0.17
+					}, {
+						"respuesta": "Le es indiferente",
+						"valor": 0.22
+					}]
+
+				}
+
+			]
+		}, {
+			"vista": "sexo",
+			"contenido": [{
+				"territorio": "San Andres",
+				"contenido": [{
+					"sexo": "mujer",
+					"datos": [{
+						"respuesta": "De acuerdo",
+						"valor": 0.22
+					}, {
+						"respuesta": "Completamente de acuerdo",
+						"valor": 0.28
+					}, {
+						"respuesta": "En desacuerdo",
+						"valor": 0.29
+					}, {
+						"respuesta": "Completamente en desacuerdo",
+						"valor": 0.17
+					}, {
+						"respuesta": "Le es indiferente",
+						"valor": 0.22
+					}]
+				}, {
+					"sexo": "hombre",
+					"datos": [{
+						"respuesta": "De acuerdo",
+						"valor": 0.22
+					}, {
+						"respuesta": "Completamente de acuerdo",
+						"valor": 0.28
+					}, {
+						"respuesta": "En desacuerdo",
+						"valor": 0.29
+					}, {
+						"respuesta": "Completamente en desacuerdo",
+						"valor": 0.17
+					}, {
+						"respuesta": "Le es indiferente",
+						"valor": 0.22
+					}]
+				}]
+			}, {
+				"territorio": "Providencia",
+				"contenido": [{
+					"sexo": "mujer",
+					"datos": [{
+						"respuesta": "De acuerdo",
+						"valor": 0.22
+					}, {
+						"respuesta": "Completamente de acuerdo",
+						"valor": 0.28
+					}, {
+						"respuesta": "En desacuerdo",
+						"valor": 0.29
+					}, {
+						"respuesta": "Completamente en desacuerdo",
+						"valor": 0.17
+					}, {
+						"respuesta": "Le es indiferente",
+						"valor": 0.22
+					}]
+				}, {
+					"sexo": "hombre",
+					"datos": [{
+						"respuesta": "De acuerdo",
+						"valor": 0.22
+					}, {
+						"respuesta": "Completamente de acuerdo",
+						"valor": 0.28
+					}, {
+						"respuesta": "En desacuerdo",
+						"valor": 0.29
+					}, {
+						"respuesta": "Completamente en desacuerdo",
+						"valor": 0.17
+					}, {
+						"respuesta": "Le es indiferente",
+						"valor": 0.22
+					}]
+				}]
+			}, {
+				"territorio": "Nacional",
+				"contenido": [{
+					"sexo": "mujer",
+					"datos": [{
+						"respuesta": "De acuerdo",
+						"valor": 0.22
+					}, {
+						"respuesta": "Completamente de acuerdo",
+						"valor": 0.28
+					}, {
+						"respuesta": "En desacuerdo",
+						"valor": 0.29
+					}, {
+						"respuesta": "Completamente en desacuerdo",
+						"valor": 0.17
+					}, {
+						"respuesta": "Le es indiferente",
+						"valor": 0.22
+					}]
+				}, {
+					"sexo": "hombre",
+					"datos": [{
+						"respuesta": "De acuerdo",
+						"valor": 0.22
+					}, {
+						"respuesta": "Completamente de acuerdo",
+						"valor": 0.28
+					}, {
+						"respuesta": "En desacuerdo",
+						"valor": 0.29
+					}, {
+						"respuesta": "Completamente en desacuerdo",
+						"valor": 0.17
+					}, {
+						"respuesta": "Le es indiferente",
+						"valor": 0.22
+					}]
+				}]
+			}]
+		}, {
+			"vista": "edad",
+			"contenido": [{
+				"grupoedad": "-18",
+				"contenido": [{
+					"territorio": "San Andres",
+					"datos": [{
+						"respuesta": "De acuerdo",
+						"valor": 0.22
+					}, {
+						"respuesta": "Completamente de acuerdo",
+						"valor": 0.28
+					}, {
+						"respuesta": "En desacuerdo",
+						"valor": 0.29
+					}, {
+						"respuesta": "Completamente en desacuerdo",
+						"valor": 0.17
+					}, {
+						"respuesta": "Le es indiferente",
+						"valor": 0.22
+					}]
+
+				}, {
+					"territorio": "Providencia",
+					"datos": [{
+						"respuesta": "De acuerdo",
+						"valor": 0.22
+					}, {
+						"respuesta": "Completamente de acuerdo",
+						"valor": 0.28
+					}, {
+						"respuesta": "En desacuerdo",
+						"valor": 0.29
+					}, {
+						"respuesta": "Completamente en desacuerdo",
+						"valor": 0.17
+					}, {
+						"respuesta": "Le es indiferente",
+						"valor": 0.22
+					}]
+
+				}, {
+					"territorio": "Nacional",
+					"datos": [{
+						"respuesta": "De acuerdo",
+						"valor": 0.22
+					}, {
+						"respuesta": "Completamente de acuerdo",
+						"valor": 0.28
+					}, {
+						"respuesta": "En desacuerdo",
+						"valor": 0.29
+					}, {
+						"respuesta": "Completamente en desacuerdo",
+						"valor": 0.17
+					}, {
+						"respuesta": "Le es indiferente",
+						"valor": 0.22
+					}]
+
+				}]
+			}, {
+				"grupoedad": "18-25",
+				"contenido": [{
+					"territorio": "San Andres",
+					"datos": [{
+						"respuesta": "De acuerdo",
+						"valor": 0.22
+					}, {
+						"respuesta": "Completamente de acuerdo",
+						"valor": 0.28
+					}, {
+						"respuesta": "En desacuerdo",
+						"valor": 0.29
+					}, {
+						"respuesta": "Completamente en desacuerdo",
+						"valor": 0.17
+					}, {
+						"respuesta": "Le es indiferente",
+						"valor": 0.22
+					}]
+
+				}, {
+					"territorio": "Providencia",
+					"datos": [{
+						"respuesta": "De acuerdo",
+						"valor": 0.22
+					}, {
+						"respuesta": "Completamente de acuerdo",
+						"valor": 0.28
+					}, {
+						"respuesta": "En desacuerdo",
+						"valor": 0.29
+					}, {
+						"respuesta": "Completamente en desacuerdo",
+						"valor": 0.17
+					}, {
+						"respuesta": "Le es indiferente",
+						"valor": 0.22
+					}]
+
+				}, {
+					"territorio": "Nacional",
+					"datos": [{
+						"respuesta": "De acuerdo",
+						"valor": 0.22
+					}, {
+						"respuesta": "Completamente de acuerdo",
+						"valor": 0.28
+					}, {
+						"respuesta": "En desacuerdo",
+						"valor": 0.29
+					}, {
+						"respuesta": "Completamente en desacuerdo",
+						"valor": 0.17
+					}, {
+						"respuesta": "Le es indiferente",
+						"valor": 0.22
+					}]
+
+				}]
+			}, {
+				"grupoedad": "26-35",
+				"contenido": [{
+					"territorio": "San Andres",
+					"datos": [{
+						"respuesta": "De acuerdo",
+						"valor": 0.22
+					}, {
+						"respuesta": "Completamente de acuerdo",
+						"valor": 0.28
+					}, {
+						"respuesta": "En desacuerdo",
+						"valor": 0.29
+					}, {
+						"respuesta": "Completamente en desacuerdo",
+						"valor": 0.17
+					}, {
+						"respuesta": "Le es indiferente",
+						"valor": 0.22
+					}]
+
+				}, {
+					"territorio": "Providencia",
+					"datos": [{
+						"respuesta": "De acuerdo",
+						"valor": 0.22
+					}, {
+						"respuesta": "Completamente de acuerdo",
+						"valor": 0.28
+					}, {
+						"respuesta": "En desacuerdo",
+						"valor": 0.29
+					}, {
+						"respuesta": "Completamente en desacuerdo",
+						"valor": 0.17
+					}, {
+						"respuesta": "Le es indiferente",
+						"valor": 0.22
+					}]
+
+				}, {
+					"territorio": "Nacional",
+					"datos": [{
+						"respuesta": "De acuerdo",
+						"valor": 0.22
+					}, {
+						"respuesta": "Completamente de acuerdo",
+						"valor": 0.28
+					}, {
+						"respuesta": "En desacuerdo",
+						"valor": 0.29
+					}, {
+						"respuesta": "Completamente en desacuerdo",
+						"valor": 0.17
+					}, {
+						"respuesta": "Le es indiferente",
+						"valor": 0.22
+					}]
+
+				}]
+			}, {
+				"grupoedad": "36-45",
+				"contenido": [{
+					"territorio": "San Andres",
+					"datos": [{
+						"respuesta": "De acuerdo",
+						"valor": 0.22
+					}, {
+						"respuesta": "Completamente de acuerdo",
+						"valor": 0.28
+					}, {
+						"respuesta": "En desacuerdo",
+						"valor": 0.29
+					}, {
+						"respuesta": "Completamente en desacuerdo",
+						"valor": 0.17
+					}, {
+						"respuesta": "Le es indiferente",
+						"valor": 0.22
+					}]
+
+				}, {
+					"territorio": "Providencia",
+					"datos": [{
+						"respuesta": "De acuerdo",
+						"valor": 0.22
+					}, {
+						"respuesta": "Completamente de acuerdo",
+						"valor": 0.28
+					}, {
+						"respuesta": "En desacuerdo",
+						"valor": 0.29
+					}, {
+						"respuesta": "Completamente en desacuerdo",
+						"valor": 0.17
+					}, {
+						"respuesta": "Le es indiferente",
+						"valor": 0.22
+					}]
+
+				}, {
+					"territorio": "Nacional",
+					"datos": [{
+						"respuesta": "De acuerdo",
+						"valor": 0.22
+					}, {
+						"respuesta": "Completamente de acuerdo",
+						"valor": 0.28
+					}, {
+						"respuesta": "En desacuerdo",
+						"valor": 0.29
+					}, {
+						"respuesta": "Completamente en desacuerdo",
+						"valor": 0.17
+					}, {
+						"respuesta": "Le es indiferente",
+						"valor": 0.22
+					}]
+
+				}]
+			}, {
+				"grupoedad": "46-55",
+				"contenido": [{
+					"territorio": "San Andres",
+					"datos": [{
+						"respuesta": "De acuerdo",
+						"valor": 0.22
+					}, {
+						"respuesta": "Completamente de acuerdo",
+						"valor": 0.28
+					}, {
+						"respuesta": "En desacuerdo",
+						"valor": 0.29
+					}, {
+						"respuesta": "Completamente en desacuerdo",
+						"valor": 0.17
+					}, {
+						"respuesta": "Le es indiferente",
+						"valor": 0.22
+					}]
+
+				}, {
+					"territorio": "Providencia",
+					"datos": [{
+						"respuesta": "De acuerdo",
+						"valor": 0.22
+					}, {
+						"respuesta": "Completamente de acuerdo",
+						"valor": 0.28
+					}, {
+						"respuesta": "En desacuerdo",
+						"valor": 0.29
+					}, {
+						"respuesta": "Completamente en desacuerdo",
+						"valor": 0.17
+					}, {
+						"respuesta": "Le es indiferente",
+						"valor": 0.22
+					}]
+
+				}, {
+					"territorio": "Nacional",
+					"datos": [{
+						"respuesta": "De acuerdo",
+						"valor": 0.22
+					}, {
+						"respuesta": "Completamente de acuerdo",
+						"valor": 0.28
+					}, {
+						"respuesta": "En desacuerdo",
+						"valor": 0.29
+					}, {
+						"respuesta": "Completamente en desacuerdo",
+						"valor": 0.17
+					}, {
+						"respuesta": "Le es indiferente",
+						"valor": 0.22
+					}]
+
+				}]
+			}, {
+				"grupoedad": "+55",
+				"contenido": [{
+					"territorio": "San Andres",
+					"datos": [{
+						"respuesta": "De acuerdo",
+						"valor": 0.22
+					}, {
+						"respuesta": "Completamente de acuerdo",
+						"valor": 0.28
+					}, {
+						"respuesta": "En desacuerdo",
+						"valor": 0.29
+					}, {
+						"respuesta": "Completamente en desacuerdo",
+						"valor": 0.17
+					}, {
+						"respuesta": "Le es indiferente",
+						"valor": 0.22
+					}]
+
+				}, {
+					"territorio": "Providencia",
+					"datos": [{
+						"respuesta": "De acuerdo",
+						"valor": 0.22
+					}, {
+						"respuesta": "Completamente de acuerdo",
+						"valor": 0.28
+					}, {
+						"respuesta": "En desacuerdo",
+						"valor": 0.29
+					}, {
+						"respuesta": "Completamente en desacuerdo",
+						"valor": 0.17
+					}, {
+						"respuesta": "Le es indiferente",
+						"valor": 0.22
+					}]
+
+				}, {
+					"territorio": "Nacional",
+					"datos": [{
+						"respuesta": "De acuerdo",
+						"valor": 0.22
+					}, {
+						"respuesta": "Completamente de acuerdo",
+						"valor": 0.28
+					}, {
+						"respuesta": "En desacuerdo",
+						"valor": 0.29
+					}, {
+						"respuesta": "Completamente en desacuerdo",
+						"valor": 0.17
+					}, {
+						"respuesta": "Le es indiferente",
+						"valor": 0.22
+					}]
+
+				}]
+			}]
+		}
+
+	]
+}]

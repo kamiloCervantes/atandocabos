@@ -1,0 +1,73 @@
+[{
+	"indicador": "1",
+	"territorio": "San Andres",
+	"sexo": "hombre",
+	"datos": [{
+		"respuesta": "Le es indiferente",
+		"valor": 0.30
+	}, {
+		"respuesta": "No le gustaría",
+		"valor": 0.9
+	}]
+
+}, {
+	"indicador": "1",
+	"territorio": "San Andres",
+	"sexo": "mujer",
+	"datos": [{
+		"respuesta": "Le es indiferente",
+		"valor": 0.30
+	}, {
+		"respuesta": "No le gustaría",
+		"valor": 0.1
+	}]
+
+}, {
+	"indicador": "1",
+	"territorio": "Providencia",
+	"sexo": "hombre",
+	"datos": [{
+		"respuesta": "Le es indiferente",
+		"valor": 0.30
+	}, {
+		"respuesta": "No le gustaría",
+		"valor": 0.70
+	}]
+
+}, {
+	"indicador": "1",
+	"territorio": "Providencia",
+	"sexo": "mujer",
+	"datos": [{
+		"respuesta": "Le es indiferente",
+		"valor": 0.30
+	}, {
+		"respuesta": "No le gustaría",
+		"valor": 0.30
+	}]
+
+}, {
+	"indicador": "1",
+	"territorio": "Nacional",
+	"sexo": "hombre",
+	"datos": [{
+		"respuesta": "Le es indiferente",
+		"valor": 0.30
+	}, {
+		"respuesta": "No le gustaría",
+		"valor": 0.50
+	}]
+
+}, {
+	"indicador": "1",
+	"territorio": "Nacional",
+	"sexo": "mujer",
+	"datos": [{
+		"respuesta": "Le es indiferente",
+		"valor": 0.30
+	}, {
+		"respuesta": "No le gustaría",
+		"valor": 0.50
+	}]
+
+}]

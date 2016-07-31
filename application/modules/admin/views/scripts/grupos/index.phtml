@@ -1,0 +1,24 @@
+<section id="categorias">
+    <h2>Listado de Grupos</h2>
+    <hr/>
+    <div id="controls">
+        <a href="/admin/grupos/add" class="btn"><i class="icon-plus"></i> Agregar grupo</a>
+    </div>
+    <br/>
+    <table class="table table-striped" id="grupos-list">
+        <tr>
+            <th>Nombre</th>
+            <th>Programa</th>
+            <th>Miembros</th>
+            <th>&nbsp;</th>
+        </tr>
+        <?php foreach($this->grupos as $g){ ?>
+        <tr>
+            <td><?php echo $g['nombre']?></td>
+            <td><?php echo $g['programa']['nombre']?>, <?php echo $g['programa']['institucion']['nombre']?></td>
+            <td><?php echo count($g['estudiantes'])?></td>
+            <td><a href="/admin/grupos/view/id/<?php echo $g['id'] ?>"><i class="fa fa-search"></i></a></td>
+        </tr>
+        <?php } ?>
+    </table>
+</section>

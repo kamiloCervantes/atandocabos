@@ -1,0 +1,45 @@
+<section id="documentacion">
+    <h2>Documentación Adaptike</h2>
+
+<p>Adaptike es un sistema de información que ofrece un API para la implementación 
+    de Sistemas de Evaluación Adaptativos, por medio de Servicios Web que 
+    cumplen con los principios REST, también permite crear y administrar tests 
+    adaptativos y mantener bancos de Ítems a través de la aplicación web. A 
+    continuación se presentan las funcionalidades mas importantes del sistema y 
+    sus características.</p>
+
+<h3>Banco de Ítems</h3>
+<p>Los ítems son la materia prima para realizar tests de conocimientos. Para 
+    poder aprovecharlos al máximo se parametrizan siguiendo los modelos 
+    propuestos por la Teoría de Respuesta al Ítem. En el sistema Adaptike es 
+    posible ingresar los ítems con los parámetros siguiendo el modelo logístico 
+    de 3 parámetros (3PL Model) a través de la interfaz web de Adaptike. Los ítems 
+    se pueden agrupar por categorías para evaluar competencias o áreas de 
+    conocimiento. Cabe resaltar que Adaptike soporta ítems de opción múltiple con 
+    única respuesta.</p>
+ 
+<h3>Creación de Tests adaptativos</h3>
+<p>Esta acción se ejecuta a través de la interfaz web de Adaptike y permite 
+    personalizar las opciones del test adaptativo. Los tests adaptativos se 
+    caracterizan por tener un criterio de parada variable, el cual puede ser 
+    por número de ítems fijo o también por un nivel de habilidad específico, es 
+    decir, se puede establecer que el test finalice cuando el evaluado cumpla 
+    con el valor del criterio de parada especificado al momento de crear el 
+    test. Esto es importante para reducir el tiempo de ejecución del test.</p>
+
+<h3>Administración de tests adaptativos</h3>
+<p>Administrar un test consiste en permitir al evaluado responder una serie de 
+    ítems para que el evaluador pueda obtener sus respuestas y analizarlas para 
+    dar una valoración del conocimiento del evaluado en cierta área o 
+    competencia. Sin embargo en los tests adaptativos el proceso sigue los 
+    siguientes pasos:</p>
+<img src="/img/flujo.png" style="text-align: center">
+<p>En la administración de los tests adaptativos se presenta un proceso 
+    iterativo en el cual se realiza la estimación del nivel de la habilidad del 
+    evaluado a partir de las respuestas ingresadas en el test usando el 
+    estimador de máxima verosimilitud (MLE), por otro lado se realiza también la 
+    selección del ítem mas adecuado para el evaluado teniendo en cuenta su nivel 
+    de habilidad por medio del algoritmo de máxima información.</p>
+<br/>
+<br/>
+</section>

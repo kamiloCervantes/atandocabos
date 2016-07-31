@@ -1,0 +1,21 @@
+<section id="tests">
+    <h2>Añadir estudiante al grupo</h2>
+    <hr/>
+    <form id="test-form-add" method="post">
+        <p>
+        <label for="nombre">Nombre</label>  
+        <input type="text" id="nombre" name="nombre" />
+        <label for="apellido">Apellido</label>  
+        <input type="text" id="apellido" name="apellido" />
+        <label for="email">Email</label>  
+        <input type="text" id="email" name="email" />
+        <label for="pass">Contraseña</label>  
+        <input type="password" id="pass" name="pass" />
+        <label for="pass2">Repetir contraseña</label>  
+        <input type="password" id="pass2" name="pass2" />
+        <input type="hidden" id="gid" name="<?php echo $this->gid ?>" />
+        </p>
+        <input type="submit" class="btn btn-primary" id="grupo-add" value="Crear estudiante">
+        <a href="/admin/grupos" class="btn">Cancelar</a>
+    </form>
+</section>

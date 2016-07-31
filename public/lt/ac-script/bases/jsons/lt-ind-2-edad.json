@@ -1,0 +1,221 @@
+[{
+	"indicador": "2",
+	"territorio": "San Andres",
+	"edad": "-18",
+	"datos": [{
+		"respuesta": "Le es indiferente",
+		"valor": 0.30
+	}, {
+		"respuesta": "No le gustaría",
+		"valor": 0.70
+	}]
+
+}, {
+	"indicador": "2",
+	"territorio": "Providencia y Santa Catalina",
+	"edad": "-18",
+	"datos": [{
+		"respuesta": "Le es indiferente",
+		"valor": 0.66
+	}, {
+		"respuesta": "No le gustaría",
+		"valor": 0.34
+	}]
+
+}, {
+	"indicador": "2",
+	"territorio": "Nacional",
+	"edad": "-18",
+	"datos": [{
+		"respuesta": "Le es indiferente",
+		"valor": 0.48
+	}, {
+		"respuesta": "No le gustaría",
+		"valor": 1
+	}]
+
+}, {
+	"indicador": "2",
+	"territorio": "San Andres",
+	"edad": "18-25",
+	"datos": [{
+		"respuesta": "Le es indiferente",
+		"valor": 0.30
+	}, {
+		"respuesta": "No le gustaría",
+		"valor": 0.70
+	}]
+
+}, {
+	"indicador": "2",
+	"territorio": "Providencia y Santa Catalina",
+	"edad": "18-25",
+	"datos": [{
+		"respuesta": "Le es indiferente",
+		"valor": 0.66
+	}, {
+		"respuesta": "No le gustaría",
+		"valor": 0.34
+	}]
+
+}, {
+	"indicador": "2",
+	"territorio": "Nacional",
+	"edad": "18-25",
+	"datos": [{
+		"respuesta": "Le es indiferente",
+		"valor": 0.48
+	}, {
+		"respuesta": "No le gustaría",
+		"valor": 1
+	}]
+
+},
+{
+	"indicador": "2",
+	"territorio": "San Andres",
+	"edad": "26-35",
+	"datos": [{
+		"respuesta": "Le es indiferente",
+		"valor": 0.30
+	}, {
+		"respuesta": "No le gustaría",
+		"valor": 0.70
+	}]
+
+}, {
+	"indicador": "2",
+	"territorio": "Providencia y Santa Catalina",
+	"edad": "26-35",
+	"datos": [{
+		"respuesta": "Le es indiferente",
+		"valor": 0.66
+	}, {
+		"respuesta": "No le gustaría",
+		"valor": 0.34
+	}]
+
+}, {
+	"indicador": "2",
+	"territorio": "Nacional",
+	"edad": "26-35",
+	"datos": [{
+		"respuesta": "Le es indiferente",
+		"valor": 0.48
+	}, {
+		"respuesta": "No le gustaría",
+		"valor": 1
+	}]
+
+},
+{
+	"indicador": "2",
+	"territorio": "San Andres",
+	"edad": "36-45",
+	"datos": [{
+		"respuesta": "Le es indiferente",
+		"valor": 0.30
+	}, {
+		"respuesta": "No le gustaría",
+		"valor": 0.70
+	}]
+
+}, {
+	"indicador": "2",
+	"territorio": "Providencia y Santa Catalina",
+	"edad": "36-45",
+	"datos": [{
+		"respuesta": "Le es indiferente",
+		"valor": 0.66
+	}, {
+		"respuesta": "No le gustaría",
+		"valor": 0.34
+	}]
+
+}, {
+	"indicador": "2",
+	"territorio": "Nacional",
+	"edad": "36-45",
+	"datos": [{
+		"respuesta": "Le es indiferente",
+		"valor": 0.48
+	}, {
+		"respuesta": "No le gustaría",
+		"valor": 1
+	}]
+
+},
+{
+	"indicador": "2",
+	"territorio": "San Andres",
+	"edad": "46-55",
+	"datos": [{
+		"respuesta": "Le es indiferente",
+		"valor": 0.30
+	}, {
+		"respuesta": "No le gustaría",
+		"valor": 0.70
+	}]
+
+}, {
+	"indicador": "2",
+	"territorio": "Providencia y Santa Catalina",
+	"edad": "46-55",
+	"datos": [{
+		"respuesta": "Le es indiferente",
+		"valor": 0.66
+	}, {
+		"respuesta": "No le gustaría",
+		"valor": 0.34
+	}]
+
+}, {
+	"indicador": "2",
+	"territorio": "Nacional",
+	"edad": "46-55",
+	"datos": [{
+		"respuesta": "Le es indiferente",
+		"valor": 0.48
+	}, {
+		"respuesta": "No le gustaría",
+		"valor": 1
+	}]
+
+},
+{
+	"indicador": "2",
+	"territorio": "San Andres",
+	"edad": "+55",
+	"datos": [{
+		"respuesta": "Le es indiferente",
+		"valor": 0.30
+	}, {
+		"respuesta": "No le gustaría",
+		"valor": 0.1
+	}]
+
+}, {
+	"indicador": "2",
+	"territorio": "Providencia y Santa Catalina",
+	"edad": "+55",
+	"datos": [{
+		"respuesta": "Le es indiferente",
+		"valor": 0.66
+	}, {
+		"respuesta": "No le gustaría",
+		"valor": 0.34
+	}]
+
+}, {
+	"indicador": "2",
+	"territorio": "Nacional",
+	"edad": "+55",
+	"datos": [{
+		"respuesta": "Le es indiferente",
+		"valor": 0.48
+	}, {
+		"respuesta": "No le gustaría",
+		"valor": 1
+	}]
+
+}]

@@ -1,0 +1,757 @@
+[{
+	"indicador": "4",
+	"territorio": "San Andres",
+	"fecha": "2010",
+	"edad": "-18",
+	"valor": 245
+
+}, {
+	"indicador": "4",
+	"territorio": "San Andres",
+	"fecha": "2011",
+	"edad": "-18",
+	"valor": 25
+
+}, {
+	"indicador": "4",
+	"territorio": "San Andres",
+	"fecha": "2012",
+	"edad": "-18",
+	"valor": 115
+
+}, {
+	"indicador": "4",
+	"territorio": "San Andres",
+	"fecha": "2013",
+	"edad": "-18",
+	"valor": 200
+
+}, {
+	"indicador": "4",
+	"territorio": "San Andres",
+	"fecha": "2014",
+	"edad": "-18",
+	"valor": 245
+
+}, {
+	"indicador": "4",
+	"territorio": "San Andres",
+	"fecha": "2015",
+	"edad": "-18",
+	"valor": 50
+
+}, {
+	"indicador": "4",
+	"territorio": "Providencia y Santa Catalina",
+	"fecha": "2010",
+	"edad": "-18",
+	"valor": 245
+
+}, {
+	"indicador": "4",
+	"territorio": "Providencia y Santa Catalina",
+	"fecha": "2011",
+	"edad": "-18",
+	"valor": 25
+
+}, {
+	"indicador": "4",
+	"territorio": "Providencia y Santa Catalina",
+	"fecha": "2012",
+	"edad": "-18",
+	"valor": 115
+
+}, {
+	"indicador": "4",
+	"territorio": "Providencia y Santa Catalina",
+	"fecha": "2013",
+	"edad": "-18",
+	"valor": 200
+
+}, {
+	"indicador": "4",
+	"territorio": "Providencia y Santa Catalina",
+	"fecha": "2014",
+	"edad": "-18",
+	"valor": 245
+
+}, {
+	"indicador": "4",
+	"territorio": "Providencia y Santa Catalina",
+	"fecha": "2015",
+	"edad": "-18",
+	"valor": 50
+
+}, {
+	"indicador": "4",
+	"territorio": "Nacional",
+	"fecha": "2010",
+	"edad": "-18",
+	"valor": 245
+
+}, {
+	"indicador": "4",
+	"territorio": "Nacional",
+	"fecha": "2011",
+	"edad": "-18",
+	"valor": 25
+
+}, {
+	"indicador": "4",
+	"territorio": "Nacional",
+	"fecha": "2012",
+	"edad": "-18",
+	"valor": 115
+
+}, {
+	"indicador": "4",
+	"territorio": "Nacional",
+	"fecha": "2013",
+	"edad": "-18",
+	"valor": 200
+
+}, {
+	"indicador": "4",
+	"territorio": "Nacional",
+	"fecha": "2014",
+	"edad": "-18",
+	"valor": 245
+
+}, {
+	"indicador": "4",
+	"territorio": "Nacional",
+	"fecha": "2015",
+	"edad": "-18",
+	"valor": 50
+
+}, {
+	"indicador": "4",
+	"territorio": "San Andres",
+	"fecha": "2010",
+	"edad": "18-25",
+	"valor": 245
+
+}, {
+	"indicador": "4",
+	"territorio": "San Andres",
+	"fecha": "2011",
+	"edad": "18-25",
+	"valor": 25
+
+}, {
+	"indicador": "4",
+	"territorio": "San Andres",
+	"fecha": "2012",
+	"edad": "18-25",
+	"valor": 115
+
+}, {
+	"indicador": "4",
+	"territorio": "San Andres",
+	"fecha": "2013",
+	"edad": "18-25",
+	"valor": 200
+
+}, {
+	"indicador": "4",
+	"territorio": "San Andres",
+	"fecha": "2014",
+	"edad": "18-25",
+	"valor": 245
+
+}, {
+	"indicador": "4",
+	"territorio": "San Andres",
+	"fecha": "2015",
+	"edad": "18-25",
+	"valor": 50
+
+}, {
+	"indicador": "4",
+	"territorio": "Providencia y Santa Catalina",
+	"fecha": "2010",
+	"edad": "18-25",
+	"valor": 245
+
+}, {
+	"indicador": "4",
+	"territorio": "Providencia y Santa Catalina",
+	"fecha": "2011",
+	"edad": "18-25",
+	"valor": 25
+
+}, {
+	"indicador": "4",
+	"territorio": "Providencia y Santa Catalina",
+	"fecha": "2012",
+	"edad": "18-25",
+	"valor": 115
+
+}, {
+	"indicador": "4",
+	"territorio": "Providencia y Santa Catalina",
+	"fecha": "2013",
+	"edad": "18-25",
+	"valor": 200
+
+}, {
+	"indicador": "4",
+	"territorio": "Providencia y Santa Catalina",
+	"fecha": "2014",
+	"edad": "18-25",
+	"valor": 245
+
+}, {
+	"indicador": "4",
+	"territorio": "Providencia y Santa Catalina",
+	"fecha": "2015",
+	"edad": "18-25",
+	"valor": 50
+
+}, {
+	"indicador": "4",
+	"territorio": "Nacional",
+	"fecha": "2010",
+	"edad": "18-25",
+	"valor": 245
+
+}, {
+	"indicador": "4",
+	"territorio": "Nacional",
+	"fecha": "2011",
+	"edad": "18-25",
+	"valor": 25
+
+}, {
+	"indicador": "4",
+	"territorio": "Nacional",
+	"fecha": "2012",
+	"edad": "18-25",
+	"valor": 115
+
+}, {
+	"indicador": "4",
+	"territorio": "Nacional",
+	"fecha": "2013",
+	"edad": "18-25",
+	"valor": 200
+
+}, {
+	"indicador": "4",
+	"territorio": "Nacional",
+	"fecha": "2014",
+	"edad": "18-25",
+	"valor": 245
+
+}, {
+	"indicador": "4",
+	"territorio": "Nacional",
+	"fecha": "2015",
+	"edad": "18-25",
+	"valor": 50
+
+}, {
+	"indicador": "4",
+	"territorio": "San Andres",
+	"fecha": "2010",
+	"edad": "26-35",
+	"valor": 245
+
+}, {
+	"indicador": "4",
+	"territorio": "San Andres",
+	"fecha": "2011",
+	"edad": "26-35",
+	"valor": 25
+
+}, {
+	"indicador": "4",
+	"territorio": "San Andres",
+	"fecha": "2012",
+	"edad": "26-35",
+	"valor": 115
+
+}, {
+	"indicador": "4",
+	"territorio": "San Andres",
+	"fecha": "2013",
+	"edad": "26-35",
+	"valor": 200
+
+}, {
+	"indicador": "4",
+	"territorio": "San Andres",
+	"fecha": "2014",
+	"edad": "26-35",
+	"valor": 245
+
+}, {
+	"indicador": "4",
+	"territorio": "San Andres",
+	"fecha": "2015",
+	"edad": "26-35",
+	"valor": 50
+
+}, {
+	"indicador": "4",
+	"territorio": "Providencia y Santa Catalina",
+	"fecha": "2010",
+	"edad": "26-35",
+	"valor": 245
+
+}, {
+	"indicador": "4",
+	"territorio": "Providencia y Santa Catalina",
+	"fecha": "2011",
+	"edad": "26-35",
+	"valor": 25
+
+}, {
+	"indicador": "4",
+	"territorio": "Providencia y Santa Catalina",
+	"fecha": "2012",
+	"edad": "26-35",
+	"valor": 115
+
+}, {
+	"indicador": "4",
+	"territorio": "Providencia y Santa Catalina",
+	"fecha": "2013",
+	"edad": "26-35",
+	"valor": 200
+
+}, {
+	"indicador": "4",
+	"territorio": "Providencia y Santa Catalina",
+	"fecha": "2014",
+	"edad": "26-35",
+	"valor": 245
+
+}, {
+	"indicador": "4",
+	"territorio": "Providencia y Santa Catalina",
+	"fecha": "2015",
+	"edad": "26-35",
+	"valor": 50
+
+}, {
+	"indicador": "4",
+	"territorio": "Nacional",
+	"fecha": "2010",
+	"edad": "26-35",
+	"valor": 245
+
+}, {
+	"indicador": "4",
+	"territorio": "Nacional",
+	"fecha": "2011",
+	"edad": "26-35",
+	"valor": 25
+
+}, {
+	"indicador": "4",
+	"territorio": "Nacional",
+	"fecha": "2012",
+	"edad": "26-35",
+	"valor": 115
+
+}, {
+	"indicador": "4",
+	"territorio": "Nacional",
+	"fecha": "2013",
+	"edad": "26-35",
+	"valor": 200
+
+}, {
+	"indicador": "4",
+	"territorio": "Nacional",
+	"fecha": "2014",
+	"edad": "26-35",
+	"valor": 245
+
+}, {
+	"indicador": "4",
+	"territorio": "Nacional",
+	"fecha": "2015",
+	"edad": "26-35",
+	"valor": 50
+
+}, {
+	"indicador": "4",
+	"territorio": "San Andres",
+	"fecha": "2010",
+	"edad": "36-45",
+	"valor": 245
+
+}, {
+	"indicador": "4",
+	"territorio": "San Andres",
+	"fecha": "2011",
+	"edad": "36-45",
+	"valor": 25
+
+}, {
+	"indicador": "4",
+	"territorio": "San Andres",
+	"fecha": "2012",
+	"edad": "36-45",
+	"valor": 115
+
+}, {
+	"indicador": "4",
+	"territorio": "San Andres",
+	"fecha": "2013",
+	"edad": "36-45",
+	"valor": 200
+
+}, {
+	"indicador": "4",
+	"territorio": "San Andres",
+	"fecha": "2014",
+	"edad": "36-45",
+	"valor": 245
+
+}, {
+	"indicador": "4",
+	"territorio": "San Andres",
+	"fecha": "2015",
+	"edad": "36-45",
+	"valor": 50
+
+}, {
+	"indicador": "4",
+	"territorio": "Providencia y Santa Catalina",
+	"fecha": "2010",
+	"edad": "36-45",
+	"valor": 245
+
+}, {
+	"indicador": "4",
+	"territorio": "Providencia y Santa Catalina",
+	"fecha": "2011",
+	"edad": "36-45",
+	"valor": 25
+
+}, {
+	"indicador": "4",
+	"territorio": "Providencia y Santa Catalina",
+	"fecha": "2012",
+	"edad": "36-45",
+	"valor": 115
+
+}, {
+	"indicador": "4",
+	"territorio": "Providencia y Santa Catalina",
+	"fecha": "2013",
+	"edad": "36-45",
+	"valor": 200
+
+}, {
+	"indicador": "4",
+	"territorio": "Providencia y Santa Catalina",
+	"fecha": "2014",
+	"edad": "36-45",
+	"valor": 245
+
+}, {
+	"indicador": "4",
+	"territorio": "Providencia y Santa Catalina",
+	"fecha": "2015",
+	"edad": "36-45",
+	"valor": 50
+
+}, {
+	"indicador": "4",
+	"territorio": "Nacional",
+	"fecha": "2010",
+	"edad": "36-45",
+	"valor": 245
+
+}, {
+	"indicador": "4",
+	"territorio": "Nacional",
+	"fecha": "2011",
+	"edad": "36-45",
+	"valor": 25
+
+}, {
+	"indicador": "4",
+	"territorio": "Nacional",
+	"fecha": "2012",
+	"edad": "36-45",
+	"valor": 115
+
+}, {
+	"indicador": "4",
+	"territorio": "Nacional",
+	"fecha": "2013",
+	"edad": "36-45",
+	"valor": 200
+
+}, {
+	"indicador": "4",
+	"territorio": "Nacional",
+	"fecha": "2014",
+	"edad": "36-45",
+	"valor": 245
+
+}, {
+	"indicador": "4",
+	"territorio": "Nacional",
+	"fecha": "2015",
+	"edad": "36-45",
+	"valor": 50
+
+}, {
+	"indicador": "4",
+	"territorio": "San Andres",
+	"fecha": "2010",
+	"edad": "46-55",
+	"valor": 245
+
+}, {
+	"indicador": "4",
+	"territorio": "San Andres",
+	"fecha": "2011",
+	"edad": "46-55",
+	"valor": 25
+
+}, {
+	"indicador": "4",
+	"territorio": "San Andres",
+	"fecha": "2012",
+	"edad": "46-55",
+	"valor": 115
+
+}, {
+	"indicador": "4",
+	"territorio": "San Andres",
+	"fecha": "2013",
+	"edad": "46-55",
+	"valor": 200
+
+}, {
+	"indicador": "4",
+	"territorio": "San Andres",
+	"fecha": "2014",
+	"edad": "46-55",
+	"valor": 245
+
+}, {
+	"indicador": "4",
+	"territorio": "San Andres",
+	"fecha": "2015",
+	"edad": "46-55",
+	"valor": 50
+
+}, {
+	"indicador": "4",
+	"territorio": "Providencia y Santa Catalina",
+	"fecha": "2010",
+	"edad": "46-55",
+	"valor": 245
+
+}, {
+	"indicador": "4",
+	"territorio": "Providencia y Santa Catalina",
+	"fecha": "2011",
+	"edad": "46-55",
+	"valor": 25
+
+}, {
+	"indicador": "4",
+	"territorio": "Providencia y Santa Catalina",
+	"fecha": "2012",
+	"edad": "46-55",
+	"valor": 115
+
+}, {
+	"indicador": "4",
+	"territorio": "Providencia y Santa Catalina",
+	"fecha": "2013",
+	"edad": "46-55",
+	"valor": 200
+
+}, {
+	"indicador": "4",
+	"territorio": "Providencia y Santa Catalina",
+	"fecha": "2014",
+	"edad": "46-55",
+	"valor": 245
+
+}, {
+	"indicador": "4",
+	"territorio": "Providencia y Santa Catalina",
+	"fecha": "2015",
+	"edad": "46-55",
+	"valor": 50
+
+}, {
+	"indicador": "4",
+	"territorio": "Nacional",
+	"fecha": "2010",
+	"edad": "46-55",
+	"valor": 245
+
+}, {
+	"indicador": "4",
+	"territorio": "Nacional",
+	"fecha": "2011",
+	"edad": "46-55",
+	"valor": 25
+
+}, {
+	"indicador": "4",
+	"territorio": "Nacional",
+	"fecha": "2012",
+	"edad": "46-55",
+	"valor": 115
+
+}, {
+	"indicador": "4",
+	"territorio": "Nacional",
+	"fecha": "2013",
+	"edad": "46-55",
+	"valor": 200
+
+}, {
+	"indicador": "4",
+	"territorio": "Nacional",
+	"fecha": "2014",
+	"edad": "46-55",
+	"valor": 245
+
+}, {
+	"indicador": "4",
+	"territorio": "Nacional",
+	"fecha": "2015",
+	"edad": "46-55",
+	"valor": 50
+
+}, {
+	"indicador": "4",
+	"territorio": "San Andres",
+	"fecha": "2010",
+	"edad": "+55",
+	"valor": 245
+
+}, {
+	"indicador": "4",
+	"territorio": "San Andres",
+	"fecha": "2011",
+	"edad": "+55",
+	"valor": 25
+
+}, {
+	"indicador": "4",
+	"territorio": "San Andres",
+	"fecha": "2012",
+	"edad": "+55",
+	"valor": 115
+
+}, {
+	"indicador": "4",
+	"territorio": "San Andres",
+	"fecha": "2013",
+	"edad": "+55",
+	"valor": 200
+
+}, {
+	"indicador": "4",
+	"territorio": "San Andres",
+	"fecha": "2014",
+	"edad": "+55",
+	"valor": 245
+
+}, {
+	"indicador": "4",
+	"territorio": "San Andres",
+	"fecha": "2015",
+	"edad": "+55",
+	"valor": 50
+
+}, {
+	"indicador": "4",
+	"territorio": "Providencia y Santa Catalina",
+	"fecha": "2010",
+	"edad": "+55",
+	"valor": 245
+
+}, {
+	"indicador": "4",
+	"territorio": "Providencia y Santa Catalina",
+	"fecha": "2011",
+	"edad": "+55",
+	"valor": 25
+
+}, {
+	"indicador": "4",
+	"territorio": "Providencia y Santa Catalina",
+	"fecha": "2012",
+	"edad": "+55",
+	"valor": 115
+
+}, {
+	"indicador": "4",
+	"territorio": "Providencia y Santa Catalina",
+	"fecha": "2013",
+	"edad": "+55",
+	"valor": 200
+
+}, {
+	"indicador": "4",
+	"territorio": "Providencia y Santa Catalina",
+	"fecha": "2014",
+	"edad": "+55",
+	"valor": 245
+
+}, {
+	"indicador": "4",
+	"territorio": "Providencia y Santa Catalina",
+	"fecha": "2015",
+	"edad": "+55",
+	"valor": 50
+
+}, {
+	"indicador": "4",
+	"territorio": "Nacional",
+	"fecha": "2010",
+	"edad": "+55",
+	"valor": 245
+
+}, {
+	"indicador": "4",
+	"territorio": "Nacional",
+	"fecha": "2011",
+	"edad": "+55",
+	"valor": 25
+
+}, {
+	"indicador": "4",
+	"territorio": "Nacional",
+	"fecha": "2012",
+	"edad": "+55",
+	"valor": 115
+
+}, {
+	"indicador": "4",
+	"territorio": "Nacional",
+	"fecha": "2013",
+	"edad": "+55",
+	"valor": 200
+
+}, {
+	"indicador": "4",
+	"territorio": "Nacional",
+	"fecha": "2014",
+	"edad": "+55",
+	"valor": 245
+
+}, {
+	"indicador": "4",
+	"territorio": "Nacional",
+	"fecha": "2015",
+	"edad": "+55",
+	"valor": 50
+
+}]

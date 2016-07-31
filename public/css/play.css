@@ -1,0 +1,24 @@
+#enunciado{
+    padding: 20px;
+    background: #eee;
+}
+
+#opciones{
+    padding: 20px;
+}
+
+#opciones li:hover{
+    cursor: pointer;
+    background: #bbb;
+}
+
+#opciones li{
+    padding: 10px;
+}
+
+#resultado-test{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    background: #eee;
+}

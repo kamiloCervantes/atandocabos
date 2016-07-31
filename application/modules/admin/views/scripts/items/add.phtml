@@ -1,0 +1,45 @@
+<section id="items">
+    <h2>Agregar ítem</h2>
+    <hr/>
+    <form id="items-form-add">
+        <p>
+        <label for="categoria">Categoría:</label>
+        <select id="categoria">
+            <option value="0">Seleccione una categoría...</option>
+        </select>
+        <p>
+        <label for="enunciado_tbl">Enunciado:</label>
+        <textarea id="enunciado" style="width: 100%; height: 100px"></textarea>
+        </p>
+        <p>
+        <label for="opciones_tbl">Opciones de respuesta:</label>
+        <textarea id="opciones" style="width: 100%; height: 100px"></textarea>
+        </p>
+        <a href="#" class="btn" id="option-add">Agregar opción</a> 
+        <label class="checkbox inline pull-right">
+        <input type="checkbox" name="correcta" id="correcta"/> Es la opción correcta
+        </label>
+        <br/><br/>
+        <table class="table table-striped hide" id="opciones-list">
+            <tr>
+                <th>&nbsp;</th>
+                <th>Opción</th>
+                <th>Correcta</th>
+            </tr>
+        </table>      
+        <div class="alert alert-info">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong>Pista:</strong> Usar el punto (.) para ingresar valores decimales.
+        </div>
+        <label for="param_a">Parámetro a:</label>  
+        <input type="text" id="param_a" name="param_a" />
+        <label for="param_b">Parámetro b:</label>
+        <input type="text" id="param_b" name="param_b" />
+        <label for="param_c">Parámetro c:</label>
+        <input type="text" id="param_c" name="param_c" />
+        </p>
+        
+        <a href="#" class="btn btn-primary" id="item-add">Agregar ítem</a>
+        <a href="/admin/items" class="btn">Cancelar</a>
+    </form>
+</section>   

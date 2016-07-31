@@ -1,0 +1,181 @@
+[{
+	"id": "#lt-1-1-edad-g1-san",
+	"datos": [{
+		"respuesta": "Le es indiferente",
+		"valor": 0.30
+	}, {
+		"respuesta": "No le gustaría",
+		"valor": 0.70
+	}]
+
+}, {
+	"id": "#lt-1-1-edad-g1-psc",
+	"datos": [{
+		"respuesta": "Le es indiferente",
+		"valor": 0.66
+	}, {
+		"respuesta": "No le gustaría",
+		"valor": 0.34
+	}]
+
+}, {
+	"id": "#lt-1-1-edad-g1-nal",
+	"datos": [{
+		"respuesta": "Le es indiferente",
+		"valor": 0.48
+	}, {
+		"respuesta": "No le gustaría",
+		"valor": 1
+	}]
+
+}, {
+	"id": "#lt-1-1-edad-g2-san",
+	"datos": [{
+		"respuesta": "Le es indiferente",
+		"valor": 0.30
+	}, {
+		"respuesta": "No le gustaría",
+		"valor": 0.50
+	}]
+
+}, {
+	"id": "#lt-1-1-edad-g2-psc",
+	"datos": [{
+		"respuesta": "Le es indiferente",
+		"valor": 0.66
+	}, {
+		"respuesta": "No le gustaría",
+		"valor": 0.24
+	}]
+
+}, {
+	"id": "#lt-1-1-edad-g2-nal",
+	"datos": [{
+		"respuesta": "Le es indiferente",
+		"valor": 0.48
+	}, {
+		"respuesta": "No le gustaría",
+		"valor": 0.1
+	}]
+
+}, {
+	"id": "#lt-1-1-edad-g3-san",
+	"datos": [{
+		"respuesta": "Le es indiferente",
+		"valor": 0.30
+	}, {
+		"respuesta": "No le gustaría",
+		"valor": 0.70
+	}]
+
+}, {
+	"id": "#lt-1-1-edad-g3-psc",
+	"datos": [{
+		"respuesta": "Le es indiferente",
+		"valor": 0.66
+	}, {
+		"respuesta": "No le gustaría",
+		"valor": 0.34
+	}]
+
+}, {
+	"id": "#lt-1-1-edad-g3-nal",
+	"datos": [{
+		"respuesta": "Le es indiferente",
+		"valor": 0.48
+	}, {
+		"respuesta": "No le gustaría",
+		"valor": 1
+	}]
+
+}, {
+	"id": "#lt-1-1-edad-g4-san",
+	"datos": [{
+		"respuesta": "Le es indiferente",
+		"valor": 0.30
+	}, {
+		"respuesta": "No le gustaría",
+		"valor": 0.50
+	}]
+
+}, {
+	"id": "#lt-1-1-edad-g4-psc",
+	"datos": [{
+		"respuesta": "Le es indiferente",
+		"valor": 0.66
+	}, {
+		"respuesta": "No le gustaría",
+		"valor": 0.24
+	}]
+
+}, {
+	"id": "#lt-1-1-edad-g4-nal",
+	"datos": [{
+		"respuesta": "Le es indiferente",
+		"valor": 0.48
+	}, {
+		"respuesta": "No le gustaría",
+		"valor": 0.1
+	}]
+
+}, {
+	"id": "#lt-1-1-edad-g5-san",
+	"datos": [{
+		"respuesta": "Le es indiferente",
+		"valor": 0.30
+	}, {
+		"respuesta": "No le gustaría",
+		"valor": 0.70
+	}]
+
+}, {
+	"id": "#lt-1-1-edad-g5-psc",
+	"datos": [{
+		"respuesta": "Le es indiferente",
+		"valor": 0.66
+	}, {
+		"respuesta": "No le gustaría",
+		"valor": 0.34
+	}]
+
+}, {
+	"id": "#lt-1-1-edad-g5-nal",
+	"datos": [{
+		"respuesta": "Le es indiferente",
+		"valor": 0.48
+	}, {
+		"respuesta": "No le gustaría",
+		"valor": 1
+	}]
+
+}, {
+	"id": "#lt-1-1-edad-g6-san",
+	"datos": [{
+		"respuesta": "Le es indiferente",
+		"valor": 0.30
+	}, {
+		"respuesta": "No le gustaría",
+		"valor": 0.50
+	}]
+
+}, {
+	"id": "#lt-1-1-edad-g6-psc",
+	"datos": [{
+		"respuesta": "Le es indiferente",
+		"valor": 0.66
+	}, {
+		"respuesta": "No le gustaría",
+		"valor": 0.24
+	}]
+
+}, {
+	"id": "#lt-1-1-edad-g6-nal",
+	"datos": [{
+		"respuesta": "Le es indiferente",
+		"valor": 0.48
+	}, {
+		"respuesta": "No le gustaría",
+		"valor": 0.1
+	}]
+
+}]

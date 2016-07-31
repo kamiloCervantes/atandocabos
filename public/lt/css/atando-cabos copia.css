@@ -1,0 +1,224 @@
+@charset "UTF-8";
+.lt-estrellas {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 11px;
+	font-weight: 300;
+	fill: #242424;
+	text-align: center;
+	text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 -1px 0 #fff;
+	cursor: default;
+}
+.lt-estrellas .col-sm-4 > div {
+	background-color: rgba(255,255,255,0.35)
+}
+.legend {
+	font-family: 'Raleway', sans-serif;
+	fill: #333333;
+}
+.tooltip {
+	fill: #333333;
+}
+/*
+=========
+=========
+GENERALES
+=========
+=========
+*/
+.lt-pg-ind .lt-vista {
+	display:none;
+}
+.lt-pg-ind .lt-vista.lt-vista-activa {
+	display: block;
+}
+.lt-tit-territorio {
+	font-size: 1.4rem;
+	background-color: #fcf573;
+	text-shadow: none;
+	color:#565655;
+	padding: 8px 4px 6px;
+	margin:30px 0;
+}
+.lt-convenciones {
+	margin: 30px auto;
+}
+.lt-convenciones span {
+	text-shadow: none;
+	font-size: 1rem;
+	text-transform: uppercase;
+	font-family: 'Gotham Rounded', 'GothamRounded', 'Quicksans', sans-serif;
+	font-weight: 400;
+	margin: 8px;
+	position: relative;
+	padding-left: 14px;
+}
+.lt-convenciones span:before {
+	content:"";
+	position: absolute;
+	width: 8px;
+	height: 8px;
+	display: block;
+	background-color: blue;
+	top: 0;
+	left: 0;
+	border-radius: 50%;
+
+}
+/*
+=========
+=========
+ENCABEZADOS
+=========
+=========
+*/
+.lt-cabeza-indicador h2 {
+	text-align:center;
+	color: #4d54fc;
+	font-size: 4rem;
+	
+}
+.lt-cabeza-indicador .lt-indicador-subnav h3 {
+	text-transform: uppercase;
+	font-weight: 400;
+	color: #241c66;
+	text-align: center;
+	font-size: 1.6rem
+}
+.lt-cabeza-indicador .lt-indicador-subnav {
+	position: relative;
+	padding: 0 70px;
+}
+.lt-cabeza-indicador .lt-indicador-subnav .btn-anterior, .lt-cabeza-indicador .lt-indicador-subnav .btn-siguiente {
+	background: #fff2d9;
+	display: block;
+	height: 50px;
+	width: 50px;
+	position: absolute;
+	top: 50%;
+	margin-top: -25px;
+	border-radius: 8px;
+	border: 3px solid #4d54fc;
+	text-align: center;
+	color: #4d54fc;
+}
+.lt-cabeza-indicador .lt-indicador-subnav .btn-anterior i, 
+.lt-cabeza-indicador .lt-indicador-subnav .btn-siguiente i{
+	margin-top: 10px;	
+}
+.lt-cabeza-indicador .lt-indicador-subnav .btn-anterior span, 
+.lt-cabeza-indicador .lt-indicador-subnav .btn-siguiente span{
+	font-size: 0;	
+}
+.lt-cabeza-indicador .lt-indicador-subnav .btn-anterior {
+	left: 0;
+}
+.lt-cabeza-indicador .lt-indicador-subnav .btn-siguiente {
+	right: 0;
+}
+.lt-cabeza-indicador .lt-ac-botones-desagregar {
+	text-align: center;
+}
+.lt-cabeza-indicador .lt-ac-botones-desagregar .lt-btn-desagregar {
+	background-color: #4d54fc;
+	color: #fcf573;
+	font-weight: 400;
+	border-radius: 100px;
+	min-width: 120px;
+	font-size: 1.6rem
+}
+.lt-cabeza-indicador .lt-ac-botones-desagregar .lt-btn-desagregar.activo {
+	background-color: #fcf573;
+	color: #4d54fc;
+	
+}
+
+/*
+=========
+=========
+BOTONES CHECK
+=========
+=========
+*/
+.lt-btn-desagregar-check {
+	font-size: 1.4rem;
+	text-shadow: none;
+	color: #4d54fc;
+	font-family: 'Gotham Rounded', 'GothamRounded', 'Quicksans', sans-serif;
+	position: relative;
+	display: inline-block;
+	padding-left: 25px;
+	margin: 8px 30px;
+
+}
+.lt-btn-desagregar-check:before {
+	content:"";
+	display: inline-block;
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	box-shadow: 0 0 0 3px #4d54fc inset;
+	border-radius: 50%;
+	background-color: #fff2d9;
+	left: 0;
+	top: -1px;
+	-moz-transition: all 300ms ease;
+	-webkit-transition: all 300ms ease;
+	transition: all 300ms ease;
+}
+.lt-btn-desagregar-check.activo:before {
+	box-shadow: 0 0 0 6px #4d54fc inset;
+	background-color: #fcf573;
+	
+}
+/*
+=========
+=========
+ESTRELLAS EDAD
+=========
+=========
+*/
+.lt-edad-g-tit {
+	
+	border-left: 1px solid #4d54fc;
+	border-right: 1px solid #4d54fc;
+	position: relative;
+	margin: 60px 0 30px; 
+}
+.lt-edad-g-tit::before {
+	content: "";
+	position:absolute;
+	width: 100%;
+	height: 1px;
+	top: 45%;
+	left: 0;
+	border-top: 3px solid #4d54fc;
+
+}
+.lt-edad-g-tit span{
+	font-size: 1.6rem;
+	text-shadow: none;
+	color: #4d54fc;
+	font-family: 'Gotham Rounded', 'GothamRounded', 'Quicksans', sans-serif;
+	background-color: #fff2d9;
+	padding: 0px 12px;
+	display: inline-block;
+	border-left: 1px solid #4d54fc;
+	border-right: 1px solid #4d54fc;
+	min-width: 120px;
+}
+.lt-fila-edad {
+	display:none;
+}
+.lt-fila-edad.lt-fila-edad-activa {
+	display: block;
+}
+/*
+=========
+=========
+ESTRELLAS SEXO
+=========
+=========
+*/
+.lt-sexo .lt-graf > svg > g > .radarWrapper.ocultar {
+	display:none;
+}

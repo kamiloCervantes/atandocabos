@@ -1,0 +1,34 @@
+[{
+	"indicador": "1",
+	"territorio": "San Andres",
+	"datos": [{
+		"respuesta": "Le es indiferente",
+		"valor": 0.30
+	}, {
+		"respuesta": "No le gustaría",
+		"valor": 0.10
+	}]
+
+}, {
+	"indicador": "1",
+	"territorio": "Providencia y Santa Catalina",
+	"datos": [{
+		"respuesta": "Le es indiferente",
+		"valor": 0.30
+	}, {
+		"respuesta": "No le gustaría",
+		"valor": 1
+	}]
+
+}, {
+	"indicador": "1",
+	"territorio": "Nacional",
+	"datos": [{
+		"respuesta": "Le es indiferente",
+		"valor": 0.30
+	}, {
+		"respuesta": "No le gustaría",
+		"valor": 0.70
+	}]
+
+}]

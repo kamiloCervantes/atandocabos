@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Atando Cabos Detalle - Living Together</title>
+<!-- Bootstrap -->
+<link href="/lt/css/bootstrap.css" rel="stylesheet">
+<link href="/lt/css/bootstrap-theme.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/lt/css/estilos-living.css">
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+<link href='https://fonts.googleapis.com/css?family=Caveat:700|Source+Sans+Pro:300,700,400italic,700italic,300italic,400|Quicksand:700,400' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
+
+<link rel="stylesheet" type="text/css" href="/lt/css/living-flexbox.css">
+<!--ESTILOS PARA ESTAS PÁGINAS ÚNICAMENTE-->
+<!--Estilo para páginas divididas
+<link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />-->
+<!--Estilos para Atando Cabos-->
+<link rel="stylesheet" type="text/css" href="/lt/css/atando-cabos.css" />
+<!-- D3.js -->
+<script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+</head>
+<body class="lt-pg-ind">
+<div class="lt-gran-contenedor">
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid"> 
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#lt-mainMenu"><span class="sr-only">Desplegar navegación</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span><span class="lt-tit-navbar-menu">MENÚ</span></button>
+        <a class="navbar-brand lt-nav-icono" href="index.html"><span>Inicio</span> <i class="fa fa-home" aria-hidden="true"></i></a></div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="lt-mainMenu">
+        <ul class="nav navbar-nav lt-nav-items">
+          <li><a href="living-together.html">Living Together</a></li>
+          <li><a href="#">¿Cuál es tu papel?</a></li>
+          <li class="active"><a href="#">Atando Cabos <span class="sr-only">(actual)</span></a></li>
+          <li><a href="lego-taak-1.html">Lego Takk!</a></li>
+          <li><a href="wisdom-house-1.html">The Wisdom House</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a class="lt-nav-icono" href="#"><span>Facebook</span><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+          <li><a class="lt-nav-icono" href="#"><span>Twitter</span><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse --> 
+    </div>
+    <!-- /.container-fluid --> 
+  </nav>
+  <!-- INFORMACIÓN DE TEMÁTICA -->
+  <header class="lt-sidebar-tematica"> <img class="img-responsive center-block" src="/lt/img/franja-atando-cabos.png" alt="Atando Cabos" title="Atando Cabos"/>
+    <h1 class="sr-only">Atando Cabos</h1>
+    <div class="lt-info-tematica"> <img class="img-responsive center-block" src="/lt/img/img-atando-tematica.png" alt="Ilustración temática" title="Ilustración temática"/>
+      <h4>Violencia <strong>interpersonal</strong></h4>
+      <h2>Tolerancia y reconocimiento del otro</h2>
+      <p>En general, se buscó recopilar y adaptar metodologías de actividades ya llevadas a cabo por Corpovisionarios para la reducción de las violencias interpersonal e intrafamiliar (especialmente de pareja), con el ánimo de construir sobre lo construido.</p>
+    </div>
+    <a class="lt-botonCirc lt-btn-cerrar" href="wisdom-house-1.html" title="Nueva búsqueda"><i class="fa fa-times" aria-hidden="true"></i></a> </header>
+  <!-- Inicio Sección, una sección contiene todos los indicadores seleccionados en al pantalla de búsqueda-->
+  <section class="lt-grupo-indicadores"> 
+      <input type="hidden" id="indicadordata" value="<?php echo $this->indicador; ?>">
+      <input type="hidden" id="index" value="0">
+      <input type="hidden" id="numsubpreguntas" value="0">
+    <!-- Inicio de indicador, cada indicador es un article-->
+    <!-- Agregar ID y clase a article según indicador y tipo de gráfica-->
+    <article id="lt-ind-1" class="lt-ind lt-tolerancia"> 
+    <div class="container">
+      <!-- Título del indicador-->
+      <div class="row">
+      <div class="col-xs-12 lt-tit-ind">
+        <h2><?php echo $this->data_indicador[0]['pregunta'] ?></h2>
+      </div>
+      </div>
+      
+      
+      <div class="row lt-nav-ind">
+        <div class="col-xs-12">
+          <div class="lt-subtit-ind">
+            <h3><?php echo $this->data_indicador[0]['descripcion'] ?></h3>
+            <a href="#" class="next-item">Siguiente</a>
+          </div>
+          <div class="lt-nav-desagregar">
+            <input class="lt-btn-desagregar lt-btn-desagregar-sexo btn" name="botonSexo" type="button" value="SEXO" />
+            <input class="lt-btn-desagregar lt-btn-desagregar-gnrl btn" name="botonGnrl" type="button" value="GENERAL" />
+            <input class="lt-btn-desagregar lt-btn-desagregar-edad btn" name="botonEdad" type="button" value="EDAD" />
+          </div>
+        </div>
+      </div>
+      <div class="row lt-cuerpo-ind">
+        <div class="col-xs-12"> 
+          <!--Inicio de gráficas-->
+          <div class="lt-cont-grafs"> 
+            <!--AQUÍ SE CARGAN LAS GRÁFICAS--> 
+          </div>
+        </div>
+      </div>
+      
+      
+      </div>
+    </article>
+    <!--Fin de indicador--> 
+  </section>
+  <!--Fin de sección--> 
+  <footer>
+    <div class="lt-contenedor">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <p>Info del footer</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+<script src="/lt/js/jquery-1.12.3.min.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script> 
+
+<!-- Include all compiled plugins (below), or include individual files as needed --> 
+<script src="/lt/js/bootstrap.js"></script> 
+ 
+<!--Script para gráficas tipo tolerancia --> 
+<script src="/lt/ac-script/tolerancia/tolerancia_1.js"></script> 
+
+
+
+</body>
+</html>

@@ -6,9 +6,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Atando Cabos Detalle - Living Together</title>
 <!-- Bootstrap -->
-<link href="/lt/css/bootstrap.css" rel="stylesheet">
-<link href="/lt/css/bootstrap-theme.css" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="/lt/css/estilos-living.css">
+<link href="/ltf/css/bootstrap.css" rel="stylesheet">
+<link href="/ltf/css/bootstrap-theme.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/ltf/css/estilos-living.css">
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
@@ -17,12 +17,12 @@
     <![endif]-->
 <link href='https://fonts.googleapis.com/css?family=Caveat:700|Source+Sans+Pro:300,700,400italic,700italic,300italic,400|Quicksand:700,400' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css" href="/lt/css/living-flexbox.css">
+<link rel="stylesheet" type="text/css" href="/ltf/css/living-flexbox.css">
 <!--ESTILOS PARA ESTAS PÁGINAS ÚNICAMENTE-->
 <!--Estilo para navegación vertical-->
-<link rel="stylesheet" type="text/css" href="/lt/css/nav-vertical.css" />
+<link rel="stylesheet" type="text/css" href="/ltf/css/nav-vertical.css" />
 <!--Estilos para Atando Cabos-->
-<link rel="stylesheet" type="text/css" href="/lt/css/atando-cabos.css" />
+<link rel="stylesheet" type="text/css" href="/ltf/css/atando-cabos.css" />
 <!-- D3.js -->
 <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 </head>
@@ -59,20 +59,17 @@
     <!-- /.container-fluid -->
   </nav>
   <!-- INFORMACIÓN DE TEMÁTICA -->
-  <header class="lt-sidebar-tematica"> <img class="img-responsive center-block" src="/lt/img/franja-atando-cabos.png" alt="Atando Cabos" title="Atando Cabos"/>
+  <header class="lt-sidebar-tematica"> <img class="img-responsive center-block" src="/ltf/img/franja-atando-cabos.png" alt="Atando Cabos" title="Atando Cabos"/>
     <h1 class="sr-only">Atando Cabos</h1>
-    <div class="lt-info-tematica"> <img class="img-responsive center-block" src="/lt/img/img-atando-tematica.png" alt="Ilustración temática" title="Ilustración temática"/>
-        <h4>Violencia <strong>interpersonal</strong></h4>
-      <h2>Tolerancia y reconocimiento del otro</h2>
+   <div class="lt-info-tematica"> <img class="img-tematica img-responsive center-block" src="img-tematicas/cargando.png" alt="Ilustración temática" title="Ilustración temática"/>
+      <h4></h4>
+      <h2></h2>
       <p>En general, se buscó recopilar y adaptar metodologías de actividades ya llevadas a cabo por Corpovisionarios para la reducción de las violencias interpersonal e intrafamiliar (especialmente de pareja), con el ánimo de construir sobre lo construido.</p>
     </div>
     <a class="lt-botonCirc lt-btn-cerrar" href="/atandocabos" title="Nueva búsqueda"><i class="fa fa-times" aria-hidden="true"></i></a> </header>
   <!-- Inicio Sección, una sección contiene todos los indicadores seleccionados en al pantalla de búsqueda-->
   <section class="lt-grupo-indicadores">
-      
-    <!-- Inicio de indicador, cada indicador es un article-->
-    <!-- Agregar ID y data-graf a article según indicador y tipo de gráfica-->
-    <?php foreach($this->data_indicador as $d){  ?>
+      <?php foreach($this->data_indicador as $d){  ?>
     <article id="lt-ind-<?php echo $d[0]["idIndicador"]?>" class="lt-ind cd-section" data-indicador="<?php echo $d[0]["idIndicador"]?>" data-graf="<?php echo $this->tipo_graficas[$d[0]["tipo_grafica"]]?>">
       <div>
         <div class="container">
@@ -93,21 +90,17 @@
                  <?php if($d[0]["tipo_grafica"] != 3){ ?>
               <div class="lt-subtit-ind">
                 <input type="hidden" class="flecha_idx" value="0">
-                <?php if($this->tot_subpreguntas > 1){ ?>
                 <a href="#" class="btn-anterior nav-indicadores"><i class="fa fa-chevron-left" aria-hidden="true"></i><span>Anterior</span></a>
-                <h3><?php echo $d["subpreguntas"][0]["descripcion"]?></h3>
+                <h3><?php
+//                var_dump($d["subpreguntas"][0]["descripcion"]);
+                echo $d["subpreguntas"][0]["descripcion"] == 'NA' ? '' : $d["subpreguntas"][0]["descripcion"] ?></h3>
                 <a href="#" class="btn-siguiente nav-indicadores"><i class="fa fa-chevron-right" aria-hidden="true"></i><span>Siguiente</span></a>
-                <?php } else {  ?>
-                <h3><?php echo $d["subpreguntas"][0]["descripcion"]?></h3>
-                <?php }  ?>
               </div>
                 <?php }  ?>
               <div class="lt-nav-desagregar">
                 <input class="lt-btn-desagregar lt-btn-desagregar-sexo btn" name="botonSexo" type="button" value="sexo" />
                 <input class="lt-btn-desagregar lt-btn-desagregar-gnrl lt-btn-desagregar-gnrl-<?php echo $d[0]["idIndicador"]?> btn" name="botonGnrl" type="button" value="general" />
-                <?php if($d[0]["tipo_grafica"] != 3){ ?>
                 <input class="lt-btn-desagregar lt-btn-desagregar-edad btn" name="botonEdad" type="button" value="edad" />
-                <?php }  ?>
               </div>
             </div>
           </div>
@@ -128,19 +121,17 @@
           </div>
           <?php if($d[0]["idIndicador"] == 38){ ?>
           <br/>
-          <p style="font-size: 12px">Fuente: Policia Nacional de Colombia. Centro de Investigaciones Criminologicas – CICRI. Datos disponibles en: http://oasportal.policia.gov.co/imagenes_ponal/dijin/observatorio/cicri/cifras0.html</p>
+          <p style="font-size: 12px">Fuente: Policia Nacional de Colombia. Centro de Investigaciones Criminologicas – CICRI. Datos disponibles en: <a href="http://oasportal.policia.gov.co/imagenes_ponal/dijin/observatorio/cicri/cifras0.html">http://oasportal.policia.gov.co/imagenes_ponal/dijin/observatorio/cicri/cifras0.html</a></p>
           <?php }  ?>
           <?php if($d[0]["idIndicador"] == 48 || $d[0]["idIndicador"] == 49  || $d[0]["idIndicador"] == 47){ ?>
           <br/>
-          <p style="font-size: 12px">Instituto Nacional de Medicina Legal y Ciencias Forenses. Histórico publicación Forensis: Datos oficiales sobre la violencia en Colombia. Disponible en: http://www.medicinalegal.gov.co/forensis</p>
+          <p style="font-size: 12px">Instituto Nacional de Medicina Legal y Ciencias Forenses. Histórico publicación Forensis: Datos oficiales sobre la violencia en Colombia. Disponible en: <a href="http://www.medicinalegal.gov.co/forensis">http://www.medicinalegal.gov.co/forensis</a></p>
           <?php }  ?>
         </div>
       </div>
     </article>
     <!--Fin de indicador-->
     <?php } ?>
-    
-  
   </section>
   <!--Fin de sección-->
   <footer>
@@ -148,7 +139,7 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-12">
-            <p>Corpovisionarios - 2016</p>
+            <p>Info del footer</p>
           </div>
         </div>
       </div>
@@ -171,20 +162,23 @@
 		for(i = 0; i < articles.length; i++){
 			vNav.append('<li><a href="#'+articles[i]+'"></a></li>');
 		}
+		
+		vNav.find('li:first-child a').addClass('active');
 	});
 </script>
 <!--Script para navegación vertical-->
-<script src="/lt/js/nav-vertical.js"></script>
-<script src="/lt/ac-script/atando-cabos.js"></script>
-<!--Script para gráficas tipo estrella -->
-<script src="/lt/ac-script/bases/estrellas-base.js"></script>
-<script src="/lt/ac-script/bases/tolerancia-base.js"></script>
-<script src="/lt/ac-script/bases/linea-base.js"></script>
-<script src="/lt/ac-script/bases/bolas-base.js"></script>
+<script src="/ltf/js/nav-vertical.js"></script>
+<!--Script de funciones comunes-->
+<script src="/ltf/ac-script/atando-cabos.js"></script>
+<!--Script de base para gráficas-->
+<script src="/ltf/ac-script/bases/estrellas-base.js"></script>
+<script src="/ltf/ac-script/bases/tolerancia-base.js"></script>
+<script src="/ltf/ac-script/bases/linea-base.js"></script>
+<script src="/ltf/ac-script/bases/bolas-base.js"></script>
 <!--Scripts para gráficar -->
-<script src="/lt/ac-script/graficarGeneral.js"></script>
-<script src="/lt/ac-script/graficarSexo.js"></script>
-<script src="/lt/ac-script/graficarEdad.js"></script>
+<script src="/ltf/ac-script/graficarGeneral.js"></script>
+<script src="/ltf/ac-script/graficarSexo.js"></script>
+<script src="/ltf/ac-script/graficarEdad.js"></script>
 <!--Iniciar botones-->
 <script type="text/javascript">
 	$('.lt-nav-desagregar').on('click', '.lt-btn-desagregar-gnrl', cargarGeneral);
@@ -211,7 +205,10 @@
             jqxhr.done(function(data){
                 console.log(data);
                 $(self).parent().find('.flecha_idx').val(data.index);
-                $(self).parent().find('h3').html(data.subpregunta.descripcion); 
+                if(data.subpregunta.descripcion != 'NA'){
+                    $(self).parent().find('h3').html(data.subpregunta.descripcion); 
+                }
+                    
                 console.log($(self).closest('article')[0]);
                 $(self).closest('article').attr('data-subpregunta', data.subpregunta.idsubpregunta);
                 $(self).closest('article').data('subpregunta', data.subpregunta.idsubpregunta);
@@ -219,6 +216,42 @@
                 $('.lt-btn-desagregar-gnrl-'+indicador).trigger('click');
             });
         });
+        //Información de temáticas
+        function infoTematica() {
+                console.log("hola");
+                var elem = $('.lt-grupo-indicadores > article:first-child'),
+                        eID = elem.data('indicador');
+
+                d3.xhr("/servicios/gettematicas")
+                .header("Content-Type", "application/json")  
+                .post(
+                 JSON.stringify({indicador: eID}), function(error, data) {
+                        console.log(data.response);
+                        data = JSON.parse(data.response);
+                        console.log(data[0]);
+                        var datos = data[0],
+                                info = d3.select('.lt-info-tematica'),
+                                img = info.select('.img-tematica'),
+                                vio = info.select('h4'),
+                                titTem = info.select('h2');
+                        
+                        console.log(datos.idTema);
+                        img.attr('src', function(){
+                                return '/ltf/img-tematicas/tematica-'+datos.idTema+'.png';
+                        });
+
+                        vio.text(function(){
+                                var v = (datos.idTematica == 1) ? 'Violencia Interpersonal' : (datos.tematica_idtematica == 2) ? 'Violencia Intrafamiliar' : 'Violencia';
+                                return v;
+                        });
+
+                        titTem.text(function(){
+                                return datos.nom_tema;
+                        });
+                });//Fin de json
+        }
+
+        infoTematica();
 </script>
 </body>
 </html>

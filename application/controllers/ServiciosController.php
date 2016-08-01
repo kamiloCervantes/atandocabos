@@ -38,7 +38,7 @@ class ServiciosController extends Zend_Controller_Action
     public function getindicadoresAction(){
         $tema = $this->_getParam('tema');
         $dql = "select i from Application_Model_Indicadores i join i.tema_idTema tem where 
-            tem.idTema = :tema and i.tipo_grafica in (1,2,3,4) and i.visible=1";
+            tem.idTema = :tema and i.tipo_grafica in (1,2,3,4)";
         $query = $this->_em->createQuery($dql);
         $query->setParameter('tema', $tema);
         $indicadores = $query->getArrayResult();
@@ -1311,7 +1311,27 @@ class ServiciosController extends Zend_Controller_Action
         echo Zend_Json::encode($json);
     }
     
-    
+    public function gettematicasAction(){
+//        echo "hola";
+        $params = Zend_Json::decode($this->getRequest()->getRawBody());
+//        
+        $indicador = $params['indicador'];
+//        $indicador = 1;
+////        
+         $dql_1 = "select t.idTema,t.nom_tema, te.idTematica from Application_Model_Indicadores i 
+             join i.tema_idTema t join t.tematica te where i.idIndicador = :indicador"; 
+//         
+//         var_dump($dql_1);
+//
+        $query_1 = $this->_em->createQuery($dql_1);
+        $query_1->setParameter('indicador', $indicador);
+        $result_1 = $query_1->getArrayResult(); 
+        
+        echo Zend_Json::encode($result_1);
+    }
+  
+
+
   
 
 }

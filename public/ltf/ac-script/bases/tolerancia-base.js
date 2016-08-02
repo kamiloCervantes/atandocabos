@@ -17,7 +17,7 @@ function lanzarBolas (miDiv, miDato, interval, vista) {
 			
 		tooltip.append('span')
 			.attr('class', 'tip-dato')
-			.text('El '+miValor*100+"%");
+			.text('El '+Math.round(miValor*100)+"%");
 			
 		tooltip.append('span')
 			.attr('class', 'tip-gDes')

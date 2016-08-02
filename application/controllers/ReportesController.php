@@ -50,7 +50,7 @@ class ReportesController extends Zend_Controller_Action
    
   
   private function generarLinea($indicador){
-      $objPHPExcel = PHPExcel_IOFactory::load("/home/admin/public/livingth-v1/library/PHPExcel-1.8/templates/linea.xlsx");
+      $objPHPExcel = PHPExcel_IOFactory::load(APPLICATION_PATH . "/../library/PHPExcel-1.8/templates/linea.xlsx");
       $objPHPExcel->setActiveSheetIndex(0);
       
       $dql_1 = "select i,p
@@ -185,7 +185,7 @@ class ReportesController extends Zend_Controller_Action
             2 => 'Masculino'
         );
     
-   $objPHPExcel = PHPExcel_IOFactory::load("/home/admin/public/livingth-v1/library/PHPExcel-1.8/templates/estrella.xlsx");
+   $objPHPExcel = PHPExcel_IOFactory::load(APPLICATION_PATH . "/../library/PHPExcel-1.8/templates/estrella.xlsx");
    $objPHPExcel->setActiveSheetIndex(0);
      $dql_1 = "select i,p,sub
         from Application_Model_Indicadores i join i.pregunta_idPregunta 
@@ -213,7 +213,7 @@ class ReportesController extends Zend_Controller_Action
         }
 
     }
-    $objPHPExcel->getActiveSheet()->setCellValue('C3', $subpregunta_nombre);
+    $objPHPExcel->getActiveSheet()->setCellValue('C3', utf8_encode(html_entity_decode($subpregunta_nombre)));
 //    var_dump($ciudades);
     foreach($ciudades as $k=>$c){
         $tmp = array();
@@ -252,7 +252,7 @@ class ReportesController extends Zend_Controller_Action
              $data[$kd]["valor"] = ($d["valor"]/$total);
 //             var_dump(chr($col_ciudad+$kd+1).(5+$k));
              $objPHPExcel->getActiveSheet()->setCellValue(chr($col_ciudad).($k+5), $c);
-             $objPHPExcel->getActiveSheet()->setCellValue(chr($col_ciudad+$kd+1).(5), $data[$kd]["respuesta"]);
+             $objPHPExcel->getActiveSheet()->setCellValue(chr($col_ciudad+$kd+1).(5), utf8_encode(html_entity_decode($data[$kd]["respuesta"])));
              $objPHPExcel->getActiveSheet()->setCellValue(chr($col_ciudad+$kd+1).(5+$k), round($data[$kd]["valor"],3));
         }
 //         var_dump($data);

@@ -1,0 +1,8 @@
+
+@font-face {
+  font-family: 'CronosPro-LtCapt';
+  src: url('CronosPro-LtCapt.eot?#iefix') format('embedded-opentype'),  url('CronosPro-LtCapt.otf')  format('opentype'),
+	     url('CronosPro-LtCapt.woff') format('woff'), url('CronosPro-LtCapt.ttf')  format('truetype'), url('CronosPro-LtCapt.svg#CronosPro-LtCapt') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

@@ -38,7 +38,7 @@ class ServiciosController extends Zend_Controller_Action
     public function getindicadoresAction(){
         $tema = $this->_getParam('tema');
         $dql = "select i from Application_Model_Indicadores i join i.tema_idTema tem where 
-            tem.idTema = :tema and i.tipo_grafica in (1,2,3,4)";
+            tem.idTema = :tema and i.tipo_grafica in (1,2,3,4) and i.visible=1";
         $query = $this->_em->createQuery($dql);
         $query->setParameter('tema', $tema);
         $indicadores = $query->getArrayResult();
@@ -578,7 +578,7 @@ class ServiciosController extends Zend_Controller_Action
                             Application_Model_Indicadores ind join ind.pregunta_idPregunta pre join 
                             pre.subpreguntas sub join sub.respuestas res join sub.escala_idEscala esc 
                             join res.cod_respuesta opr join res.ciudad_idciudad ciu where ind.idIndicador = :indicador 
-                            and sub.idsubpregunta=:idsubpregunta and ciu.idciudad=:ciudad group by opr.descripcion';  
+                            and sub.idsubpregunta=:idsubpregunta and ciu.idciudad=:ciudad group by opr.descripcion order by opr.orden';  
 //                            
 //                            var_dump($subpregunta);
                             $query_2 = $this->_em->createQuery($dql_2); 
@@ -613,7 +613,7 @@ class ServiciosController extends Zend_Controller_Action
                         $dql_3 = "select opc.descripcion as respuesta, tn.total as valor from Application_Model_Totalnacional tn
                             join tn.cod_respuesta opc join tn.subpregunta_idsubpregunta sub join sub.escala_idEscala esc
                             join sub.pregunta_idPregunta pre join pre.indicadores ind where ind.idIndicador = :indicador 
-                            and sub.idsubpregunta=:idsubpregunta and tn.descripcion = 'Nacional' group by opc.descripcion"; 
+                            and sub.idsubpregunta=:idsubpregunta and tn.descripcion = 'Nacional' group by opc.descripcion order by opc.orden"; 
                         
                         $query_3 = $this->_em->createQuery($dql_3);
                         $query_3->setParameter('idsubpregunta', $subpregunta);
@@ -657,8 +657,7 @@ class ServiciosController extends Zend_Controller_Action
                                 Application_Model_Indicadores ind join ind.pregunta_idPregunta pre join 
                                 pre.subpreguntas sub join sub.respuestas res join sub.escala_idEscala esc 
                                 join res.cod_respuesta opr join res.ciudad_idciudad ciu where ind.idIndicador = :indicador 
-                                and sub.idsubpregunta=:idsubpregunta and ciu.idciudad=:ciudad and res.sexo = '%s' group by opr.descripcion", $g);  
-
+                                and sub.idsubpregunta=:idsubpregunta and ciu.idciudad=:ciudad and res.sexo = '%s' group by opr.descripcion order by opr.orden", $g);  
 
                                 $query_2 = $this->_em->createQuery($dql_2); 
                                 $query_2->setParameter('idsubpregunta', $subpregunta);
@@ -693,7 +692,7 @@ class ServiciosController extends Zend_Controller_Action
                         $dql_3 = sprintf("select opc.descripcion as respuesta, tn.total as valor from Application_Model_Totalnacional tn
                             join tn.cod_respuesta opc join tn.subpregunta_idsubpregunta sub join sub.escala_idEscala esc
                             join sub.pregunta_idPregunta pre join pre.indicadores ind where ind.idIndicador = :indicador 
-                            and sub.idsubpregunta=:idsubpregunta and tn.descripcion = '%s' group by opc.descripcion", $g); 
+                            and sub.idsubpregunta=:idsubpregunta and tn.descripcion = '%s' group by opc.descripcion order by opc.orden", $g); 
 //                        
                         $query_3 = $this->_em->createQuery($dql_3);
                         $query_3->setParameter('idsubpregunta', $subpregunta);
@@ -734,7 +733,7 @@ class ServiciosController extends Zend_Controller_Action
                                 Application_Model_Indicadores ind join ind.pregunta_idPregunta pre join 
                                 pre.subpreguntas sub join sub.respuestas res join sub.escala_idEscala esc 
                                 join res.cod_respuesta opr join res.ciudad_idciudad ciu where ind.idIndicador = :indicador 
-                                and sub.idsubpregunta=:idsubpregunta and ciu.idciudad=:ciudad and res.edad_cat = '%s' group by opr.descripcion", $e);  
+                                and sub.idsubpregunta=:idsubpregunta and ciu.idciudad=:ciudad and res.edad_cat = '%s' group by opr.descripcion order by opr.orden", $e);  
 
 
                                 $query_2 = $this->_em->createQuery($dql_2); 
@@ -769,7 +768,7 @@ class ServiciosController extends Zend_Controller_Action
                         $dql_3 = sprintf("select opc.descripcion as respuesta, tn.total as valor from Application_Model_Totalnacional tn
                             join tn.cod_respuesta opc join tn.subpregunta_idsubpregunta sub join sub.escala_idEscala esc
                             join sub.pregunta_idPregunta pre join pre.indicadores ind where ind.idIndicador = :indicador 
-                            and sub.idsubpregunta=:idsubpregunta and tn.descripcion = '%s' group by opc.descripcion", $edades_tn[$ke]); 
+                            and sub.idsubpregunta=:idsubpregunta and tn.descripcion = '%s' group by opc.descripcion order by opc.orden", $edades_tn[$ke]); 
 //                        
                         $query_3 = $this->_em->createQuery($dql_3);
                         $query_3->setParameter('idsubpregunta', $subpregunta);
@@ -812,7 +811,7 @@ class ServiciosController extends Zend_Controller_Action
                             Application_Model_Indicadores ind join ind.pregunta_idPregunta pre join 
                             pre.subpreguntas sub join sub.respuestas res join sub.escala_idEscala esc 
                             join res.cod_respuesta opr join res.ciudad_idciudad ciu where ind.idIndicador = :indicador 
-                            and sub.idsubpregunta=:idsubpregunta and ciu.idciudad=:ciudad group by opr.descripcion';  
+                            and sub.idsubpregunta=:idsubpregunta and ciu.idciudad=:ciudad group by opr.descripcion order by opr.orden';  
 //                            
                             
                             $query_2 = $this->_em->createQuery($dql_2); 
@@ -845,7 +844,7 @@ class ServiciosController extends Zend_Controller_Action
                         $dql_3 = 'select opc.descripcion as respuesta, tn.total as valor from Application_Model_Totalnacional tn
                             join tn.cod_respuesta opc join tn.subpregunta_idsubpregunta sub join sub.escala_idEscala esc
                             join sub.pregunta_idPregunta pre join pre.indicadores ind where ind.idIndicador = :indicador 
-                            and sub.idsubpregunta=:idsubpregunta group by opc.descripcion'; 
+                            and sub.idsubpregunta=:idsubpregunta group by opc.descripcion order by opc.orden'; 
                         
                         $query_3 = $this->_em->createQuery($dql_3);
                         $query_3->setParameter('idsubpregunta', $subpregunta);
@@ -879,7 +878,7 @@ class ServiciosController extends Zend_Controller_Action
                                 Application_Model_Indicadores ind join ind.pregunta_idPregunta pre join 
                                 pre.subpreguntas sub join sub.respuestas res join sub.escala_idEscala esc 
                                 join res.cod_respuesta opr join res.ciudad_idciudad ciu where ind.idIndicador = :indicador 
-                                and sub.idsubpregunta=:idsubpregunta and ciu.idciudad=:ciudad and res.sexo = '%s' group by opr.descripcion", $g);  
+                                and sub.idsubpregunta=:idsubpregunta and ciu.idciudad=:ciudad and res.sexo = '%s' group by opr.descripcion order by opr.orden", $g);  
 
 
                                 $query_2 = $this->_em->createQuery($dql_2); 
@@ -914,7 +913,7 @@ class ServiciosController extends Zend_Controller_Action
                         $dql_3 = sprintf("select opc.descripcion as respuesta, tn.total as valor from Application_Model_Totalnacional tn
                             join tn.cod_respuesta opc join tn.subpregunta_idsubpregunta sub join sub.escala_idEscala esc
                             join sub.pregunta_idPregunta pre join pre.indicadores ind where ind.idIndicador = :indicador 
-                            and sub.idsubpregunta=:idsubpregunta and tn.descripcion = '%s' group by opc.descripcion", $g); 
+                            and sub.idsubpregunta=:idsubpregunta and tn.descripcion = '%s' group by opc.descripcion order by opc.orden", $g); 
 //                        
                         $query_3 = $this->_em->createQuery($dql_3);
                         $query_3->setParameter('idsubpregunta', $subpregunta);
@@ -948,7 +947,7 @@ class ServiciosController extends Zend_Controller_Action
                                 Application_Model_Indicadores ind join ind.pregunta_idPregunta pre join 
                                 pre.subpreguntas sub join sub.respuestas res join sub.escala_idEscala esc 
                                 join res.cod_respuesta opr join res.ciudad_idciudad ciu where ind.idIndicador = :indicador 
-                                and sub.idsubpregunta=:idsubpregunta and ciu.idciudad=:ciudad and res.edad_cat = '%s' group by opr.descripcion", $e);  
+                                and sub.idsubpregunta=:idsubpregunta and ciu.idciudad=:ciudad and res.edad_cat = '%s' group by opr.descripcion order by opr.orden", $e);  
 
 
                                 $query_2 = $this->_em->createQuery($dql_2); 
@@ -983,7 +982,7 @@ class ServiciosController extends Zend_Controller_Action
                         $dql_3 = sprintf("select opc.descripcion as respuesta, tn.total as valor from Application_Model_Totalnacional tn
                             join tn.cod_respuesta opc join tn.subpregunta_idsubpregunta sub join sub.escala_idEscala esc
                             join sub.pregunta_idPregunta pre join pre.indicadores ind where ind.idIndicador = :indicador 
-                            and sub.idsubpregunta=:idsubpregunta and tn.descripcion = '%s' group by opc.descripcion", $edades_tn[$ke]); 
+                            and sub.idsubpregunta=:idsubpregunta and tn.descripcion = '%s' group by opc.descripcion order by opc.orden", $edades_tn[$ke]); 
 //                        
                         $query_3 = $this->_em->createQuery($dql_3);
                         $query_3->setParameter('idsubpregunta', $subpregunta);
@@ -1053,15 +1052,28 @@ class ServiciosController extends Zend_Controller_Action
 
                         }
                         else{
-                            $dql = sprintf("select i.idIndicador as indicador, ciu.ciudadcol as territorio, ml.anno as fecha, ml.total as valor from Application_Model_Medicinalegal ml join ml.indicador_idindicador i join
-                            ml.ciudad_idciudad ciu where i.idIndicador = :indicador and
-                            ml.descripcion = '%s'", $descripcion_opt[1]);
+                            foreach($ciudades as $k=>$c){               
+                                $dql = sprintf("select i.idIndicador as indicador, ciu.ciudadcol as territorio, ml.anno as fecha, ml.total as valor from Application_Model_Medicinalegal ml join ml.indicador_idindicador i join
+                                ml.ciudad_idciudad ciu where i.idIndicador = :indicador and
+                                ml.descripcion = '%s' and ciu.idciudad = :ciudad", $descripcion_opt[1]);
 
-                            $query = $this->_em->createQuery($dql);
+                                $query = $this->_em->createQuery($dql);
 
-                            $query->setParameter('indicador', $indicador); 
-                            $data = $query->getArrayResult();
-                            $json = $data;
+                                $query->setParameter('indicador', $indicador); 
+                                $query->setParameter('ciudad', $k); 
+                                $data = $query->getArrayResult();
+                                
+                                var_dump($data);
+                                var_dump($dql);
+                                var_dump($k);
+                                var_dump($indicador);
+                                
+                                $json = $data;
+
+                                 foreach($data as $key=>$d){
+                                    $json[] = $d;
+                                }
+                            }
                         }
                         
                         break;
@@ -1214,7 +1226,7 @@ class ServiciosController extends Zend_Controller_Action
                             Application_Model_Indicadores ind join ind.pregunta_idPregunta pre join 
                             pre.subpreguntas sub join sub.respuestas res join sub.escala_idEscala esc 
                             join res.cod_respuesta opr join res.ciudad_idciudad ciu where ind.idIndicador = :indicador 
-                            and sub.idsubpregunta=:idsubpregunta and ciu.idciudad=:ciudad group by opr.descripcion';  
+                            and sub.idsubpregunta=:idsubpregunta and ciu.idciudad=:ciudad group by opr.descripcion order by opr.orden';  
 //                            
                             
                             $query_2 = $this->_em->createQuery($dql_2); 
@@ -1247,7 +1259,7 @@ class ServiciosController extends Zend_Controller_Action
                         $dql_3 = 'select opc.descripcion as respuesta, tn.total as valor from Application_Model_Totalnacional tn
                             join tn.cod_respuesta opc join tn.subpregunta_idsubpregunta sub join sub.escala_idEscala esc
                             join sub.pregunta_idPregunta pre join pre.indicadores ind where ind.idIndicador = :indicador 
-                            and sub.idsubpregunta=:idsubpregunta group by opc.descripcion'; 
+                            and sub.idsubpregunta=:idsubpregunta group by opc.descripcion order by opc.orden'; 
                         
                         $query_3 = $this->_em->createQuery($dql_3);
                         $query_3->setParameter('idsubpregunta', $subpregunta);

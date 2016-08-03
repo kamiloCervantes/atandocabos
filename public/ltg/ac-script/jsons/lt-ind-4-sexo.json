@@ -1,0 +1,253 @@
+[{
+	"indicador": "4",
+	"territorio": "San Andres",
+	"fecha": "2010",
+	"sexo": "Femenino",
+	"valor": 245
+
+}, {
+	"indicador": "4",
+	"territorio": "San Andres",
+	"fecha": "2011",
+	"sexo": "Femenino",
+	"valor": 25
+
+}, {
+	"indicador": "4",
+	"territorio": "San Andres",
+	"fecha": "2012",
+	"sexo": "Femenino",
+	"valor": 115
+
+}, {
+	"indicador": "4",
+	"territorio": "San Andres",
+	"fecha": "2013",
+	"sexo": "Femenino",
+	"valor": 200
+
+}, {
+	"indicador": "4",
+	"territorio": "San Andres",
+	"fecha": "2014",
+	"sexo": "Femenino",
+	"valor": 245
+
+}, {
+	"indicador": "4",
+	"territorio": "San Andres",
+	"fecha": "2015",
+	"sexo": "Femenino",
+	"valor": 50
+
+}, {
+	"indicador": "4",
+	"territorio": "Providencia y Santa Catalina",
+	"fecha": "2010",
+	"sexo": "Femenino",
+	"valor": 245
+
+}, {
+	"indicador": "4",
+	"territorio": "Providencia y Santa Catalina",
+	"fecha": "2011",
+	"sexo": "Femenino",
+	"valor": 25
+
+}, {
+	"indicador": "4",
+	"territorio": "Providencia y Santa Catalina",
+	"fecha": "2012",
+	"sexo": "Femenino",
+	"valor": 115
+
+}, {
+	"indicador": "4",
+	"territorio": "Providencia y Santa Catalina",
+	"fecha": "2013",
+	"sexo": "Femenino",
+	"valor": 200
+
+}, {
+	"indicador": "4",
+	"territorio": "Providencia y Santa Catalina",
+	"fecha": "2014",
+	"sexo": "Femenino",
+	"valor": 245
+
+}, {
+	"indicador": "4",
+	"territorio": "Providencia y Santa Catalina",
+	"fecha": "2015",
+	"sexo": "Femenino",
+	"valor": 50
+
+}, {
+	"indicador": "4",
+	"territorio": "Nacional",
+	"fecha": "2010",
+	"sexo": "Femenino",
+	"valor": 245
+
+}, {
+	"indicador": "4",
+	"territorio": "Nacional",
+	"fecha": "2011",
+	"sexo": "Femenino",
+	"valor": 25
+
+}, {
+	"indicador": "4",
+	"territorio": "Nacional",
+	"fecha": "2012",
+	"sexo": "Femenino",
+	"valor": 115
+
+}, {
+	"indicador": "4",
+	"territorio": "Nacional",
+	"fecha": "2013",
+	"sexo": "Femenino",
+	"valor": 200
+
+}, {
+	"indicador": "4",
+	"territorio": "Nacional",
+	"fecha": "2014",
+	"sexo": "Femenino",
+	"valor": 245
+
+}, {
+	"indicador": "4",
+	"territorio": "Nacional",
+	"fecha": "2015",
+	"sexo": "Femenino",
+	"valor": 50
+
+}, {
+	"indicador": "4",
+	"territorio": "San Andres",
+	"fecha": "2010",
+	"sexo": "Masculino",
+	"valor": 245
+
+}, {
+	"indicador": "4",
+	"territorio": "San Andres",
+	"fecha": "2011",
+	"sexo": "Masculino",
+	"valor": 25
+
+}, {
+	"indicador": "4",
+	"territorio": "San Andres",
+	"fecha": "2012",
+	"sexo": "Masculino",
+	"valor": 115
+
+}, {
+	"indicador": "4",
+	"territorio": "San Andres",
+	"fecha": "2013",
+	"sexo": "Masculino",
+	"valor": 200
+
+}, {
+	"indicador": "4",
+	"territorio": "San Andres",
+	"fecha": "2014",
+	"sexo": "Masculino",
+	"valor": 245
+
+}, {
+	"indicador": "4",
+	"territorio": "San Andres",
+	"fecha": "2015",
+	"sexo": "Masculino",
+	"valor": 50
+
+}, {
+	"indicador": "4",
+	"territorio": "Providencia y Santa Catalina",
+	"fecha": "2010",
+	"sexo": "Masculino",
+	"valor": 245
+
+}, {
+	"indicador": "4",
+	"territorio": "Providencia y Santa Catalina",
+	"fecha": "2011",
+	"sexo": "Masculino",
+	"valor": 25
+
+}, {
+	"indicador": "4",
+	"territorio": "Providencia y Santa Catalina",
+	"fecha": "2012",
+	"sexo": "Masculino",
+	"valor": 115
+
+}, {
+	"indicador": "4",
+	"territorio": "Providencia y Santa Catalina",
+	"fecha": "2013",
+	"sexo": "Masculino",
+	"valor": 200
+
+}, {
+	"indicador": "4",
+	"territorio": "Providencia y Santa Catalina",
+	"fecha": "2014",
+	"sexo": "Masculino",
+	"valor": 245
+
+}, {
+	"indicador": "4",
+	"territorio": "Providencia y Santa Catalina",
+	"fecha": "2015",
+	"sexo": "Masculino",
+	"valor": 50
+
+}, {
+	"indicador": "4",
+	"territorio": "Nacional",
+	"fecha": "2010",
+	"sexo": "Masculino",
+	"valor": 245
+
+}, {
+	"indicador": "4",
+	"territorio": "Nacional",
+	"fecha": "2011",
+	"sexo": "Masculino",
+	"valor": 25
+
+}, {
+	"indicador": "4",
+	"territorio": "Nacional",
+	"fecha": "2012",
+	"sexo": "Masculino",
+	"valor": 115
+
+}, {
+	"indicador": "4",
+	"territorio": "Nacional",
+	"fecha": "2013",
+	"sexo": "Masculino",
+	"valor": 200
+
+}, {
+	"indicador": "4",
+	"territorio": "Nacional",
+	"fecha": "2014",
+	"sexo": "Masculino",
+	"valor": 245
+
+}, {
+	"indicador": "4",
+	"territorio": "Nacional",
+	"fecha": "2015",
+	"sexo": "Masculino",
+	"valor": 50
+
+}]

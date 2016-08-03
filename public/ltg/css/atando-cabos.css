@@ -1,0 +1,1426 @@
+@charset "UTF-8";
+/*
+=========
+=========
+GENERALES
+=========
+=========
+*/
+
+.lt-grupo-indicadores {
+	margin-left: 300px;
+}
+.lt-pg-ind footer{
+	margin-left: 300px;
+}
+.lt-contenedor-grafica {
+	width:100%;
+	margin: 0 auto;
+	padding: 15px;
+}
+.lt-tit-territorio {
+	font-size: 14px;
+	background-color: #fcf573;
+	text-shadow: none;
+	color:#565655;
+	padding: 8px 4px 6px;
+	margin:30px 15px;
+	text-align: center;
+	text-transform: uppercase;
+}
+.lt-ind {
+	padding: 80px 0;
+}
+.lt-cont-grafs {
+	padding: 60px 30px;
+}
+.lt-graf {
+	position: relative;
+}
+.lt-graf svg {
+	display: block;
+	margin: 0 auto;
+}
+.lt-cont-grafs  [class*='col-'] {
+    padding-right:0;
+    padding-left:0;
+}
+.lt-cont-grafs .row{
+	margin-left: 0;
+	margin-right: 0;
+}
+/*SIDEBAR TEMÁTICA*/
+.lt-sidebar-tematica {
+	background-color: #fcf573;
+	width: 300px;
+	position:fixed;
+	padding: 0px 20px 15px;
+	min-height: 100vh;
+	color: #241c66;
+}
+.lt-sidebar-tematica .lt-botonCirc {
+	position: absolute;
+	right: -30px;
+	top: 150px;
+	z-index: 500;
+	
+}
+.lt-sidebar-tematica h4 {
+	font-size: 18px;
+	text-transform: uppercase;
+	border-bottom: 1px solid #241c66
+}
+.lt-sidebar-tematica h2 {
+	font-size: 28px;
+	margin: 10px 0 15px;
+}
+.lt-sidebar-tematica p {
+	font-size: 20px;
+}
+/*BOTÓN DE DESCARGA Y NUEVA BÚSQUEDA*/
+.lt-pg-ind .lt-botonCirc {
+	border-color: #4c54fc;
+	color: #4c54fc; 
+}
+.lt-pg-ind .lt-botonCirc:hover, 
+.lt-pg-ind a:hover > .lt-botonCirc {
+	-moz-box-shadow: 0 0 0px 20px rgba(125,237,181,.8);
+	-webkit-box-shadow: 0 0 0px 20px rgba(125,237,181,.8);
+	box-shadow: 0 0 0px 20px rgba(125,237,181,.8);
+	color: #7dedb5;
+	border-color: #7dedb5;
+	background: #fff2d9;
+}
+/*
+=========
+=========
+ENCABEZADOS
+=========
+=========
+*/
+.lt-tit-ind h2 {
+	text-align:center;
+	color: #4d54fc;
+	font-size: 40px;
+	margin: 0;
+	
+}
+.lt-subtit-ind h3 {
+	text-transform: uppercase;
+	font-weight: 400;
+	color: #241c66;
+	text-align: center;
+	font-size: 16px;
+	margin: 0;
+}
+.lt-subtit-ind {
+	position: relative;
+	padding: 0 70px;
+	margin: 20px 0;
+
+}
+.lt-subtit-ind .btn-anterior, 
+.lt-subtit-ind .btn-siguiente {
+	background: #fff2d9;
+	display: block;
+	height: 50px;
+	width: 50px;
+	position: absolute;
+	top: 50%;
+	margin-top: -25px;
+	border-radius: 8px;
+	border: 3px solid #4d54fc;
+	text-align: center;
+	color: #4d54fc;
+}
+.lt-subtit-ind .btn-anterior i, 
+.lt-subtit-ind .btn-siguiente i{
+	margin-top: 10px;	
+}
+.lt-subtit-ind .btn-anterior span, 
+.lt-subtit-ind .btn-siguiente span{
+	font-size: 0;	
+}
+.lt-subtit-ind .btn-anterior {
+	left: 0;
+}
+.lt-subtit-ind .btn-siguiente {
+	right: 0;
+}
+.lt-nav-desagregar {
+	text-align: center;
+	margin: 48px 0 12px;
+}
+.lt-nav-desagregar .lt-btn-desagregar {
+	background-color: #4d54fc;
+	color: #fcf573;
+	font-weight: 400;
+	border-radius: 100px;
+	min-width: 120px;
+	font-size: 16px;
+	padding: 2px;
+	margin: 0 24px;
+	-webkit-box-shadow: 3px 3px 0 0 rgba(163,137,122,.5);
+	-moz-box-shadow: 3px 3px 0 0 rgba(163,137,122,.5);
+	box-shadow: 3px 3px 0 0 rgba(163,137,122,.5);
+}
+.lt-nav-desagregar .lt-btn-desagregar:focus{
+	outline: none;
+    outline-offset: 0;
+}
+.lt-nav-desagregar .lt-btn-desagregar.activo {
+	background-color: #fcf573;
+	color: #4d54fc;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
+
+/*
+=========
+=========
+BOTONES CHECK
+=========
+=========
+*/
+.lt-nav-edad, .lt-nav-sexo {
+	margin-top: -36px;
+}
+.lt-nav-edad {
+	text-align: center;
+}
+
+.lt-btn-check {
+	font-size: 13px;
+	text-shadow: none;
+	color: #4d54fc;
+	font-family: 'Gotham Rounded', 'GothamRounded', 'Quicksans', sans-serif;
+	position: relative;
+	display: inline-block;
+	padding-left: 25px;
+	margin: 8px 30px;
+	text-transform: uppercase;
+
+}
+.lt-btn-check[data-ltSexo='gSexo-M'],
+.lt-btn-check.gSexo-M {
+	color: #33d3b5;
+}
+.lt-btn-check[data-ltSexo='gSexo-F'],
+.lt-btn-check.gSexo-F {
+	color: #b80d80;
+}
+.lt-btn-check:before {
+	content:"";
+	display: inline-block;
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	box-shadow: 0 0 0 3px #4d54fc inset;
+	background-color: #fff2d9;
+	left: 0;
+	top: -3px;
+	-moz-transition: all 300ms ease;
+	-webkit-transition: all 300ms ease;
+	transition: all 300ms ease;
+}
+.lt-btn-check.activo:before {
+	box-shadow: 0 0 0 6px #4d54fc inset;
+	background-color: #fcf573;
+	
+}
+.lt-btn-check[data-ltSexo='gSexo-M']:before,
+.lt-btn-check.gSexo-M:before {
+	box-shadow: 0 0 0 3px #33b3d5 inset;
+}
+.lt-btn-check[data-ltSexo='gSexo-F']:before,
+.lt-btn-check.gSexo-F:before {
+	box-shadow: 0 0 0 3px #b80d80 inset;
+}
+.lt-btn-check.activo[data-ltSexo='gSexo-M']:before,
+.lt-btn-check.activo.gSexo-M:before {
+	box-shadow: 0 0 0 6px #33b3d5 inset;
+	background-color: #fff2d8;
+}
+.lt-btn-check.activo[data-ltSexo='gSexo-F']:before,
+.lt-btn-check.activo.gSexo-F:before {
+	box-shadow: 0 0 0 6px #b80d80 inset;
+	background-color: #fff2d8;
+}
+/*==========
+==TOOLTIPS==
+==========*/
+.lt-tooltip,
+.lt-tooltip-bolas,
+.lt-tooltip-est {
+	font-family: 'Gotham Rounded', 'GothamRounded', 'Quicksans', sans-serif;
+	line-height: 1;
+	width: 110px;
+	/*max-width: 120px;*/
+	background-color: #fff5e6;
+	border: 3px solid #caba9f;
+	padding: 8px;
+	position: absolute;
+	z-index: 1000;
+	text-align :left;
+	color: #4c54fc;
+	font-weight: 400;
+	font-size: 11px;
+	line-height: 1.2;
+}
+/*.lt-tooltip span,
+.lt-tooltip-bolas span,
+.lt-tooltip-est span {
+	margin: 0;
+}*/
+.lt-tooltip-bolas p,
+.lt-tooltip-est p {
+	margin: 0;
+}
+.lt-tooltip {
+	bottom: 55%;
+	top: initial;
+	left: 50%;
+	display:none;
+	text-align :left;
+	color: #4c54fc;
+	-moz-transition: opacity 500ms ease;
+	-webkit-transition: opacity 500ms ease;
+	transition: opacity 500ms ease;
+	line-height: 1.2;
+}
+.lt-tooltip p {
+	line-height: 1.2;
+}
+.lt-tooltip:after,
+.lt-tooltip-bolas:after,
+.lt-tooltip-est:after {
+	content: "";
+	position: absolute;
+	width: 26px;
+	height: 32px;
+	display: block;
+	background: url(../img/atando-cabos/punta-tooltip.png) no-repeat left bottom;
+	left: -3px;
+	bottom: -26px;
+}
+.lt-tooltip .tip-dato,
+.lt-tooltip-bolas .tip-dato,
+.lt-tooltip-est .tip-dato {
+	/*font-weight: 700;*/
+	font-size: 22px;
+	display: block;
+	margin: 6px 0;
+}
+/*.lt-tooltip .tip-rta,
+.lt-tooltip-bolas .tip-rta,
+.lt-tooltip-est .tip-rta {
+	font-weight: 400;
+	font-size: 11px;
+	line-height: 1.2;
+	top: initial;
+	bottom: initial;
+	margin: 0;
+}
+.lt-tooltip .tip-gDes,
+.lt-tooltip-bolas .tip-gDes,
+.lt-tooltip-est .tip-gDes {
+	
+	font-size: 11px;
+	line-height: 1.2;
+	
+	top: initial;
+	bottom: initial;
+}*/
+/*Punta al centro*/
+.lt-tol-sexo .lt-tooltip,
+.lt-linea-cont .lt-tooltip {
+	margin-left: -55px;
+}
+.lt-tol-sexo .lt-tooltip:after,
+.lt-linea-cont .lt-tooltip:after,
+.lt-tooltip-bolas:after,
+.lt-tooltip-est:after {
+	background: url(../img/atando-cabos/punta-tooltip-centro.png) no-repeat left bottom;
+	left: 50%;
+	margin-left: -14px;
+}
+
+/*Modificaciones*/
+.lt-tol-sexo.gSexo-M .lt-tooltip {
+	color: #33d3b5;
+}
+.lt-tol-sexo.gSexo-F .lt-tooltip {
+	color: #b80d80;
+}
+
+
+.lt-tooltip-bolas .lt-bTool-r {
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 1;
+    
+}
+.lt-tooltip-bolas-cont {
+	background: rgba(0,0,0,.3);
+	position: absolute;
+	left: 50%;
+	
+}
+
+/*
+=========
+=========
+ESTRELLAS 
+=========
+=========
+*/
+article[data-graf="estrella"] .lt-graf {
+	width: 280px;
+	margin: 0 auto;
+	position: relative;
+}
+.lt-convenciones {
+	margin: 30px auto;
+}
+.lt-convenciones span {
+	text-shadow: none;
+	font-size: 10px;
+	text-transform: uppercase;
+	font-family: 'Gotham Rounded', 'GothamRounded', 'Quicksans', sans-serif;
+	font-weight: 400;
+	margin: 8px;
+	position: relative;
+	padding-left: 14px;
+}
+.lt-convenciones span:before {
+	content:"";
+	position: absolute;
+	width: 8px;
+	height: 8px;
+	display: block;
+	background-color: blue;
+	top: 0;
+	left: 0;
+	border-radius: 50%;
+}
+.lt-edad-g-tit {
+	
+	border-left: 1px solid #4d54fc;
+	border-right: 1px solid #4d54fc;
+	position: relative;
+	margin: 60px 0 30px; 
+	text-align:center;
+}
+.lt-edad-g-tit::before {
+	content: "";
+	position:absolute;
+	width: 100%;
+	height: 1px;
+	top: 45%;
+	left: 0;
+	border-top: 3px solid #4d54fc;
+
+}
+.lt-edad-g-tit span{
+	font-size: 16px;
+	text-shadow: none;
+	color: #4d54fc;
+	font-family: 'Gotham Rounded', 'GothamRounded', 'Quicksans', sans-serif;
+	background-color: #fff2d9;
+	padding: 0px 12px;
+	display: inline-block;
+	border-left: 1px solid #4d54fc;
+	border-right: 1px solid #4d54fc;
+	min-width: 120px;
+}
+.lt-fila-edad {
+	display:none;
+}
+.lt-fila-edad.lt-fila-edad-activa {
+	display: block;
+}
+/*Estrellas Sexo*/
+.lt-sexo .lt-graf > svg > g > .radarWrapper.ocultar {
+	display:none;
+}
+/*Convenciones*/
+.lt-estrella-conv {
+	min-height: 50px;
+	display: inline-block;
+	margin: 48px auto 0;
+}
+.lt-estrella-conv > div {
+	float: left;
+	max-width: 180px;
+}
+.lt-estrella-conv h6 {
+	padding: 0 12px;
+	margin: 0;
+}
+
+/*.lt-estrella-conv:before {
+	content: "Convenciones";
+	text-align: center;
+}*/
+.lt-estrella-conv .est-bolita {
+	width: 20px;
+	height: 20px;
+	display: block;
+	border: 3px solid #4c54fc;
+	border-radius: 50%;
+	float: left;
+	font-size: 11px;
+	color: #4c54fc;
+	padding-top: 1px;
+	
+}
+.lt-estrella-conv .lt-label-conv {
+	text-shadow: none;
+	font-size: 9px!important;
+	text-transform: uppercase;
+	font-family: 'Gotham Rounded', 'GothamRounded', 'Quicksans', sans-serif;
+	font-weight: 700;
+	margin: 0 0 0 24px;
+	position: relative;
+	padding-top: 6px;
+	display: block;
+	text-align: left;
+}
+
+/*Grilla*/
+.gridCircle.c-est-5 {
+	fill: #fff2d8!important;
+	stroke-dasharray: 3,3;
+}
+.conv-est {
+	stroke: #4c54fc;
+	stroke-width: 3;
+	fill:  #fff2d8;
+}
+.legend {
+	fill:  #4c54fc;
+	font-size: 12px;
+	font-family: 'Gotham Rounded', 'GothamRounded', 'Quicksans', sans-serif;
+	font-weight: 700;
+}
+/*Colores convenciones*/
+/*.lt-eje-1 .conv-est {
+	stroke: #33d3b5;
+}
+.lt-eje-1 .legend {
+	fill:  #33d3b5;
+}
+.rta-estrella-1 .est-bolita {
+	border-color: #33d3b5;	
+	color: #33d3b5;
+}
+.lt-eje-2 .conv-est {
+	stroke: #78eaf3;
+}
+.lt-eje-2 .legend {
+	fill:  #78eaf3;
+}
+.rta-estrella-2 .est-bolita {
+	border-color: #78eaf3;	
+	color: #78eaf3;
+}
+.lt-eje-3 .conv-est {
+	stroke: #7076fd;
+}
+.lt-eje-3 .legend {
+	fill:  #7076fd;
+}
+.rta-estrella-3 .est-bolita {
+	border-color: #7076fd;	
+	color: #7076fd;
+}
+.lt-eje-4 .conv-est {
+	stroke: #662482;
+}
+.lt-eje-4 .legend {
+	fill:  #662482;
+}
+.rta-estrella-4 .est-bolita {
+	border-color: #662482;	
+	color: #662482;
+}
+.lt-eje-5 .conv-est {
+	stroke: #c63d99;
+}
+.lt-eje-5 .legend {
+	fill:  #c63d99;
+}
+.rta-estrella-5 .est-bolita {
+	border-color: #c63d99;	
+	color: #c63d99;
+}*/
+/*Texticos porcentajes*/
+.porc-est {
+	font-size: 9px!important;
+	font-family: 'Gotham Rounded', 'GothamRounded', 'Quicksans', sans-serif;
+	font-weight: 700;
+	fill: #4c54fc;
+}
+.porc-est .pgSexo-M {
+	fill: #33d3b5;
+	-moz-transition: opacity 500ms linear;
+	-webkit-transition: opacity 500ms linear;
+	transition: opacity 500ms linear;
+}
+.porc-est .pgSexo-F {
+	fill: #b80d80;
+	-moz-transition: opacity 500ms linear;
+	-webkit-transition: opacity 500ms linear;
+	transition: opacity 500ms linear;
+}
+.porc-est .pgSexo-F.inactivo, 
+.porc-est .pgSexo-M.inactivo {
+	opacity: 0;
+	
+}
+.fEdadEst {
+	border-left: 3px solid #4c54fc;
+	position: relative;
+	margin: 30px 0;
+}
+.fEdadEst > .col-xs-12:before,
+.fEdadEst > .col-xs-12:after {
+	content: "";
+    position: absolute;
+    width: 22px;
+    height: 1px;
+    top: 0px;
+    left: -13px;
+    border-top: 1px solid #4d54fc;
+}
+.fEdadEst > .col-xs-12:after {
+	bottom: 0;
+    top: initial;
+    left: -13px;
+    border-top: 1px solid #4d54fc;
+}
+.fEdadEst .lt-tit-territorio {
+	margin-top: 0;
+}
+
+.lt-est-edad-span {
+	position: absolute;
+	font-size: 16px;
+	font-family: 'Gotham Rounded', 'GothamRounded', 'Quicksans', sans-serif;
+	font-weight: 700;
+	color: #4d54fc;
+	left: -50px;
+	text-align:right;
+	width: 50px;
+	bottom: 50%;
+	margin-bottom: -16px;
+	background-color: #fff2d8;
+	padding: 6px 0 4px;
+}
+.lt-est-edad-span:before,
+.lt-est-edad-span:after {
+	content: "";
+    position: absolute;
+    width: 12px;
+    height: 1px;
+    top: 0px;
+    right: -4px;
+    border-top: 1px solid #4d54fc;
+}
+.lt-est-edad-span:after {
+	top: initial;
+	bottom: 0;
+}
+/*
+=========
+=========
+TOLERANCIA
+=========
+=========
+*/
+.g-tolerancia circle {
+	fill: #4c54fc;
+}
+article[data-graf="tolerancia"] .lt-graf {
+	background: url("../img/atando-cabos/linea.png")repeat-x center;
+	background-color: rgba(0,0,0,.05);
+	padding: 30px 0;
+}
+article[data-graf="tolerancia"] .lt-graf::after, 
+article[data-graf="tolerancia"] .lt-graf::before {
+	content:"";
+	display: block;
+	width: 4px;
+	height: 8px;
+	position: absolute;
+	border-radius: 4px;
+	background-color:#4c54fc;
+	top: 50%;
+	margin-top: -4px;
+}
+article[data-graf="tolerancia"] .lt-graf::after {
+	right: -2px;
+}
+article[data-graf="tolerancia"] .lt-graf::before {
+	left: -2px;
+}
+article[data-graf="tolerancia"] .lt-tol-sexo {
+	width: 50%;
+	display: inline-block;
+	position: relative;
+}
+
+article[data-graf="tolerancia"] .gSexo-M circle, 
+article[data-graf="tolerancia"] .gSexo-F circle {
+	fill: #ccc;
+	-moz-transition: fill ease 500ms;
+	-webkit-transition: fill ease 500ms;
+	transition: fill ease 500ms;
+}
+
+article[data-graf="tolerancia"] .gSexo-M.sexoActivo circle {
+	fill: #33d3b5;
+}
+article[data-graf="tolerancia"] .gSexo-F.sexoActivo circle {
+	fill: #b80d80;
+}
+.lt-filas-edad > .row {
+	position: relative;
+	margin-bottom: 8px;
+}
+.lt-tol-edad-span {
+	position: absolute;
+	font-size: 16px;
+	font-family: 'Gotham Rounded', 'GothamRounded', 'Quicksans', sans-serif;
+	font-weight: 700;
+	color: #4d54fc;
+	left: -55px;
+	text-align:right;
+	width: 50px;
+	bottom: 93px;
+	
+}
+.lt-filas-edad .lt-tit-territorio {
+	display: none;
+}
+
+/*
+=========
+=========
+LINEAS
+=========
+=========
+*/
+/*Tabla*/
+.table > thead > tr > th, 
+.table > tbody > tr > th, 
+.table > tfoot > tr > th, 
+.table > thead > tr > td, 
+.table > tbody > tr > td, 
+.table > tfoot > tr > td {
+	padding: 0;
+}
+.table > thead > tr > th, 
+.table > tbody > tr > th, 
+.table > tfoot > tr > th, 
+.table > thead > tr > td, 
+.table > tbody > tr > td, 
+.table > tfoot > tr > td {
+	border: 0;
+}
+.lt-linea-cont {
+	padding-top: 30px;
+}
+/*Linea fechas*/
+.lt-linea-fechas .label-fecha h5 {
+	background: url("../img/atando-cabos/linea.png")repeat-x center;
+	position: relative;
+}
+.lt-linea-fechas .label-fecha h5 span{
+	background: #fff2d8;
+	padding: 2px 8px;
+	position: relative;
+}
+thead .lt-linea-fechas > th:first-child h5,
+tfoot .lt-linea-fechas > td:first-child h5 {
+	position: relative;
+	padding-left: 10px!important;
+}
+.lt-linea-fechas .label-fecha h5 span:after,
+.lt-linea-fechas .label-fecha h5 span:before,
+thead .lt-linea-fechas > th:first-child h5:before,
+tfoot .lt-linea-fechas > td:first-child h5:before {
+	content:"";
+	display: block;
+	width: 4px;
+	height: 8px;
+	position: absolute;
+	border-radius: 4px;
+	background-color:#4c54fc;
+	top: 50%;
+	left: 0;
+	margin-top: -4px;
+}
+.lt-linea-fechas .label-fecha h5 span:after {
+	left: initial;
+	right: 0
+	
+}
+.lt-linea-fechas .tit-fechas {
+	text-align: left;
+	display: block;
+	padding: 0;
+}
+.lt-linea-fechas h5 {
+	font-size: 14px;
+	color: #4c54fc;
+	
+	position: relative;
+}
+.label-fecha h5 {
+	text-align: center;
+}
+
+.lt-linea-cont-gnrl .lt-linea-fechas  > .col-md-11 {
+	width: 100%;
+	margin-left: 0;
+}
+/*linea cuerpo*/
+.lt-linea-cont-gnrl .lt-linea-cuerpo .row > .col-md-1 {
+	width: 0;
+}
+.lt-linea-cont-gnrl .lt-linea-cuerpo .row > .col-md-11 {
+	width: 100%;
+}
+.lt-linea-tit-des h5 {
+	font-size: 12px;
+	color: #575757;
+	text-transform: uppercase;
+	text-align:  left;
+}
+.gSexo-F .lt-linea-tit-des h5 {
+	color: #b80d80;
+}
+.gSexo-M .lt-linea-tit-des h5 {
+	color: #33d3b5;
+}
+article[data-graf="linea"] .gSexo-F circle {
+	fill:#b80d80;
+}
+article[data-graf="linea"] .gSexo-M circle {
+	fill:#33d3b5;
+}
+.lt-linea-tit-sx {
+	text-transform: uppercase;
+	font-size: 16px;
+	text-align: right;
+}
+
+.tit-linea-v {
+	font-size: 12px;
+	width: 126px;
+	color: #575757;
+	text-transform: uppercase;
+	/*-ms-transform: rotate(270deg); 
+    -webkit-transform: rotate(270deg); 
+    transform: rotate(270deg);*/
+    background-color: yellow;
+    margin: 0:
+}
+.lt-linea-cuerpo > .row {
+	padding: 30px 0;
+}
+.lt-linea-cuerpo  [class*='col-'] {
+    height: 100%;
+    min-height: 110px;
+}
+.lt-linea-cont .table {
+	margin-bottom: 0;
+}
+.celda-territorio {
+	vertical-align: middle!important;
+}
+.celda-territorio h5 {
+	font-size: 12px;
+	color: #575757;
+	text-transform: uppercase;
+	text-align:  left;
+}
+.lt-linea-cont .lt-graf-celda {
+	background: url("../img/atando-cabos/linea-v.png") repeat-y center;
+	padding: 5px 0;
+	position: relative;
+	
+}
+.lt-linea-cont .lt-graf-celda .lt-graf {
+	background: rgba(202,186,159,.1) url("../img/atando-cabos/linea.png")repeat-x center;
+}
+.celda-territorio.ct-sexo {
+	
+}
+.gGnrl .lt-graf-celda {
+	padding: 24px 0;
+}
+.gSexo-F .lt-graf-celda {
+	padding-top: 24px;
+}
+.gSexo-M .lt-graf-celda {
+	padding-bottom: 24px;
+}
+.gSexo-F .lt-linea-tit-des h5 {
+	padding-top: 24px;
+}
+.gSexo-M .lt-linea-tit-des h5 {
+	padding-bottom: 18px;
+}
+thead th {
+	padding-top: 20px;
+}
+tfoot td {
+	padding-bottom: 20px;
+}
+/*.lt-linea-cont-gnrl .linea-fTerr:first-child .gGnrl .lt-graf-celda:before {
+	content:"";
+	display: block;
+	width: 8px;
+	height: 4px;
+	position: absolute;
+	border-radius: 4px;
+	background-color:#4c54fc;
+	top: 0;
+	left: 50%;
+	margin-left: -4px;
+}*/
+/*.lt-linea-cont-gnrl .linea-fTerr:last-child .gGnrl .lt-graf-celda:before {
+	content:"";
+	display: block;
+	width: 8px;
+	height: 4px;
+	position: absolute;
+	border-radius: 4px;
+	background-color:#4c54fc;
+	bottom: 0;
+	left: 50%;
+	margin-left: -4px;
+}*/
+.lt-linea-cont-gnrl table  {
+	position: relative;
+}
+.gGnrl:before,
+.gGnrl:after,
+.ct-gnrl:before {
+	content:"";
+	display: block;
+	width: 4px;
+	height: 8px;
+	position: absolute;
+	border-radius: 4px;
+	background-color:#caba9f;
+	top: 50%;
+	left: 0;
+	margin-top: -4px;
+	
+
+}
+.gGnrl::after {
+	
+	left: initial;
+	right: 0;
+	
+	margin-right: 0;
+
+}
+.ct-gnrl {
+	padding-left: 10px!important;
+	position: relative;
+}
+/*Responsive*/
+
+.celda-territorio {
+	width: 130px;
+}
+.f-esp-gnrl {
+	width: 0;
+	display: none;
+}
+.f-esp-edad {
+	width: 45px;
+}
+.f-esp-sexo {
+	width: 89px;
+}
+/*Fechas*/
+.tabla-v-gnrl > .linea-fTerr thead,
+.tabla-v-gnrl > .linea-fTerr tfoot, 
+.tabla-v-sexo > .linea-fTerr thead,
+.tabla-v-sexo > .linea-fTerr tfoot {
+	display: none;
+}
+
+.tabla-v-gnrl > .linea-fTerr:first-child thead,
+.tabla-v-sexo > .linea-fTerr:first-child thead {
+	display: table-header-group;
+}
+.tabla-v-gnrl > .linea-fTerr:last-child tfoot,
+.tabla-v-sexo > .linea-fTerr:last-child tfoot {
+	display: table-footer-group;
+}
+/*.ct-gnrl {
+	width: 140px;
+}
+.ct-sexo {
+	width: 120px;
+}
+.ct-sexo h5 {
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	-ms-transform: rotate(270deg); 
+    -webkit-transform: rotate(270deg); 
+    transform: rotate(270deg);
+	
+}*/
+.ct-edad {
+	width: 140px;
+}
+/*
+=========
+=========
+BOLAS SIMPLES
+=========
+=========
+*/
+[data-graf='bolas'] .lt-graf {
+	background: url(../img/atando-cabos/bolas-simple-fondo.png) no-repeat center;
+	margin: 0 auto;
+	position: relative;
+}
+
+
+.lt-bolas-conv {
+	margin-top: 48px;
+}
+.lt-bolas-conv > div:nth-child(4n) {
+	clear: left;
+}
+.lt-bolas-conv .lt-btn-bolas {
+	display: block;
+	position: relative;
+	padding-left: 45px;
+	margin-bottom: 25px;
+}
+
+.lt-bolas-conv .lt-color-conv {
+	position: absolute;
+	left: 0;
+	background-color: gray;
+	width: 30px;
+	height: 30px;
+	display: inline-block;
+	border-radius: 50%;
+	border: 8px solid #fff2d8;
+	-moz-box-shadow: 0 0 0 2px #a3897a, 3px 3px 0 2px rgba(163,137,122,.5);
+	-webkit-box-shadow: 0 0 0 2px #a3897a, 3px 3px 0 2px rgba(163,137,122,.5);
+	box-shadow: 0 0 0 2px #a3897a, 3px 3px 0 2px rgba(163,137,122,.5);
+
+}
+.lt-bolas-conv .lt-label-conv {
+	font-family: 'Gotham Rounded', 'GothamRounded', 'Quicksans', sans-serif;
+	font-weight: 400;
+	font-size: 13px;
+	line-height: 1.2;
+	display: block;
+	min-height: 40px;
+	padding: 6px 12px 0 0;
+	text-align: left;
+	color: #575757;
+}
+
+.lt-graf .lt-bolas-porcion {
+	fill: transparent;
+	stroke: #caba9f;
+	stroke-width: 2;
+	
+}
+
+.label-bolas {
+	font-size: 9px!important;
+	font-family: 'Gotham Rounded', 'GothamRounded', 'Quicksans', sans-serif;
+	font-weight: 700;
+	fill: #4c54fc;
+	stroke: initial;
+}
+.rta-bola-0  {
+	fill: #241c66;
+}
+.rta-bola-1  {
+	fill: #5fece2;
+}
+.rta-bola-2  {
+	fill: #ffe16c;
+}
+.rta-bola-3  {
+	fill: #084fe5;
+}
+.rta-bola-4  {
+	fill: #fd5759;
+}
+.rta-bola-5  {
+	fill: #47ff96;
+}
+.rta-bola-6 {
+	fill: #662482;
+}
+.lt-bolas-conv .lt-color-conv-0 {
+	background-color: #241c66;
+}
+.lt-bolas-conv .lt-color-conv-1 {
+	background-color: #5fece2;
+}
+.lt-bolas-conv .lt-color-conv-2 {
+	background-color: #ffe16c;
+}
+.lt-bolas-conv .lt-color-conv-3 {
+	background-color: #084fe5;
+}
+.lt-bolas-conv .lt-color-conv-4 {
+	background-color: #fd5759;
+}
+.lt-bolas-conv .lt-color-conv-5 {
+	background-color: #47ff96;
+}
+.lt-bolas-conv .lt-color-conv-6 {
+	background-color: #662482;
+}
+.lt-bolas-circ-referencia {
+	display:none;
+}
+g.lt-tooltip {
+	width: 100px;
+	height: 100px;
+	fill: rgba( 255,255,255,.9);
+	z-index: 100;
+}
+g.lt-tooltip text {
+	fill: black;
+	font-size: 14px;
+	stroke-width: 1;
+	stroke-color: white;
+}
+g.cont-bolas > circle.desactivado {
+	opacity: .05;
+}
+a.lt-btn-bolas.activo .lt-color-conv {
+	border-color: #fcf573;
+}
+.lt-graf {
+	position: relative;
+}
+.linea-ext-bolas {
+	stroke-width: 2;
+}
+.linea-int-bolas {
+	stroke-width: 1;
+}
+.bolas-vista-edad .linea-ext-bolas {
+	stroke: #4c54fc;
+	
+}
+.bolas-vista-sexo .gSexo-F .linea-ext-bolas {
+	stroke: #b80d80;
+}
+.bolas-vista-sexo .gSexo-M .linea-ext-bolas {
+	stroke: #33d3b5;
+}
+.bolas-vista-sexo .gSexo-F  .label-bolas{
+	fill: #b80d80;
+	text-transform: uppercase;
+}
+.bolas-vista-sexo .gSexo-M  .label-bolas {
+	fill: #33d3b5;
+	text-transform: uppercase;
+}
+.bolas-vista-gnrl .label-bolas {
+	fill: #fff2d8;
+}
+.cont-bolas .node {
+	stroke: #fff2d8;
+	stroke-width: 2;
+}
+.cont-bolas .node:not(.desactivado) {
+	cursor: pointer;
+}
+@media (max-width: 1599px) {
+	.lt-tit-territorio {
+		font-size: 12px;
+	}
+}
+@media (max-width: 1359px) {
+  .lt-grupo-indicadores {
+    margin-left: 0;
+	}
+	.lt-pg-ind footer{
+	margin-left: 0;
+}
+	.lt-sidebar-tematica {
+    background-color: #fcf573;
+    width: 100%;
+    position: relative;
+    padding: 0px 20px 15px;
+    min-height: initial;
+    color: #241c66;
+    padding-bottom: 40px;
+	}
+	.lt-sidebar-tematica img {
+		max-width: 500px;
+	}
+	.lt-sidebar-tematica .lt-info-tematica {
+		max-width: 500px;
+		margin: 0 auto;
+	}
+	.lt-sidebar-tematica .lt-botonCirc {
+    position: absolute;
+    right: initial;
+    top: initial;
+    bottom: -30px;
+    left: 50%;
+    margin-left: -30px;
+}
+}
+@media (min-width: 1360px) {
+  .lt-pg-ind .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1600px) {
+  .lt-pg-ind .container {
+    width: 1170px;
+  }
+}
+@media (max-width: 1199px) {
+.lt-tol-edad-span {
+	
+	font-size: 12px;
+	bottom: 95px;
+	
+}
+}
+@media screen and (max-width: 991px) {
+/*Botones edad y sexo*/
+.lt-btn-check {
+	
+	margin: 8px 15px;
+	
+
+}
+/*Convenciones estrellas*/
+.lt-estrella-conv > div {
+	max-width: 130px;
+	
+}
+.lt-estrella-conv > div .lt-label-conv {
+	
+	letter-spacing: 0;
+}
+/*Tolerancia*/
+.lt-filas-edad .lt-tit-territorio {
+	display: block;
+}
+.lt-tits-territorio-fEdad {
+	display: none;
+}
+.lt-filas-edad > .row {
+	border-top: 3px solid #4c54fc;
+	margin-top: 90px;
+	padding-top: 30px
+}
+.lt-filas-edad > .row:before {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 22px;
+    top: -12px;
+    left: 0;
+    border-left: 1px solid #4d54fc;
+}
+.lt-filas-edad > .row:after {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 22px;
+    top: -12px;
+    right: 0;
+    border-right: 1px solid #4d54fc;
+}
+.lt-tol-edad-span {
+	font-size: 16px;
+	font-weight: 400;
+	bottom: initial;
+	top: -12px;
+	left: 50%;
+	text-align: center;
+	margin-left: -60px;
+	background-color: #fff2d8;
+	min-width: 120px;
+	border-left: 1px solid #4c54fc;
+	border-right: 1px solid #4c54fc;
+}
+/*Tablas de linea*/
+  .table-responsive {
+    width: 100%;
+    margin-bottom: 25.5px;
+    overflow-y: hidden;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    border: 1px solid #dddddd;
+    padding-left: 15px;
+
+  }
+  .table-responsive > .table {
+    margin-bottom: 0;
+  }
+  .lt-linea-cont:before {
+	content:"<<< Desliza para ver más >>>";
+	font-size: 12px;
+	color: #4c54fc;
+	display: inline-block;
+	background: #fff2d8;
+	padding: 0 10px;
+	position: relative;
+	text-transform: uppercase;
+	font-family: 'Gotham Rounded', 'GothamRounded', 'Quicksans', sans-serif;
+
+}
+/*Estrellas*/
+
+.lt-est-edad-span {
+	font-size: 16px;
+	font-weight: 400;
+	bottom: initial;
+	top: -43px;
+	left: 50%;
+	text-align: center;
+	margin-left: -60px;
+	background-color: #fff2d8;
+	min-width: 120px;
+	border-left: 1px solid #4c54fc;
+	border-right: 1px solid #4c54fc;
+	padding: 0;
+}
+.lt-est-edad-span:before,
+.lt-est-edad-span:after {
+	display: none;
+}
+.fEdadEst {
+	border-top: 3px solid #4c54fc;
+	margin-top: 90px;
+	padding-top: 30px
+}
+
+.lt-filas-edad > .row:before {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 22px;
+    top: -12px;
+    left: 0;
+    border-left: 1px solid #4d54fc;
+}
+.lt-filas-edad > .row:after {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 22px;
+    top: -12px;
+    right: 0;
+    border-right: 1px solid #4d54fc;
+}
+.fEdadEst {
+	border-left: none;
+	position: relative;
+	margin: 30px 0;
+}
+.fEdadEst  .col-xs-12:before,
+.fEdadEst  .col-xs-12:after {
+	
+    width: 8px;
+    height: 22px;
+    top: -42px;
+    left: 0;
+    border-left: 1px solid #4d54fc;
+    border-top: none;
+}
+.fEdadEst  .col-xs-12:after {
+	
+    left: initial;
+    right: -8px;
+   
+}
+.fEdadEst .lt-tit-territorio {
+	margin-top: 0;
+}
+}
+@media screen and (max-width: 767px) {
+  .table-responsive {
+  	max-width: 495px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .lt-nav-desagregar .lt-btn-desagregar {
+	min-width: 120px;
+	width: 80%;
+	padding: 2px;
+	margin: 8px 24px;
+}
+.lt-sidebar-tematica img {
+		max-width: 400px;
+	}
+.lt-nav-edad .lt-btn-check {
+	display: block;
+	float: left;
+	width: 50%;
+	margin: 8px 0;
+	text-align: left;
+	
+}
+.lt-estrella-conv {
+	clear: both;
+	display: block;
+	padding-top: 20px;
+	margin-top: 0;
+}
+.lt-estrella-conv > .col-conv-est {
+	float: none;
+	margin: 12px auto;
+	width: 100%;
+	max-width: initial;
+}
+.lt-estrella-conv > .col-conv-est h6 {
+	padding: 0;
+}
+.lt-filas-edad > .row {
+	margin-top: 30px;
+	padding-top: 30px
+}
+.lt-nav-edad {
+	min-height: 120px;
+}
+}
+@media screen and (max-width: 599px) {
+.table-responsive {
+  	max-width: 375px;
+    
+  }
+}
+@media screen and (max-width: 479px) {
+.lt-sidebar-tematica img {
+		max-width: 280px;
+	}
+.lt-cont-grafs {
+	padding: 60px 5px;
+}
+.table-responsive {
+  	max-width: 280px;
+    
+  }
+}

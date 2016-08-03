@@ -22,6 +22,9 @@ class Application_Model_Opcionesrespuesta
      */
     private $escala_idescala;
     
+    /** @Column(type="integer") */
+    private $orden;
+    
     public function __construct() {
      
     }

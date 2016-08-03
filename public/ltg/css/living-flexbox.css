@@ -1,0 +1,87 @@
+@charset "UTF-8";
+/* CSS Document */
+/*==LIVING TOGETHER ESTILOS CON FLEXBOX==*/
+.lt-gran-contenedor {
+	min-height: 100vh;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: flex;
+	-moz-flex-direction: column;
+	-webkit-flex-direction: column;
+	flex-direction: column;
+	-moz-justify-content: space-between;
+	-webkit-justify-content: space-between;
+	justify-content: space-between;
+}.lt-contenedor-main {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: flex;
+	-moz-flex-direction: column;
+	-webkit-flex-direction: column;
+	flex-direction: column;
+	-moz-flex-grow: 1;
+-webkit-flex-grow: 1;
+flex-grow: 1;
+	-moz-justify-content: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+}
+.lt-inicio-s3 {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: flex;
+	-moz-flex-direction: row;
+	-webkit-flex-direction: row;
+	flex-direction: row;
+}
+.lt-inicio-s3 > section {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: flex;
+}
+.lt-inicio-s3 > section > div {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: flex;
+	-moz-flex-direction: column;
+	-webkit-flex-direction: column;
+	flex-direction: column;
+}
+.lt-inicio-s3 > section:first-child > div > div:first-child {
+	-moz-flex-grow: 1;
+	-webkit-flex-grow: 1;
+	flex-grow: 1;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: flex;
+	-moz-flex-direction: column;
+	-webkit-flex-direction: column;
+	flex-direction: column;
+	-moz-justify-content: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+}
+.lt-listado-noticias {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: flex;
+	-moz-flex-direction: row;
+	-webkit-flex-direction: row;
+	flex-direction: row;
+	-moz-flex-wrap: wrap;
+	-webkit-flex-wrap: wrap;
+	flex-wrap: wrap;
+}
+@media screen and (max-width: 992px) {
+.lt-inicio-s3 {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: flex;
+	-moz-flex-direction: column;
+	-webkit-flex-direction: column;
+	flex-direction: column;
+}
+.lt-inicio-s3 > section {
+	display: initial;
+}
+}

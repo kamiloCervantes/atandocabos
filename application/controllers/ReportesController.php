@@ -16,6 +16,7 @@ class ReportesController extends Zend_Controller_Action
 
     public function init()
     {
+        date_default_timezone_set('America/Bogota');
        $registry = Zend_Registry::getInstance();
        $this->_em = $registry->entitymanager;
        $this->_helper->viewRenderer->setNoRender();
@@ -119,19 +120,45 @@ class ReportesController extends Zend_Controller_Action
 
         }
         else{
+            foreach($ciudades as $k=>$c){
+                
+            
             $dql = sprintf("select i.idIndicador as indicador, ciu.ciudadcol as territorio, ml.anno as fecha, ml.total as valor from Application_Model_Medicinalegal ml join ml.indicador_idindicador i join
             ml.ciudad_idciudad ciu where i.idIndicador = :indicador and
-            ml.descripcion = '%s'", $descripcion_opt[1]);
+            ml.descripcion = '%s' and ciu.idciudad = :ciudad", $descripcion_opt[1]);
 
             $query = $this->_em->createQuery($dql);
 
             $query->setParameter('indicador', $indicador); 
+            $query->setParameter('ciudad', $c); 
             $data = $query->getArrayResult();
             $json = $data;
+            
+             foreach($data as $key=>$d){
+                $json[] = $d;
+                $objPHPExcel->getActiveSheet()->setCellValue(chr($col_ini+$data_idx).(5+$k), round($d["valor"],3));
+            }
+            }
+            
+            $dql2 = sprintf("select i.idIndicador as indicador, ciu.ciudadcol as territorio, ml.anno as fecha, ml.total as valor from Application_Model_Medicinalegal ml join ml.indicador_idindicador i join
+            ml.ciudad_idciudad ciu where i.idIndicador = :indicador and
+            ml.descripcion = '%s' and ciu.idciudad = :ciudad", $descripcion_opt[1]);
+
+            $query2 = $this->_em->createQuery($dql2);
+
+            $query2->setParameter('indicador', $indicador); 
+            $query2->setParameter('ciudad', 3); 
+            $data = $query->getArrayResult();
+            $json = $data;
+            
+             foreach($data as $key=>$d){
+                $json[] = $d;
+                $objPHPExcel->getActiveSheet()->setCellValue(chr($col_ini+$key).(5+3), round($d["valor"],3));
+            }
         }
         
         header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-        header('Content-Disposition: attachment;filename="reporte.xlsx"');
+    header('Content-Disposition: attachment;filename="'.html_entity_decode($result_1[0]['nombre_indicador']).'.xlsx"');
         header('Cache-Control: max-age=0');
         ob_end_clean();
         $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel2007');
@@ -146,6 +173,7 @@ class ReportesController extends Zend_Controller_Action
     $cols = true;
     $col_ciudad = 66;
     $row_respuesta = 5;
+    $subpregunta = 0;
 //    $col_tags = true;
      $ciudades = array(
         1 => 'San Andres',
@@ -196,6 +224,8 @@ class ReportesController extends Zend_Controller_Action
     $query_1->setParameter('indicador', $indicador);
     $result_1 = $query_1->getArrayResult(); 
     
+    var_dump($result_1);
+    
 //    $subpreguntas = $result_1[0]['pregunta_idPregunta']['subpreguntas'];
 //    $objPHPExcel->getActiveSheet()->insertNewColumnBefore('C',count($subpreguntas)-1);
     $general['indicador'] = $result_1[0]['nombre_indicador'];
@@ -226,7 +256,7 @@ class ReportesController extends Zend_Controller_Action
         Application_Model_Indicadores ind join ind.pregunta_idPregunta pre join 
         pre.subpreguntas sub join sub.respuestas res join sub.escala_idEscala esc 
         join res.cod_respuesta opr join res.ciudad_idciudad ciu where ind.idIndicador = :indicador 
-        and sub.idsubpregunta=:idsubpregunta and ciu.idciudad=:ciudad group by opr.descripcion';  
+        and sub.idsubpregunta=:idsubpregunta and ciu.idciudad=:ciudad group by opr.descripcion order by opr.orden';  
 //                            
 //                            var_dump($subpregunta);
         $query_2 = $this->_em->createQuery($dql_2); 
@@ -271,7 +301,7 @@ class ReportesController extends Zend_Controller_Action
             Application_Model_Indicadores ind join ind.pregunta_idPregunta pre join 
             pre.subpreguntas sub join sub.respuestas res join sub.escala_idEscala esc 
             join res.cod_respuesta opr join res.ciudad_idciudad ciu where ind.idIndicador = :indicador 
-            and sub.idsubpregunta=:idsubpregunta and ciu.idciudad=:ciudad and res.edad_cat = '%s' group by opr.descripcion", $e);  
+            and sub.idsubpregunta=:idsubpregunta and ciu.idciudad=:ciudad and res.edad_cat = '%s' group by opr.descripcion order by opr.orden", $e);  
 
 
             $query_2 = $this->_em->createQuery($dql_2); 
@@ -312,7 +342,7 @@ class ReportesController extends Zend_Controller_Action
             Application_Model_Indicadores ind join ind.pregunta_idPregunta pre join 
             pre.subpreguntas sub join sub.respuestas res join sub.escala_idEscala esc 
             join res.cod_respuesta opr join res.ciudad_idciudad ciu where ind.idIndicador = :indicador 
-            and sub.idsubpregunta=:idsubpregunta and ciu.idciudad=:ciudad and res.sexo = '%s' group by opr.descripcion", $g);  
+            and sub.idsubpregunta=:idsubpregunta and ciu.idciudad=:ciudad and res.sexo = '%s' group by opr.descripcion order by opr.orden", $g);  
 
 
             $query_2 = $this->_em->createQuery($dql_2); 
@@ -352,7 +382,7 @@ class ReportesController extends Zend_Controller_Action
     $dql_3 = "select opc.descripcion as respuesta, tn.total as valor from Application_Model_Totalnacional tn
         join tn.cod_respuesta opc join tn.subpregunta_idsubpregunta sub join sub.escala_idEscala esc
         join sub.pregunta_idPregunta pre join pre.indicadores ind where ind.idIndicador = :indicador 
-        and sub.idsubpregunta=:idsubpregunta and tn.descripcion='Nacional' group by opc.descripcion"; 
+        and sub.idsubpregunta=:idsubpregunta and tn.descripcion='Nacional' group by opc.descripcion order by opc.orden"; 
 
     $query_3 = $this->_em->createQuery($dql_3);
     $query_3->setParameter('idsubpregunta', $subpregunta);
@@ -383,7 +413,7 @@ class ReportesController extends Zend_Controller_Action
     $dql_3 = sprintf("select opc.descripcion as respuesta, tn.total as valor from Application_Model_Totalnacional tn
         join tn.cod_respuesta opc join tn.subpregunta_idsubpregunta sub join sub.escala_idEscala esc
         join sub.pregunta_idPregunta pre join pre.indicadores ind where ind.idIndicador = :indicador 
-        and sub.idsubpregunta=:idsubpregunta and tn.descripcion = '%s' group by opc.descripcion", $edades_tn[$ke]); 
+        and sub.idsubpregunta=:idsubpregunta and tn.descripcion = '%s' group by opc.descripcion order by opc.orden", $edades_tn[$ke]); 
 //                        
     $query_3 = $this->_em->createQuery($dql_3);
     $query_3->setParameter('idsubpregunta', $subpregunta);
@@ -419,7 +449,7 @@ class ReportesController extends Zend_Controller_Action
         $dql_3 = sprintf("select opc.descripcion as respuesta, tn.total as valor from Application_Model_Totalnacional tn
             join tn.cod_respuesta opc join tn.subpregunta_idsubpregunta sub join sub.escala_idEscala esc
             join sub.pregunta_idPregunta pre join pre.indicadores ind where ind.idIndicador = :indicador 
-            and sub.idsubpregunta=:idsubpregunta and tn.descripcion = '%s' group by opc.descripcion", $g); 
+            and sub.idsubpregunta=:idsubpregunta and tn.descripcion = '%s' group by opc.descripcion order by opc.orden", $g); 
 //                        
         $query_3 = $this->_em->createQuery($dql_3);
         $query_3->setParameter('idsubpregunta', $subpregunta);
@@ -445,7 +475,7 @@ class ReportesController extends Zend_Controller_Action
         }
     
     header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-    header('Content-Disposition: attachment;filename="reporte.xlsx"');
+    header('Content-Disposition: attachment;filename="'.html_entity_decode($result_1[0]['pregunta_idPregunta']['descripcion']).'.xlsx"');
     header('Cache-Control: max-age=0');
     ob_end_clean();
     $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel2007');

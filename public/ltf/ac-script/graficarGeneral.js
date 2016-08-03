@@ -54,8 +54,11 @@ function cargarGeneral() {
 				d3.select(miDiv).append("div")
         			.attr("class", "lt-tooltip-est")
         			.style("display", "none");
-				
-                RadarChart(miDiv, miDato, radarChartOptions, 'gnrl');
+                        
+                if(miDato[0].datos.length > 0){                   
+                    RadarChart(miDiv, miDato, radarChartOptions, 'gnrl');
+                }
+                
 
             } //Fin de loop
 

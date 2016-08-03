@@ -1,0 +1,70 @@
+[{
+	"indicador": "4",
+	"territorio": "San Andres",
+	"datos": [{
+		"respuesta": "No hizo nada",
+		"valor": 0.4
+	}, {
+		"respuesta": "Agredió verbalmente al responsable",
+		"valor": 0.15
+	}, {
+		"respuesta": "Agredió físicamente al responsable",
+		"valor": 0.2
+	}, {
+		"respuesta": "Hizo un llamado cordial al responsable para que corrigiera la situación y la persona reaccionó bien",
+		"valor": 0.1
+	}, {
+		"respuesta": "Hizo un llamado cordial al responsable para que corrigiera la situación y la persona reaccionó mal",
+		"valor": 0.05
+	}, {
+		"respuesta": "Acudió a la autoridad",
+		"valor": 0.1
+	}]
+
+}, {
+	"indicador": "4",
+	"territorio": "Providencia",
+	"datos": [{
+		"respuesta": "No hizo nada",
+		"valor": 0.4
+	}, {
+		"respuesta": "Agredió verbalmente al responsable",
+		"valor": 0.15
+	}, {
+		"respuesta": "Agredió físicamente al responsable",
+		"valor": 0.2
+	}, {
+		"respuesta": "Hizo un llamado cordial al responsable para que corrigiera la situación y la persona reaccionó bien",
+		"valor": 0.1
+	}, {
+		"respuesta": "Hizo un llamado cordial al responsable para que corrigiera la situación y la persona reaccionó mal",
+		"valor": 0.05
+	}, {
+		"respuesta": "Acudió a la autoridad",
+		"valor": 0.1
+	}]
+
+}, {
+	"indicador": "4",
+	"territorio": "Nacional",
+	"datos": [{
+		"respuesta": "No hizo nada",
+		"valor": 0.4
+	}, {
+		"respuesta": "Agredió verbalmente al responsable",
+		"valor": 0.15
+	}, {
+		"respuesta": "Agredió físicamente al responsable",
+		"valor": 0.2
+	}, {
+		"respuesta": "Hizo un llamado cordial al responsable para que corrigiera la situación y la persona reaccionó bien",
+		"valor": 0.1
+	}, {
+		"respuesta": "Hizo un llamado cordial al responsable para que corrigiera la situación y la persona reaccionó mal",
+		"valor": 0.05
+	}, {
+		"respuesta": "Acudió a la autoridad",
+		"valor": 0.1
+	}]
+
+}]

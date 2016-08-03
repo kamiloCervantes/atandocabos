@@ -6,9 +6,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Atando Cabos Detalle - Living Together</title>
 <!-- Bootstrap -->
-<link href="/ltf/css/bootstrap.css" rel="stylesheet">
-<link href="/ltf/css/bootstrap-theme.css" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="/ltf/css/estilos-living.css">
+<link href="/ltg/css/bootstrap.css" rel="stylesheet">
+<link href="/ltg/css/bootstrap-theme.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/ltg/css/estilos-living.css">
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
@@ -17,12 +17,12 @@
     <![endif]-->
 <link href='https://fonts.googleapis.com/css?family=Caveat:700|Source+Sans+Pro:300,700,400italic,700italic,300italic,400|Quicksand:700,400' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css" href="/ltf/css/living-flexbox.css">
+<link rel="stylesheet" type="text/css" href="/ltg/css/living-flexbox.css">
 <!--ESTILOS PARA ESTAS PÁGINAS ÚNICAMENTE-->
 <!--Estilo para navegación vertical-->
-<link rel="stylesheet" type="text/css" href="/ltf/css/nav-vertical.css" />
+<link rel="stylesheet" type="text/css" href="/ltg/css/nav-vertical.css" />
 <!--Estilos para Atando Cabos-->
-<link rel="stylesheet" type="text/css" href="/ltf/css/atando-cabos.css" />
+<link rel="stylesheet" type="text/css" href="/ltg/css/atando-cabos.css" />
 <!-- D3.js -->
 <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 </head>
@@ -59,12 +59,12 @@
     <!-- /.container-fluid -->
   </nav>
   <!-- INFORMACIÓN DE TEMÁTICA -->
-  <header class="lt-sidebar-tematica"> <img class="img-responsive center-block" src="/ltf/img/franja-atando-cabos.png" alt="Atando Cabos" title="Atando Cabos"/>
+  <header class="lt-sidebar-tematica"> <img class="img-responsive center-block" src="/ltg/img/franja-atando-cabos.png" alt="Atando Cabos" title="Atando Cabos"/>
     <h1 class="sr-only">Atando Cabos</h1>
-   <div class="lt-info-tematica"> <img class="img-tematica img-responsive center-block" src="img-tematicas/cargando.png" alt="Ilustración temática" title="Ilustración temática"/>
+   <div class="lt-info-tematica"> <img class="img-tematica img-responsive center-block" src="/ltg/img-tematicas/cargando.png" alt="Ilustración temática" title="Ilustración temática"/>
       <h4></h4>
       <h2></h2>
-      <p>En general, se buscó recopilar y adaptar metodologías de actividades ya llevadas a cabo por Corpovisionarios para la reducción de las violencias interpersonal e intrafamiliar (especialmente de pareja), con el ánimo de construir sobre lo construido.</p>
+<!--      <p>En general, se buscó recopilar y adaptar metodologías de actividades ya llevadas a cabo por Corpovisionarios para la reducción de las violencias interpersonal e intrafamiliar (especialmente de pareja), con el ánimo de construir sobre lo construido.</p>-->
     </div>
     <a class="lt-botonCirc lt-btn-cerrar" href="/atandocabos" title="Nueva búsqueda"><i class="fa fa-times" aria-hidden="true"></i></a> </header>
   <!-- Inicio Sección, una sección contiene todos los indicadores seleccionados en al pantalla de búsqueda-->
@@ -89,7 +89,7 @@
             <div class="col-xs-12">
                  <?php if($d[0]["tipo_grafica"] != 3){ ?>
               <div class="lt-subtit-ind">
-                <?php if(count($d[0]['subpreguntas']) > 1){ ?>
+                <?php if(count($d['subpreguntas']) > 1){ ?>
                 <input type="hidden" class="flecha_idx" value="0">
                 
                 <a href="#" class="btn-anterior nav-indicadores"><i class="fa fa-chevron-left" aria-hidden="true"></i><span>Anterior</span></a>
@@ -147,7 +147,7 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-12">
-            <p>Info del footer</p>
+            <p>Corpovisionarios - 2016</p>
           </div>
         </div>
       </div>
@@ -175,18 +175,18 @@
 	});
 </script>
 <!--Script para navegación vertical-->
-<script src="/ltf/js/nav-vertical.js"></script>
+<script src="/ltg/js/nav-vertical.js"></script>
 <!--Script de funciones comunes-->
-<script src="/ltf/ac-script/atando-cabos.js"></script>
+<script src="/ltg/ac-script/atando-cabos.js"></script>
 <!--Script de base para gráficas-->
-<script src="/ltf/ac-script/bases/estrellas-base.js"></script>
-<script src="/ltf/ac-script/bases/tolerancia-base.js"></script>
-<script src="/ltf/ac-script/bases/linea-base.js"></script>
-<script src="/ltf/ac-script/bases/bolas-base.js"></script>
+<script src="/ltg/ac-script/bases/estrellas-base.js"></script>
+<script src="/ltg/ac-script/bases/tolerancia-base.js"></script>
+<script src="/ltg/ac-script/bases/linea-base.js"></script>
+<script src="/ltg/ac-script/bases/bolas-base.js"></script>
 <!--Scripts para gráficar -->
-<script src="/ltf/ac-script/graficarGeneral.js"></script>
-<script src="/ltf/ac-script/graficarSexo.js"></script>
-<script src="/ltf/ac-script/graficarEdad.js"></script>
+<script src="/ltg/ac-script/graficarGeneral.js"></script>
+<script src="/ltg/ac-script/graficarSexo.js"></script>
+<script src="/ltg/ac-script/graficarEdad.js"></script>
 <!--Iniciar botones-->
 <script type="text/javascript">
 	$('.lt-nav-desagregar').on('click', '.lt-btn-desagregar-gnrl', cargarGeneral);
@@ -245,7 +245,7 @@
                         
                         console.log(datos.idTema);
                         img.attr('src', function(){
-                                return '/ltf/img-tematicas/tematica-'+datos.idTema+'.png';
+                                return '/ltg/img-tematicas/tematica-'+datos.idTema+'.png';
                         });
 
                         vio.text(function(){

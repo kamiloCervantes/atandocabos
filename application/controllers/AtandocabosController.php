@@ -181,6 +181,44 @@ class AtandocabosController extends Zend_Controller_Action
 
     }
     
+    public function multiple3Action(){
+        $indicadores = $this->_getParam('i');
+        $indicadores = explode('|', $indicadores);
+        $indicadores_c = implode(',', $indicadores);
+        $this->view->indicadores = $indicadores_c;
+        
+        $tipo_graficas = array(
+            1 => 'estrella',
+            2 => 'tolerancia',
+            3 => 'linea',
+            4 => 'bolas'
+        );
+        
+        $this->view->tipo_graficas = $tipo_graficas;
+        
+        $dql_1 = sprintf("select i,p.descripcion as pregunta
+            from Application_Model_Indicadores i join i.pregunta_idPregunta 
+            p where i.idIndicador IN (%s)", $indicadores_c);  
+        
+        $this->view->dql = $dql_1;
+        
+        $query_1 = $this->_em->createQuery($dql_1);
+        $result_1 = $query_1->getArrayResult();
+        
+        foreach($result_1 as $key=>$r){
+            $dql_2 = "select s from Application_Model_Subpreguntas s join s.pregunta_idPregunta p join
+                p.indicadores i where i.idIndicador = :indicador";  
+            
+            $query_2 = $this->_em->createQuery($dql_2);
+            $query_2->setParameter('indicador', $r[0]['idIndicador']);
+            $result_2 = $query_2->getArrayResult();
+            $result_1[$key]['subpreguntas'] = $result_2;
+        }
+        $this->view->tot_subpreguntas = count($result_2);
+        $this->view->data_indicador = $result_1;
+
+    }
+    
     public function multipleAction(){
         $indicadores = $this->_getParam('i');
         $indicadores = explode('|', $indicadores);

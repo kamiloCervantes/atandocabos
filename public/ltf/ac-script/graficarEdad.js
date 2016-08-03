@@ -165,7 +165,8 @@ function cargarEdad() {
                     return d.territorio;
                 })
                 .entries(datos);
-
+        
+             console.log(dAnidadosEdad);
             //Crear los Botones			
             crearBotones(datos, miContG, 'edad');
 
@@ -239,6 +240,7 @@ function cargarEdad() {
             for (i = 0; i < datos.length; i++) {
 
                 var miDato = datos[i]; 
+                
                 var gEdad = datos[i].edad.replace(/\+/g, '');
                 var terr = datos[i].territorio.substring(0, 3);
 

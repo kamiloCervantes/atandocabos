@@ -30,13 +30,19 @@ function acEstructura(losDatos, elCont, vista, elID) {
 
     var dAnidadosW = d3.nest()
         .key(function(d) {
-            return d.territorio;
+            if(typeof d.datos !== 'undefined' && d.datos.length > 0){
+                return d.territorio;
+            }
         })
         .entries(losDatos);
-
+    dAnidadosW = $.map(dAnidadosW, function(val,idx){
+        if(val.key != 'undefined'){
+            return val;
+        }
+    });
     //Número de territorios = número de columnas
     var numCols = 12 / dAnidadosW.length;
-
+    
     //Crear fila y columnas
     var ltCols = elCont.append("div")
         .attr("class", "row lt-grafs")
@@ -50,7 +56,10 @@ function acEstructura(losDatos, elCont, vista, elID) {
     ltCols.append('h5')
         .attr('class', 'lt-tit-territorio')
         .text(function(d) {
-            return '' + d.key + '';
+            if(typeof d.values[0].datos != 'undefined' && d.values[0].datos.length > 0){
+                return '' + d.key + '';
+            }
+           
         });
 
     //Agregar div que contendrá cada gráfica svg

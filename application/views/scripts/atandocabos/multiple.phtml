@@ -39,19 +39,19 @@
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#lt-mainMenu"><span class="sr-only">Desplegar navegación</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span><span class="lt-tit-navbar-menu">MENÚ</span></button>
-        <a class="navbar-brand lt-nav-icono" href="index.html"><span>Inicio</span> <i class="fa fa-home" aria-hidden="true"></i></a></div>
+        <a class="navbar-brand lt-nav-icono" href="http://livintugeda.co/"><span>Inicio</span> <i class="fa fa-home" aria-hidden="true"></i></a></div>
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="lt-mainMenu">
         <ul class="nav navbar-nav lt-nav-items">
           <li><a href="http://livintugeda.co/living-together">Living Together</a></li>
           <li><a href="http://www.livintugeda.co/cual-es-tu-papel/">¿Cuál es tu papel?</a></li>
-          <li class="active"><a href="http://atandocabos.livintugeda.co/atandocabos">Atando Cabos <span class="sr-only">(actual)</span></a></li>
+          <li class="active"><a href="http://http://52.42.193.160/atandocabos">Atando Cabos <span class="sr-only">(actual)</span></a></li>
           <li><a href="http://livintugeda.co/lego-taak">Lego Takk!</a></li>
           <li><a href="http://livintugeda.co/the-wisdom-house">The Wisdom House</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a class="lt-nav-icono" href="#"><span>Facebook</span><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
-          <li><a class="lt-nav-icono" href="#"><span>Twitter</span><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
+          <li><a class="lt-nav-icono" href="https://www.facebook.com/Corpovisionarios/"><span>Facebook</span><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+          <li><a class="lt-nav-icono" href="https://twitter.com/corpovisionario"><span>Twitter</span><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
         </ul>
       </div>
       <!-- /.navbar-collapse -->
@@ -234,16 +234,16 @@
                 .header("Content-Type", "application/json")  
                 .post(
                  JSON.stringify({indicador: eID}), function(error, data) {
-                        console.log(data.response);
+//                        console.log(data.response);
                         data = JSON.parse(data.response);
-                        console.log(data[0]);
+//                        console.log(data[0]);
                         var datos = data[0],
                                 info = d3.select('.lt-info-tematica'),
                                 img = info.select('.img-tematica'),
                                 vio = info.select('h4'),
                                 titTem = info.select('h2');
                         
-                        console.log(datos.idTema);
+//                        console.log(datos.idTema);
                         img.attr('src', function(){
                                 return '/ltg/img-tematicas/tematica-'+datos.idTema+'.png';
                         });

@@ -55,7 +55,7 @@ function cargarGeneral() {
         			.attr("class", "lt-tooltip-est")
         			.style("display", "none");
 				
-                if(miDato[0].datos.length > 0){                   
+                if(typeof miDato[0].datos != 'undefined' && miDato[0].datos.length > 0){                   
                     RadarChart(miDiv, miDato, radarChartOptions, 'gnrl');
                 }
 

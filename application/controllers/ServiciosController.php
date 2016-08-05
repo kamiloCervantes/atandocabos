@@ -481,11 +481,19 @@ class ServiciosController extends Zend_Controller_Action
         }
     }
     
+    /*
+     * Funcion que calcula los porcentajes de las gráficas desplegadas
+     * @outputformat JSON
+     * @params {
+     *      tipografico => tipo de grafico a desplegar
+     *      vista => contexto del grafico (general, sexo, edad)
+     *      subpregunta => id de la subpregunta del indicador
+     *      indicador => id del indicador a desplegar
+     * }
+     */
+    
     public function getmultipleAction(){
-//        $tipografico = 'estrella';
-//        $vista = 'general';
-//        $subpregunta = 0;
-//        $indicador = 25;
+
 //        
         $params = Zend_Json::decode($this->getRequest()->getRawBody());
         $tipografico = $params['tipografico'];
@@ -555,17 +563,13 @@ class ServiciosController extends Zend_Controller_Action
         $query_1->setParameter('indicador', $indicador);
         $result_1 = $query_1->getArrayResult(); 
         
-//        var_dump($result_1);
-        //general, edad y sexo tienen formatos distintos
-        //estrella muy similar a tolerancia
-        //linea es diferente
+
         switch($tipografico){
             case 'estrella':
                 switch($vista){
                     case 'general':
                         if(!($subpregunta > 0)){
                             $subpregunta = $result_1[0]['pregunta_idPregunta']['subpreguntas'][0]['idsubpregunta'];
-//                            var_dump($subpregunta);
                             
                         }
                         foreach($ciudades as $k=>$c){
@@ -573,14 +577,19 @@ class ServiciosController extends Zend_Controller_Action
                             $tmp['indicador'] = $result_1[0]['idIndicador'];
                             $tmp['territorio'] = $c;
                             $tmp['subpregunta'] = $subpregunta;
-//                            
+                          
+                          /*
+                           * Query para calcular porcentajes de graficos tipo estrella en ciudades en vista general
+                           * Paso 1: Obtener la sumatoria de los ponderadores de cada respuesta
+                           * agrupados por cada opcion de respuesta
+                           */
+                            
                             $dql_2 = 'select opr.descripcion as respuesta, sum(res.ponderador) as valor from
                             Application_Model_Indicadores ind join ind.pregunta_idPregunta pre join 
                             pre.subpreguntas sub join sub.respuestas res join sub.escala_idEscala esc 
                             join res.cod_respuesta opr join res.ciudad_idciudad ciu where ind.idIndicador = :indicador 
                             and sub.idsubpregunta=:idsubpregunta and ciu.idciudad=:ciudad group by opr.descripcion order by opr.orden';  
 //                            
-//                            var_dump($subpregunta);
                             $query_2 = $this->_em->createQuery($dql_2); 
                             $query_2->setParameter('idsubpregunta', $subpregunta);
                             $query_2->setParameter('indicador', $indicador); 
@@ -589,10 +598,18 @@ class ServiciosController extends Zend_Controller_Action
                             $data = $query_2->getArrayResult();
                             
                             $total = 0;
+                            /*
+                             * Paso 2: Se calcula el total de las ponderaciones calculadas de
+                             *  todas las opciones de respuesta                             
+                             */
                             foreach($data as $d){
                                 $total += $d['valor'];
                             }
-//                            $r["pregunta_idPregunta"]["subpreguntas"][$sub['idsubpregunta']][$k]["total"] = $total;
+                            
+                            /*
+                             * Paso 3: El resultado del query devuelve la sumatoria ahora se divide entre el total
+                             * de las ponderaciones calculadas de todas las opciones de respuesta
+                             */
                             foreach($data as $kd=>$d){
                                  $data[$kd]["valor"] = ($d["valor"]/$total);
                             }
@@ -609,7 +626,11 @@ class ServiciosController extends Zend_Controller_Action
                         
                         $hasdata = true;
                         
-                        
+                        /*
+                           * Query para calcular porcentajes de graficos tipo estrella a nivel nacional en vista general
+                           * Paso 1: Obtener los valores de cada respuesta agrupados por cada opcion de respuesta
+                           * Nota: Los valores nacionales ya estan calculados
+                           */
                         $dql_3 = "select opc.descripcion as respuesta, tn.total as valor from Application_Model_Totalnacional tn
                             join tn.cod_respuesta opc join tn.subpregunta_idsubpregunta sub join sub.escala_idEscala esc
                             join sub.pregunta_idPregunta pre join pre.indicadores ind where ind.idIndicador = :indicador 
@@ -620,16 +641,12 @@ class ServiciosController extends Zend_Controller_Action
                         $query_3->setParameter('indicador', $indicador); 
                         
                         $data_c = $query_3->getArrayResult();
-//                        var_dump($data_c);
-//                        $r["pregunta_idPregunta"]["subpreguntas"][$sub['idsubpregunta']][3]["data"] = $data_c;
                         foreach($data_c as $kd=>$d){
                             $data_c[$kd]["valor"] = (float) str_replace(',','.',$d["valor"]);
                             if($data_c[$kd]["valor"] == 0){
                                 $hasdata = false;
                             }
                              
-//                             var_dump($data_c[$kd]["valor"]);
-//                             var_dump($data_c[$kd]["valor"] == 0);
                         }
                         
                         if($hasdata){
@@ -652,7 +669,11 @@ class ServiciosController extends Zend_Controller_Action
                                 $tmp['territorio'] = $c;
                                 $tmp['sexo'] = $g;
 
-    //                            
+                                /*
+                                * Query para calcular porcentajes de graficos tipo estrella en ciudades en vista sexo
+                                * Paso 1: Obtener la sumatoria de los ponderadores de cada respuesta
+                                * agrupados por cada opcion de respuesta
+                                */  
                                 $dql_2 = sprintf("select opr.descripcion as respuesta, sum(res.ponderador) as valor from
                                 Application_Model_Indicadores ind join ind.pregunta_idPregunta pre join 
                                 pre.subpreguntas sub join sub.respuestas res join sub.escala_idEscala esc 
@@ -667,10 +688,18 @@ class ServiciosController extends Zend_Controller_Action
                                 $data = $query_2->getArrayResult();
 
                                 $total = 0;
+                                /*
+                                 * Paso 2: Se calcula el total de las ponderaciones calculadas de
+                                 *  todas las opciones de respuesta                             
+                                 */
                                 foreach($data as $d){
                                     $total += $d['valor'];
                                 }
-    //                            $r["pregunta_idPregunta"]["subpreguntas"][$sub['idsubpregunta']][$k]["total"] = $total;
+                                
+                                /*
+                                 * Paso 3: El resultado del query devuelve la sumatoria ahora se divide entre el total
+                                 * de las ponderaciones calculadas de todas las opciones de respuesta
+                                 */
                                 foreach($data as $kd=>$d){
                                      $data[$kd]["valor"] = ($d["valor"]/$total);
                                 }
@@ -689,6 +718,12 @@ class ServiciosController extends Zend_Controller_Action
                         
                         $hasdata = true;
                         
+                        /*
+                           * Query para calcular porcentajes de graficos tipo estrella a nivel nacional en vista sexo
+                           * Paso 1: Obtener los valores de cada respuesta agrupados por cada opcion de respuesta
+                           * Nota: Los valores nacionales ya estan calculados
+                           */
+                        
                         $dql_3 = sprintf("select opc.descripcion as respuesta, tn.total as valor from Application_Model_Totalnacional tn
                             join tn.cod_respuesta opc join tn.subpregunta_idsubpregunta sub join sub.escala_idEscala esc
                             join sub.pregunta_idPregunta pre join pre.indicadores ind where ind.idIndicador = :indicador 
@@ -699,8 +734,6 @@ class ServiciosController extends Zend_Controller_Action
                         $query_3->setParameter('indicador', $indicador); 
 //                        
                         $data_c = $query_3->getArrayResult();
-//                        var_dump($data_c);
-//                        $r["pregunta_idPregunta"]["subpreguntas"][$sub['idsubpregunta']][3]["data"] = $data_c;
                         foreach($data_c as $kd=>$d){
                             $data_c[$kd]["valor"] = (float) str_replace(',','.',$d["valor"]);
                             if($data_c[$kd]["valor"] == 0){
@@ -728,7 +761,11 @@ class ServiciosController extends Zend_Controller_Action
                                 $tmp['territorio'] = $c;
                                 $tmp['edad'] = $edades_r[$ke];
 
-    //                            
+                                /*
+                                * Query para calcular porcentajes de graficos tipo estrella en ciudades en vista edad
+                                * Paso 1: Obtener la sumatoria de los ponderadores de cada respuesta
+                                * agrupados por cada opcion de respuesta
+                                */  
                                 $dql_2 = sprintf("select opr.descripcion as respuesta, sum(res.ponderador) as valor from
                                 Application_Model_Indicadores ind join ind.pregunta_idPregunta pre join 
                                 pre.subpreguntas sub join sub.respuestas res join sub.escala_idEscala esc 
@@ -744,10 +781,18 @@ class ServiciosController extends Zend_Controller_Action
                                 $data = $query_2->getArrayResult();
 
                                 $total = 0;
+                                
+                                 /*
+                                 * Paso 2: Se calcula el total de las ponderaciones calculadas de
+                                 *  todas las opciones de respuesta                             
+                                 */
                                 foreach($data as $d){
                                     $total += $d['valor'];
                                 }
-    //                            $r["pregunta_idPregunta"]["subpreguntas"][$sub['idsubpregunta']][$k]["total"] = $total;
+                                 /*
+                                 * Paso 3: El resultado del query devuelve la sumatoria ahora se divide entre el total
+                                 * de las ponderaciones calculadas de todas las opciones de respuesta
+                                 */
                                 foreach($data as $kd=>$d){
                                      $data[$kd]["valor"] = ($d["valor"]/$total);
                                 }
@@ -764,7 +809,11 @@ class ServiciosController extends Zend_Controller_Action
                         $tmp['territorio'] = 'Nacional';
                         $tmp['edad'] = $edades_r[$ke];
                         $hasdata = true;
-                        
+                        /*
+                           * Query para calcular porcentajes de graficos tipo estrella a nivel nacional en vista edad
+                           * Paso 1: Obtener los valores de cada respuesta agrupados por cada opcion de respuesta
+                           * Nota: Los valores nacionales ya estan calculados
+                           */
                         $dql_3 = sprintf("select opc.descripcion as respuesta, tn.total as valor from Application_Model_Totalnacional tn
                             join tn.cod_respuesta opc join tn.subpregunta_idsubpregunta sub join sub.escala_idEscala esc
                             join sub.pregunta_idPregunta pre join pre.indicadores ind where ind.idIndicador = :indicador 
@@ -775,7 +824,6 @@ class ServiciosController extends Zend_Controller_Action
                         $query_3->setParameter('indicador', $indicador); 
 //                        
                         $data_c = $query_3->getArrayResult();
-//                        $r["pregunta_idPregunta"]["subpreguntas"][$sub['idsubpregunta']][3]["data"] = $data_c;
                         foreach($data_c as $kd=>$d){
                             $data_c[$kd]["valor"] = (float) str_replace(',','.',$d["valor"]);
                             if($data_c[$kd]["valor"] == 0){
@@ -798,7 +846,6 @@ class ServiciosController extends Zend_Controller_Action
                     case 'general':
                         if(!($subpregunta > 0)){
                             $subpregunta = $result_1[0]['pregunta_idPregunta']['subpreguntas'][0]['idsubpregunta'];
-//                            var_dump($subpregunta);
                             
                         }
                         foreach($ciudades as $k=>$c){
@@ -806,7 +853,13 @@ class ServiciosController extends Zend_Controller_Action
                             $tmp['indicador'] = $result_1[0]['idIndicador'];
                             $tmp['territorio'] = $c;
                             $tmp['subpregunta'] = $subpregunta;
-//                            
+//                          
+                            /*
+                            * Query para calcular porcentajes de graficos tipo tolerancia en ciudades en vista general
+                            * Paso 1: Obtener la sumatoria de los ponderadores de cada respuesta
+                            * agrupados por cada opcion de respuesta
+                            */  
+                            
                             $dql_2 = 'select opr.descripcion as respuesta, sum(res.ponderador) as valor from
                             Application_Model_Indicadores ind join ind.pregunta_idPregunta pre join 
                             pre.subpreguntas sub join sub.respuestas res join sub.escala_idEscala esc 
@@ -822,10 +875,17 @@ class ServiciosController extends Zend_Controller_Action
                             $data = $query_2->getArrayResult();
                             
                             $total = 0;
+                             /*
+                                 * Paso 2: Se calcula el total de las ponderaciones calculadas de
+                                 *  todas las opciones de respuesta                             
+                                 */
                             foreach($data as $d){
                                 $total += $d['valor'];
                             }
-//                            $r["pregunta_idPregunta"]["subpreguntas"][$sub['idsubpregunta']][$k]["total"] = $total;
+                             /*
+                                 * Paso 3: El resultado del query devuelve la sumatoria ahora se divide entre el total
+                                 * de las ponderaciones calculadas de todas las opciones de respuesta
+                                 */
                             foreach($data as $kd=>$d){
                                  $data[$kd]["valor"] = ($d["valor"]/$total);
                             }
@@ -840,6 +900,11 @@ class ServiciosController extends Zend_Controller_Action
                         $tmp['indicador'] = $result_1[0]['idIndicador'];
                         $tmp['territorio'] = 'Nacional';
                         
+                        /*
+                           * Query para calcular porcentajes de graficos tipo tolerancia a nivel nacional en vista general
+                           * Paso 1: Obtener los valores de cada respuesta agrupados por cada opcion de respuesta
+                           * Nota: Los valores nacionales ya estan calculados
+                           */
                         
                         $dql_3 = 'select opc.descripcion as respuesta, tn.total as valor from Application_Model_Totalnacional tn
                             join tn.cod_respuesta opc join tn.subpregunta_idsubpregunta sub join sub.escala_idEscala esc
@@ -851,7 +916,6 @@ class ServiciosController extends Zend_Controller_Action
                         $query_3->setParameter('indicador', $indicador); 
                         
                         $data_c = $query_3->getArrayResult();
-//                        $r["pregunta_idPregunta"]["subpreguntas"][$sub['idsubpregunta']][3]["data"] = $data_c;
                         foreach($data_c as $kd=>$d){
                              $data_c[$kd]["valor"] = (float) str_replace(',','.',$d["valor"]);
                         }
@@ -866,14 +930,18 @@ class ServiciosController extends Zend_Controller_Action
                             
                         }
                         foreach($ciudades as $k=>$c){
-//                            echo $c;
                             foreach($generos as $g){                                
                                 $tmp = array();
                                 $tmp['indicador'] = $result_1[0]['idIndicador'];
                                 $tmp['territorio'] = $c;
                                 $tmp['sexo'] = $g;
 
-    //                            
+                                /*
+                                * Query para calcular porcentajes de graficos tipo tolerancia en ciudades en vista sexo
+                                * Paso 1: Obtener la sumatoria de los ponderadores de cada respuesta
+                                * agrupados por cada opcion de respuesta
+                                */   
+                                
                                 $dql_2 = sprintf("select opr.descripcion as respuesta, sum(res.ponderador) as valor from
                                 Application_Model_Indicadores ind join ind.pregunta_idPregunta pre join 
                                 pre.subpreguntas sub join sub.respuestas res join sub.escala_idEscala esc 
@@ -889,10 +957,17 @@ class ServiciosController extends Zend_Controller_Action
                                 $data = $query_2->getArrayResult();
 
                                 $total = 0;
+                                 /*
+                                 * Paso 2: Se calcula el total de las ponderaciones calculadas de
+                                 *  todas las opciones de respuesta                             
+                                 */
                                 foreach($data as $d){
                                     $total += $d['valor'];
                                 }
-    //                            $r["pregunta_idPregunta"]["subpreguntas"][$sub['idsubpregunta']][$k]["total"] = $total;
+                                 /*
+                                 * Paso 3: El resultado del query devuelve la sumatoria ahora se divide entre el total
+                                 * de las ponderaciones calculadas de todas las opciones de respuesta
+                                 */
                                 foreach($data as $kd=>$d){
                                      $data[$kd]["valor"] = ($d["valor"]/$total);
                                 }
@@ -909,6 +984,11 @@ class ServiciosController extends Zend_Controller_Action
                         $tmp['territorio'] = 'Nacional';
                         $tmp['sexo'] = $g;
                         
+                        /*
+                           * Query para calcular porcentajes de graficos tipo tolerancia a nivel nacional en vista sexo
+                           * Paso 1: Obtener los valores de cada respuesta agrupados por cada opcion de respuesta
+                           * Nota: Los valores nacionales ya estan calculados
+                           */
                         
                         $dql_3 = sprintf("select opc.descripcion as respuesta, tn.total as valor from Application_Model_Totalnacional tn
                             join tn.cod_respuesta opc join tn.subpregunta_idsubpregunta sub join sub.escala_idEscala esc
@@ -942,7 +1022,11 @@ class ServiciosController extends Zend_Controller_Action
                                 $tmp['territorio'] = $c;
                                 $tmp['edad'] = $edades_r[$ke];
 
-    //                            
+                                 /*
+                                * Query para calcular porcentajes de graficos tipo tolerancia en ciudades en vista edad
+                                * Paso 1: Obtener la sumatoria de los ponderadores de cada respuesta
+                                * agrupados por cada opcion de respuesta
+                                */  
                                 $dql_2 = sprintf("select opr.descripcion as respuesta, sum(res.ponderador) as valor from
                                 Application_Model_Indicadores ind join ind.pregunta_idPregunta pre join 
                                 pre.subpreguntas sub join sub.respuestas res join sub.escala_idEscala esc 
@@ -958,10 +1042,17 @@ class ServiciosController extends Zend_Controller_Action
                                 $data = $query_2->getArrayResult();
 
                                 $total = 0;
+                                 /*
+                                 * Paso 2: Se calcula el total de las ponderaciones calculadas de
+                                 *  todas las opciones de respuesta                             
+                                 */
                                 foreach($data as $d){
                                     $total += $d['valor'];
                                 }
-    //                            $r["pregunta_idPregunta"]["subpreguntas"][$sub['idsubpregunta']][$k]["total"] = $total;
+                                 /*
+                                 * Paso 3: El resultado del query devuelve la sumatoria ahora se divide entre el total
+                                 * de las ponderaciones calculadas de todas las opciones de respuesta
+                                 */
                                 foreach($data as $kd=>$d){
                                      $data[$kd]["valor"] = ($d["valor"]/$total);
                                 }
@@ -978,7 +1069,11 @@ class ServiciosController extends Zend_Controller_Action
                         $tmp['territorio'] = 'Nacional';
                         $tmp['edad'] = $edades_r[$ke];
                         
-                        
+                        /*
+                           * Query para calcular porcentajes de graficos tipo tolerancia a nivel nacional en vista edad
+                           * Paso 1: Obtener los valores de cada respuesta agrupados por cada opcion de respuesta
+                           * Nota: Los valores nacionales ya estan calculados
+                           */
                         $dql_3 = sprintf("select opc.descripcion as respuesta, tn.total as valor from Application_Model_Totalnacional tn
                             join tn.cod_respuesta opc join tn.subpregunta_idsubpregunta sub join sub.escala_idEscala esc
                             join sub.pregunta_idPregunta pre join pre.indicadores ind where ind.idIndicador = :indicador 
@@ -989,7 +1084,6 @@ class ServiciosController extends Zend_Controller_Action
                         $query_3->setParameter('indicador', $indicador); 
 //                        
                         $data_c = $query_3->getArrayResult();
-//                        $r["pregunta_idPregunta"]["subpreguntas"][$sub['idsubpregunta']][3]["data"] = $data_c;
                         foreach($data_c as $kd=>$d){
                              $data_c[$kd]["valor"] = (float) str_replace(',','.',$d["valor"]);
                         }
@@ -1001,6 +1095,9 @@ class ServiciosController extends Zend_Controller_Action
                 }
                 break;
             case 'linea':
+                /*
+                 * En las graficas de linea los valores ya se encuentran calculados
+                 */
                 $descripcion_opt = array(
                     1 => 'General',
                     2 => 'Masculino',
@@ -1221,7 +1318,13 @@ class ServiciosController extends Zend_Controller_Action
                             $tmp['indicador'] = $result_1[0]['idIndicador'];
                             $tmp['territorio'] = $c;
                             $tmp['subpregunta'] = $subpregunta;
-//                            
+//                          
+                             /*
+                            * Query para calcular porcentajes de graficos tipo bolas en ciudades en vista general
+                            * Paso 1: Obtener la sumatoria de los ponderadores de cada respuesta
+                            * agrupados por cada opcion de respuesta
+                            */  
+                            
                             $dql_2 = 'select opr.descripcion as respuesta, sum(res.ponderador) as valor from
                             Application_Model_Indicadores ind join ind.pregunta_idPregunta pre join 
                             pre.subpreguntas sub join sub.respuestas res join sub.escala_idEscala esc 
@@ -1237,10 +1340,17 @@ class ServiciosController extends Zend_Controller_Action
                             $data = $query_2->getArrayResult();
                             
                             $total = 0;
+                             /*
+                                 * Paso 2: Se calcula el total de las ponderaciones calculadas de
+                                 *  todas las opciones de respuesta                             
+                                 */
                             foreach($data as $d){
                                 $total += $d['valor'];
                             }
-//                            $r["pregunta_idPregunta"]["subpreguntas"][$sub['idsubpregunta']][$k]["total"] = $total;
+                             /*
+                                 * Paso 3: El resultado del query devuelve la sumatoria ahora se divide entre el total
+                                 * de las ponderaciones calculadas de todas las opciones de respuesta
+                                 */
                             foreach($data as $kd=>$d){
                                  $data[$kd]["valor"] = ($d["valor"]/$total);
                             }
@@ -1255,7 +1365,11 @@ class ServiciosController extends Zend_Controller_Action
                         $tmp['indicador'] = $result_1[0]['idIndicador'];
                         $tmp['territorio'] = 'Nacional';
                         
-                        
+                        /*
+                           * Query para calcular porcentajes de graficos tipo bolas a nivel nacional en vista general
+                           * Paso 1: Obtener los valores de cada respuesta agrupados por cada opcion de respuesta
+                           * Nota: Los valores nacionales ya estan calculados
+                           */
                         $dql_3 = 'select opc.descripcion as respuesta, tn.total as valor from Application_Model_Totalnacional tn
                             join tn.cod_respuesta opc join tn.subpregunta_idsubpregunta sub join sub.escala_idEscala esc
                             join sub.pregunta_idPregunta pre join pre.indicadores ind where ind.idIndicador = :indicador 

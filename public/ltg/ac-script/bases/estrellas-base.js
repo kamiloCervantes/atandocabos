@@ -257,7 +257,11 @@ function RadarChart(id, data, options, laVista) {
 			return 'pgSexo-'+s;
 		})
 		.attr('dy', '9')
-		.attr('dx', '-22');
+		.attr('dx', function(d){
+			var dx = (d.valor < 0.1 && d.valorB < 0.1) ? '-16' : '-22';  
+		 console.log(d);
+		 return dx;
+		});
 	}
 
 
@@ -506,12 +510,20 @@ function RadarChart(id, data, options, laVista) {
 //Convenciones Estrella
 function convEstrellas(elCont, losDatos) {
     var datos = losDatos[0].datos;
+    console.log(datos);
     if(!(datos.length > 0)){
         datos = losDatos[1].datos;
+        if(!(datos.length > 0)){
+            datos = losDatos[2].datos;
+            if(!(datos.length > 0)){
+                datos = losDatos[6].datos;
+            }
+        }
     }
     $.each(datos, function(idx,val){
        datos[idx].respuesta = $("<div/>").html(datos[idx].respuesta).text(); 
     });
+    console.log(datos);
     var conv = elCont.append("div")
         .attr("class", "lt-estrella-conv")
         .selectAll("div")

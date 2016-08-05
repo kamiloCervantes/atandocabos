@@ -58,10 +58,22 @@ function cargarEdad() {
                     return d.edad;
                 })
                 .key(function(d) {
-                    return d.territorio;
+                    if(typeof d.datos !== 'undefined' && d.datos.length > 0){
+                        return d.territorio;
+                    }
                 })
                 .entries(datos);
-
+        
+            dAnidadosEdad = $.each(dAnidadosEdad, function(idx,val){
+                var tmp = [];
+                $.each(val.values, function(i,v){
+                    if(v.key != 'undefined'){
+                        tmp.push(v);
+                    }
+                });   
+                dAnidadosEdad[idx].values = tmp;
+            });
+            console.log(dAnidadosEdad);
             //Crear los Botones			
             crearBotones(datos, miContG, 'edad');
 			
@@ -149,7 +161,7 @@ function cargarEdad() {
         			.attr("class", "lt-tooltip-est")
         			.style("display", "none");
                         
-                if(miDato[0].datos.length > 0){                   
+                if(typeof miDato[0].datos != 'undefined' && miDato[0].datos.length > 0){                  
                     RadarChart(miDiv, miDato, radarChartOptions, 'edad');
                 }
                 

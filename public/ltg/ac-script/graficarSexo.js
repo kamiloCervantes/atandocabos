@@ -54,7 +54,7 @@ function cargarSexo() {
             crearBotones(datos, miContG, 'sexo');
 
             acEstructura(datos, miContG, "sexo", idInd);
-			
+			console.log(datos);
 			convEstrellas(miContG, datos);
             //Loop para pintar gráficas
             
@@ -68,7 +68,7 @@ function cargarSexo() {
         			.attr("class", "lt-tooltip-est")
         			.style("display", "none");
                 
-                if(miDato[0].datos.length > 0){                   
+               if(typeof miDato[0].datos != 'undefined' && miDato[0].datos.length > 0){                     
                     RadarChart(miDiv, miDato, radarChartOptions, 'sexo');
                 }
                 

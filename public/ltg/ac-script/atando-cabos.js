@@ -2,11 +2,11 @@
 //Estrella
 var mEst = {
         top: 30,
-        right: 45,
+        right: 50,//45
         bottom: 30,
-        left: 45
+        left: 50//45
     },
-    wEst = 190,
+    wEst = 180,
     hEst = 240;
 	
 //Tolerancia
@@ -80,6 +80,8 @@ function crearBotones(losDatos, elCont, vista) {
             return d.sexo;
         }).entries(losDatos) :
         'gnrl';
+
+    console.log(dAnidadosBtn);
 
     elCont.append('div')
         .attr('class', 'lt-nav-' + vista)

@@ -27,12 +27,24 @@ function cargarEdad() {
         //Tomar los datos y anidarlos
         var dAnidados = d3.nest()
             .key(function(d) {
-                return d.territorio;
+//                console.log(d);
+                if(typeof d.datos !== 'undefined' && d.datos.length > 0){
+//                    console.log(d.territorio);
+                    return d.territorio;
+                }
             })
             .entries(datos);
+         var tmp = [];
+         $.each(dAnidados, function(idx,val){                
+                if(val.key !== 'undefined'){     
+                    tmp.push(val);                
+                }
+            });
+        dAnidados = tmp;    
 
         //Número de territorios = número de columnas
         var numCols = 12 / dAnidados.length;
+        console.log(dAnidados);
 
         //*Tuve que volver a seleccionar el contenedor de grñáficas para que funcionara con d3
         var miContG = d3.select('#' + miID + '').select('.lt-cont-grafs');
@@ -73,6 +85,7 @@ function cargarEdad() {
                 });   
                 dAnidadosEdad[idx].values = tmp;
             });
+            
             console.log(dAnidadosEdad);
             //Crear los Botones			
             crearBotones(datos, miContG, 'edad');
@@ -180,6 +193,16 @@ function cargarEdad() {
                     return d.territorio;
                 })
                 .entries(datos);
+        
+        dAnidadosEdad = $.each(dAnidadosEdad, function(idx,val){
+                var tmp = [];
+                $.each(val.values, function(i,v){
+                    if(v.key != 'undefined'){
+                        tmp.push(v);
+                    }
+                });   
+                dAnidadosEdad[idx].values = tmp;
+            });
 //            console.log(dAnidadosEdad);
             //Crear los Botones			
             crearBotones(datos, miContG, 'edad');
@@ -297,7 +320,7 @@ function cargarEdad() {
 
             //Crear Escala para valores
             var dMax = d3.max(datos, function(d) {
-                return d.valor;
+                return parseInt(d.valor);
             });
 
 
@@ -315,7 +338,7 @@ function cargarEdad() {
                 var fecha = datos[i].fecha;
                 var edad = datos[i].edad.replace(/\+/g, '');
 
-                var nBolas = linearScale(datos[i].valor); //Pasar el valor por escala
+                var nBolas = linearScale(parseInt(datos[i].valor)); //Pasar el valor por escala
 
                 var miDiv = '#lt-' + idInd + '-edad-' + terr + '-' + edad + '-' + fecha + '';
 

@@ -51,6 +51,20 @@ class ReportesController extends Zend_Controller_Action
    
   
   private function generarLinea($indicador){
+       $generos = array(
+            1 => 'Masculino',
+            2 => 'Femenino'
+        );
+       
+       $edades_r = array(
+            '-18',
+            '18-25',
+            '26-35',
+            '36-45',
+            '46-55',
+            '+55'
+        );
+      
       $objPHPExcel = PHPExcel_IOFactory::load(APPLICATION_PATH . "/../library/PHPExcel-1.8/templates/linea.xlsx");
       $objPHPExcel->setActiveSheetIndex(0);
       
@@ -68,7 +82,7 @@ class ReportesController extends Zend_Controller_Action
       $col_ini = 67;
       $json = array();
       $ciudades = array(
-        1 => 'San Andres',
+        1 => 'San Andrés',
         2 => 'Providencia'
       );
       $descripcion_opt = array(
@@ -82,7 +96,7 @@ class ReportesController extends Zend_Controller_Action
             foreach($ciudades as $k=>$c){
 
 
-            $dql = "select i.idIndicador as indicador, c.ciudadcol as territorio, SUBSTRING(pn.fecha, 1, 4) as fecha, count(pn.idpolicia_nacional) as valor from Application_Model_Policianacional pn join 
+            $dql = "select i.idIndicador as indicador, c.ciudadcol as territorio, SUBSTRING(pn.fecha, 1, 4) as fecha, sum(pn.victimas) as valor from Application_Model_Policianacional pn join 
                 pn.ciudad_idciudad c join pn.indicador_idIndicador i
                 where c.idciudad = :ciudad and i.idIndicador = :indicador group by i.idIndicador,territorio,fecha";
 
@@ -95,8 +109,9 @@ class ReportesController extends Zend_Controller_Action
             foreach($data as $data_idx=>$d){
 //                                $d['fecha'] = explode('-', $d['fecha']);
 //                                $d['fecha'] = $d['fecha'][0];
+                $d['territorio'] = $c;
                 $json[] = $d;
-                $objPHPExcel->getActiveSheet()->setCellValue(chr($col_ini+$data_idx).(5+$k), round($d["valor"],3));
+                $objPHPExcel->getActiveSheet()->setCellValue(chr($col_ini+$data_idx).(5+$k), round($d["valor"],2));
 
             }
 
@@ -114,7 +129,7 @@ class ReportesController extends Zend_Controller_Action
 
             foreach($data as $key=>$d){
                 $json[] = $d;
-                $objPHPExcel->getActiveSheet()->setCellValue(chr($col_ini+$key).(5+3), round($d["valor"],3));
+                $objPHPExcel->getActiveSheet()->setCellValue(chr($col_ini+$key).(5+3), round($d["valor"],2));
 
             }
 
@@ -130,35 +145,113 @@ class ReportesController extends Zend_Controller_Action
             $query = $this->_em->createQuery($dql);
 
             $query->setParameter('indicador', $indicador); 
-            $query->setParameter('ciudad', $c); 
+            $query->setParameter('ciudad', $k); 
             $data = $query->getArrayResult();
-            $json = $data;
-            
+
              foreach($data as $key=>$d){
-                $json[] = $d;
-                $objPHPExcel->getActiveSheet()->setCellValue(chr($col_ini+$data_idx).(5+$k), round($d["valor"],3));
-            }
+                $d['territorio'] = $c;
+//                var_dump(chr($col_ini+$key+1).(5+$k));
+//                var_dump(round($d["valor"],2));
+                $objPHPExcel->getActiveSheet()->setCellValue(chr($col_ini+$key+1).(5+$k), round($d["valor"],2));
             }
             
-            $dql2 = sprintf("select i.idIndicador as indicador, ciu.ciudadcol as territorio, ml.anno as fecha, ml.total as valor from Application_Model_Medicinalegal ml join ml.indicador_idindicador i join
+                foreach($edades_r as $ke => $e){
+                    
+                    $dql = sprintf("select i.idIndicador as indicador, ciu.ciudadcol as territorio, ml.anno as fecha, ml.total as valor from Application_Model_Medicinalegal ml join ml.indicador_idindicador i join
+                    ml.ciudad_idciudad ciu where i.idIndicador = :indicador and
+                    ml.descripcion = '%s' and ciu.idciudad = :ciudad", $e);
+                    
+                    $query = $this->_em->createQuery($dql);
+                    
+                    $query->setParameter('indicador', $indicador); 
+                    $query->setParameter('ciudad', $k); 
+                    $data = $query->getArrayResult();
+                    
+                    foreach($data as $key=>$d){
+                        $d['territorio'] = $c;         
+                        $objPHPExcel->getActiveSheet()->setCellValue(chr($col_ini+$key+1).(15+(6*($k-1))+$ke), round($d["valor"],2));
+                    }
+                    
+                }
+                foreach($generos as $kg => $g){
+                    
+                    $dql = sprintf("select i.idIndicador as indicador, ciu.ciudadcol as territorio, ml.anno as fecha, ml.total as valor from Application_Model_Medicinalegal ml join ml.indicador_idindicador i join
+                    ml.ciudad_idciudad ciu where i.idIndicador = :indicador and
+                    ml.descripcion = '%s' and ciu.idciudad = :ciudad", $g);
+                    
+                    $query = $this->_em->createQuery($dql);
+                    
+                    $query->setParameter('indicador', $indicador); 
+                    $query->setParameter('ciudad', $k); 
+                    $data = $query->getArrayResult();
+                    
+                    foreach($data as $key=>$d){
+                        $d['territorio'] = $c;
+//                        var_dump($k.':'.$c);
+//                        var_dump($g);
+//                        var_dump(chr($col_ini+$key+1).(8+(2*($k-1))+$kg).':'.round($d["valor"],2));
+                        $objPHPExcel->getActiveSheet()->setCellValue(chr($col_ini+$key+1).(8+(2*($k-1))+$kg), round($d["valor"],2));
+                    }
+                    
+                    $dql2 = sprintf("select i.idIndicador as indicador, ciu.ciudadcol as territorio, ml.anno as fecha, ml.total as valor from Application_Model_Medicinalegal ml join ml.indicador_idindicador i join
+                    ml.ciudad_idciudad ciu where i.idIndicador = :indicador and
+                    ml.descripcion = '%s' and ciu.idciudad = :ciudad", $g);
+
+                    $query2 = $this->_em->createQuery($dql2);
+
+                    $query2->setParameter('indicador', $indicador); 
+                    $query2->setParameter('ciudad', 3); 
+                    $data = $query2->getArrayResult();
+
+                    foreach($data as $key=>$d){
+//                        var_dump(chr($col_ini+$key+1).(12+$kg));
+//                        var_dump(round($d["valor"],2));
+                        $objPHPExcel->getActiveSheet()->setCellValue(chr($col_ini+$key+1).(12+$kg), round($d["valor"],2));
+                    }
+                    
+                }
+            }
+            
+            $sql2 = sprintf("select i.idIndicador as indicador, ciu.ciudadcol as territorio, ml.anno as fecha, ml.total as valor from Application_Model_Medicinalegal ml join ml.indicador_idindicador i join
             ml.ciudad_idciudad ciu where i.idIndicador = :indicador and
             ml.descripcion = '%s' and ciu.idciudad = :ciudad", $descripcion_opt[1]);
+            
+//            var_dump($sql2);
 
-            $query2 = $this->_em->createQuery($dql2);
+            $query2 = $this->_em->createQuery($sql2);
 
             $query2->setParameter('indicador', $indicador); 
             $query2->setParameter('ciudad', 3); 
-            $data = $query->getArrayResult();
-            $json = $data;
+            $data2 = $query2->getArrayResult();
             
-             foreach($data as $key=>$d){
-                $json[] = $d;
-                $objPHPExcel->getActiveSheet()->setCellValue(chr($col_ini+$key).(5+3), round($d["valor"],3));
+            foreach($data2 as $key=>$d){
+//                var_dump(chr($col_ini+$key+1).(5+3));
+//                var_dump(round($d["valor"],2));
+                $objPHPExcel->getActiveSheet()->setCellValue(chr($col_ini+$key+1).(5+3), round($d["valor"],2));
             }
+            
+             foreach($edades_r as $ke => $e){
+                    
+                    $dql = sprintf("select i.idIndicador as indicador, ciu.ciudadcol as territorio, ml.anno as fecha, ml.total as valor from Application_Model_Medicinalegal ml join ml.indicador_idindicador i join
+                    ml.ciudad_idciudad ciu where i.idIndicador = :indicador and
+                    ml.descripcion = '%s' and ciu.idciudad = :ciudad", $e);
+                    
+                    $query = $this->_em->createQuery($dql);
+                    
+                    $query->setParameter('indicador', $indicador); 
+                    $query->setParameter('ciudad', 3); 
+                    $data = $query->getArrayResult();
+                    
+                    foreach($data as $key=>$d){
+                        $d['territorio'] = $c;         
+                        $objPHPExcel->getActiveSheet()->setCellValue(chr($col_ini+$key+1).(27+$ke), round($d["valor"],2));
+                    }
+                    
+                }
         }
         
         header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-    header('Content-Disposition: attachment;filename="'.html_entity_decode($result_1[0]['nombre_indicador']).'.xlsx"');
+        header('Content-Disposition: attachment;filename="'.html_entity_decode($result_1[0]['nombre_indicador']).'.xlsx"');
         header('Cache-Control: max-age=0');
         ob_end_clean();
         $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel2007');
@@ -175,11 +268,20 @@ class ReportesController extends Zend_Controller_Action
     $row_respuesta = 5;
     $subpregunta = 0;
 //    $col_tags = true;
-     $ciudades = array(
-        1 => 'San Andres',
-        2 => 'Providencia'
-//            3 => 'Nacional'
-    );
+    if($indicador == 21 || $indicador == 55){
+        $ciudades = array(
+            2 => 'Providencia'
+
+        );
+    }
+    else{
+        $ciudades = array(
+            1 => 'San Andrés',
+            2 => 'Providencia'
+
+        );
+    }
+     
      
     $edades = array(
             'Menor a 18',
@@ -212,8 +314,13 @@ class ReportesController extends Zend_Controller_Action
             1 => 'Femenino',
             2 => 'Masculino'
         );
-    
-   $objPHPExcel = PHPExcel_IOFactory::load(APPLICATION_PATH . "/../library/PHPExcel-1.8/templates/estrella.xlsx");
+   if($indicador == 21 || $indicador == 55){
+       $objPHPExcel = PHPExcel_IOFactory::load(APPLICATION_PATH . "/../library/PHPExcel-1.8/templates/providencia.xlsx");
+   }
+   else{
+       $objPHPExcel = PHPExcel_IOFactory::load(APPLICATION_PATH . "/../library/PHPExcel-1.8/templates/estrella.xlsx");
+   }
+   
    $objPHPExcel->setActiveSheetIndex(0);
      $dql_1 = "select i,p,sub
         from Application_Model_Indicadores i join i.pregunta_idPregunta 
@@ -223,13 +330,10 @@ class ReportesController extends Zend_Controller_Action
     $query_1 = $this->_em->createQuery($dql_1);
     $query_1->setParameter('indicador', $indicador);
     $result_1 = $query_1->getArrayResult(); 
+   
     
-    var_dump($result_1);
-    
-//    $subpreguntas = $result_1[0]['pregunta_idPregunta']['subpreguntas'];
-//    $objPHPExcel->getActiveSheet()->insertNewColumnBefore('C',count($subpreguntas)-1);
     $general['indicador'] = $result_1[0]['nombre_indicador'];
-    $objPHPExcel->getActiveSheet()->setCellValue('C2', utf8_encode(html_entity_decode($result_1[0]['nombre_indicador'])));
+    $objPHPExcel->getActiveSheet()->setCellValue('C2', html_entity_decode($result_1[0]['nombre_indicador']));
 
     if(!($subpregunta > 0)){
         $subpregunta = $result_1[0]['pregunta_idPregunta']['subpreguntas'][0]['idsubpregunta'];                            
@@ -243,7 +347,7 @@ class ReportesController extends Zend_Controller_Action
         }
 
     }
-    $objPHPExcel->getActiveSheet()->setCellValue('C3', utf8_encode(html_entity_decode($subpregunta_nombre)));
+    $objPHPExcel->getActiveSheet()->setCellValue('C3', html_entity_decode($subpregunta_nombre));
 //    var_dump($ciudades);
     foreach($ciudades as $k=>$c){
         $tmp = array();
@@ -258,7 +362,7 @@ class ReportesController extends Zend_Controller_Action
         join res.cod_respuesta opr join res.ciudad_idciudad ciu where ind.idIndicador = :indicador 
         and sub.idsubpregunta=:idsubpregunta and ciu.idciudad=:ciudad group by opr.descripcion order by opr.orden';  
 //                            
-//                            var_dump($subpregunta);
+
         $query_2 = $this->_em->createQuery($dql_2); 
         $query_2->setParameter('idsubpregunta', $subpregunta);
         $query_2->setParameter('indicador', $indicador); 
@@ -268,7 +372,7 @@ class ReportesController extends Zend_Controller_Action
         
         if($cols){
 //            var_dump($data);
-            $objPHPExcel->getActiveSheet()->insertNewColumnBefore('C',count($data)-1);
+            $objPHPExcel->getActiveSheet()->insertNewColumnBefore('D',count($data)-1);
             $cols = false;
         }
 
@@ -280,10 +384,19 @@ class ReportesController extends Zend_Controller_Action
            
         foreach($data as $kd=>$d){
              $data[$kd]["valor"] = ($d["valor"]/$total);
-//             var_dump(chr($col_ciudad+$kd+1).(5+$k));
-             $objPHPExcel->getActiveSheet()->setCellValue(chr($col_ciudad).($k+5), $c);
-             $objPHPExcel->getActiveSheet()->setCellValue(chr($col_ciudad+$kd+1).(5), utf8_encode(html_entity_decode($data[$kd]["respuesta"])));
-             $objPHPExcel->getActiveSheet()->setCellValue(chr($col_ciudad+$kd+1).(5+$k), round($data[$kd]["valor"],3));
+//             var_dump(chr($col_ciudad).($k+4));
+             if($indicador == 21 || $indicador == 55){
+//                var_dump(chr($col_ciudad+$kd+1).(4));
+                $objPHPExcel->getActiveSheet()->setCellValue(chr($col_ciudad).($k+4), $c);
+                $objPHPExcel->getActiveSheet()->setCellValue(chr($col_ciudad+$kd+1).(5), html_entity_decode($data[$kd]["respuesta"]));
+                $objPHPExcel->getActiveSheet()->setCellValue(chr($col_ciudad+$kd+1).(4+$k), round($data[$kd]["valor"],3)*100);
+             }
+             else{
+                $objPHPExcel->getActiveSheet()->setCellValue(chr($col_ciudad).($k+5), $c);
+                $objPHPExcel->getActiveSheet()->setCellValue(chr($col_ciudad+$kd+1+1).(5), html_entity_decode($data[$kd]["respuesta"]));
+                $objPHPExcel->getActiveSheet()->setCellValue(chr($col_ciudad+$kd+1+1).(5+$k), round($data[$kd]["valor"],3)*100);
+             }
+             
         }
 //         var_dump($data);
         $tmp['datos'] = $data;
@@ -318,11 +431,21 @@ class ReportesController extends Zend_Controller_Action
     //                            $r["pregunta_idPregunta"]["subpreguntas"][$sub['idsubpregunta']][$k]["total"] = $total;
             foreach($data as $kd=>$d){
                  $data[$kd]["valor"] = ($d["valor"]/$total);
-//                 var_dump(chr($col_ciudad+$kd+1).(9+(6*($k-1))+$ke));
+//                 var_dump(chr($col_ciudad+$kd+1).(1+(6*($k-1))+$ke));
 //                 var_dump($data[$kd]["valor"]);
 //                 var_dump($data[$kd]["respuesta"]);
-                 $objPHPExcel->getActiveSheet()->setCellValue(chr($col_ciudad).(9+(6*($k-1))), $c);
-                 $objPHPExcel->getActiveSheet()->setCellValue(chr($col_ciudad+$kd+1).(9+(6*($k-1))+$ke), round($data[$kd]["valor"], 3));
+                 if($indicador == 21 || $indicador == 55){
+                    $objPHPExcel->getActiveSheet()->setCellValue(chr($col_ciudad).(1+(6*($k-1))), $c);
+                    $objPHPExcel->getActiveSheet()->setCellValue(chr($col_ciudad).(8+(6*($k-1))), $c);
+                    $objPHPExcel->getActiveSheet()->setCellValue(chr($col_ciudad+$kd+1+1).(1+(6*($k-1))+$ke), round($data[$kd]["valor"],3)*100);
+                 }
+                 else{
+//                    var_dump(chr($col_ciudad).(15+(6*($k-1))));
+//                    var_dump(chr($col_ciudad+$kd+1+1).(15+(6*($k-1))+$ke));
+                    $objPHPExcel->getActiveSheet()->setCellValue(chr($col_ciudad).(15+(6*($k-1))), $c);
+                    $objPHPExcel->getActiveSheet()->setCellValue(chr($col_ciudad+$kd+1+1).(15+(6*($k-1))+$ke), round($data[$kd]["valor"],3)*100);
+                 }
+                 
 //                 $objPHPExcel->getActiveSheet()->setCellValue(chr($col_ciudad+$kd+1).(8+$k), $data[$kd]["valor"]);
             }
 
@@ -359,10 +482,18 @@ class ReportesController extends Zend_Controller_Action
 //                            $r["pregunta_idPregunta"]["subpreguntas"][$sub['idsubpregunta']][$k]["total"] = $total;
             foreach($data as $kd=>$d){
                  $data[$kd]["valor"] = ($d["valor"]/$total);               
-//                 var_dump($data[$kd]["valor"]);
+//                 var_dump(chr($col_ciudad).(8+(6*($k-1))));
 //                 var_dump($data[$kd]["respuesta"]);
 //                 $objPHPExcel->getActiveSheet()->setCellValue(chr($col_ciudad).(22+(6*($k-1))), $c);
-                 $objPHPExcel->getActiveSheet()->setCellValue(chr($col_ciudad+$kd+1).(26+$kg+(2*($k-1))), round($data[$kd]["valor"], 3));
+                 if($indicador == 21 || $indicador == 55){
+                     $objPHPExcel->getActiveSheet()->setCellValue(chr($col_ciudad).(7+(6*($k-1))), $c);
+                     $objPHPExcel->getActiveSheet()->setCellValue(chr($col_ciudad+$kd+1+1).(10+$kg+(2*($k-1))), round($data[$kd]["valor"],3)*100);
+                 }
+                 else{
+//                     var_dump(chr($col_ciudad+$kd+1+1).(8+$kg+(2*($k-1))));
+                     $objPHPExcel->getActiveSheet()->setCellValue(chr($col_ciudad+$kd+1+1).(8+$kg+(2*($k-1))), round($data[$kd]["valor"],3)*100);
+                 }
+                 
             }
 
             $tmp['datos'] = $data;
@@ -372,6 +503,7 @@ class ReportesController extends Zend_Controller_Action
     }
 
     //nacional
+    if($indicador != 21 || $indicador != 55){
     $tmp = array();
     $tmp['indicador'] = $result_1[0]['idIndicador'];
     $tmp['territorio'] = 'Nacional';
@@ -391,7 +523,8 @@ class ReportesController extends Zend_Controller_Action
     $data_c = $query_3->getArrayResult();
     foreach($data_c as $kd=>$d){
          $data_c[$kd]["valor"] = (float) str_replace(',','.',$d["valor"]);
-         $objPHPExcel->getActiveSheet()->setCellValue(chr($col_ciudad+$kd+1).(8), round($data_c[$kd]["valor"],3));
+         var_dump(chr($col_ciudad+$kd+1+1).(8));
+         $objPHPExcel->getActiveSheet()->setCellValue(chr($col_ciudad+$kd+1+1).(8), round($data_c[$kd]["valor"],3)*100);
     }
 
     $tmp['datos'] = $data_c;
@@ -425,11 +558,11 @@ class ReportesController extends Zend_Controller_Action
         if($data_c[$kd]["valor"] == 0){
             $hasdata = false;
         }
-//         var_dump(chr($col_ciudad+$kd+1).(15+(6*($k-1))+$ke));
+//         var_dump(chr($col_ciudad+$kd+1).(21+(6*($k-1))+$ke));
 //         var_dump($data_c[$kd]["valor"]);
 //         var_dump($data_c[$kd]["respuesta"]);
          $data_c[$kd]["valor"] = (float) str_replace(',','.',$d["valor"]);
-         $objPHPExcel->getActiveSheet()->setCellValue(chr($col_ciudad+$kd+1).(15+(6*($k-1))+$ke), round($data_c[$kd]["valor"],3));
+         $objPHPExcel->getActiveSheet()->setCellValue(chr($col_ciudad+$kd+1+1).(21+(6*($k-1))+$ke), round($data_c[$kd]["valor"],3)*100);
     }
     if($hasdata){
          $tmp['datos'] = $data_c;
@@ -462,10 +595,10 @@ class ReportesController extends Zend_Controller_Action
                 $hasdata = false;
             }
              $data_c[$kd]["valor"] = (float) str_replace(',','.',$d["valor"]);
-             var_dump(chr($col_ciudad+$kd+1).(24+(6*($k-1))+$kg));
-                var_dump($data_c[$kd]["valor"]);
-                var_dump($data_c[$kd]["respuesta"]);
-             $objPHPExcel->getActiveSheet()->setCellValue(chr($col_ciudad+$kd+1).(24+(6*($k-1))+$kg), round($data_c[$kd]["valor"],3));
+//             var_dump(chr($col_ciudad+$kd+1).(6+(6*($k-1))+$kg));
+//                var_dump($data_c[$kd]["valor"]);
+//                var_dump($data_c[$kd]["respuesta"]);
+             $objPHPExcel->getActiveSheet()->setCellValue(chr($col_ciudad+$kd+1+1).(6+(6*($k-1))+$kg), round($data_c[$kd]["valor"],3)*100);
         }
         if($hasdata){
              $tmp['datos'] = $data_c;
@@ -473,9 +606,19 @@ class ReportesController extends Zend_Controller_Action
 
 //        $json[] = $tmp;
         }
-    
+    }
+    $styleArray = array(
+        'borders' => array(
+          'allborders' => array(
+            'style' => PHPExcel_Style_Border::BORDER_THIN
+          )
+        )
+      );    
+     
+    $objPHPExcel->getActiveSheet()->getStyle('C32:G32')->applyFromArray($styleArray);
+    unset($styleArray);
     header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-    header('Content-Disposition: attachment;filename="'.html_entity_decode($result_1[0]['pregunta_idPregunta']['descripcion']).'.xlsx"');
+    header('Content-Disposition: attachment;filename="'.html_entity_decode($result_1[0]['nombre_indicador']).'.xlsx"');
     header('Cache-Control: max-age=0');
     ob_end_clean();
     $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel2007');

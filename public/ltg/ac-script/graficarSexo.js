@@ -162,7 +162,7 @@ function cargarSexo() {
 
             //Crear Escala para valores
             var dMax = d3.max(datos, function(d) {
-                return d.valor;
+                return parseInt(d.valor);
             });
             //console.log(dMax);
 
@@ -191,7 +191,7 @@ function cargarSexo() {
                 var fecha = datos[i].fecha;
                 var sexo = datos[i].sexo.substring(0, 1);
 
-                var nBolas = linearScale(datos[i].valor); //Pasar el valor por escala
+                var nBolas = linearScale(parseInt(datos[i].valor)); //Pasar el valor por escala
 
                 var miDiv = '#lt-' + idInd + '-sexo-' + terr + '-' + sexo + '-' + fecha + '';
 

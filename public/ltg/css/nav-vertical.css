@@ -234,13 +234,14 @@ Vertical navigation
   }
   .cd-vertical-nav a {
     position: relative;
-    /*padding: 5px 0 0;*/
     padding: 0;
-    margin: 25px auto;
+    margin: 20px auto;
+    margin: 1.5vh auto;
     border-bottom: none;
     font-size: 1.2rem;
     color: #eaf2e3;
     height: 20px;
+    height: 2vh;
   }
   .cd-vertical-nav a.active {
     color: #eaf2e3;
@@ -250,21 +251,14 @@ Vertical navigation
     content: '';
     position: absolute;
     left: 50%;
-    /* Force Hardware Acceleration
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    -webkit-transform: translateZ(0);
-    -moz-transform: translateZ(0);
-    -ms-transform: translateZ(0);
-    -o-transform: translateZ(0);
-    transform: translateZ(0); */
+    
   }
   .cd-vertical-nav a::before {
     /* filled circle */
     top: 0;
-    height: 15px;
-    width: 15px;
-    margin-left: -15px;
+    height: 13px;
+    width: 13px;
+    margin-left: -13px;
     border: 2px solid #4d54fc;
     border-radius: 50%;
     background: #fff2d8;

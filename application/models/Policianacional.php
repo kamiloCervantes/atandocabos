@@ -33,6 +33,9 @@ class Application_Model_Policianacional
      * @JoinColumn(name="indicador_idIndicador", referencedColumnName="idIndicador")
      */
     private $indicador_idIndicador;
+    
+    /** @Column(type="integer") */
+    private $victimas;
  
     
     

@@ -108,7 +108,7 @@ function cargarGeneral() {
 
             //Crear Escala para valores
             var dMax = d3.max(datos, function(d) {
-                return d.valor;
+                return parseInt(d.valor);
             });
 
             var linearScale = d3.scale.linear()
@@ -123,7 +123,7 @@ function cargarGeneral() {
                 var miDato = datos[i]; //Obtener Valor
                 var terr = datos[i].territorio.substring(0, 3);
                 var fecha = datos[i].fecha;
-                var nBolas = linearScale(datos[i].valor); //Pasar el valor por escala
+                var nBolas = linearScale(parseInt(datos[i].valor)); //Pasar el valor por escala
 
                 var miDiv = '#lt-' + idInd + '-gnrl-' + terr + '-' + fecha + '';
 

@@ -226,10 +226,10 @@ function RadarChart(id, data, options, laVista) {
         .attr("text-anchor", "middle")
         .attr("dy", "0.35em")
         .attr("x", function(d, i) {
-            return rScale(maxValue * cfg.labelFactor*1.22) * Math.cos(angleSlice * i - Math.PI / 2);
+            return rScale(maxValue * cfg.labelFactor*1.26) * Math.cos(angleSlice * i - Math.PI / 2);
         })
         .attr("y", function(d, i) {
-            return rScale(maxValue * cfg.labelFactor*1.22) * Math.sin(angleSlice * i - Math.PI / 2);
+            return rScale(maxValue * cfg.labelFactor*1.26) * Math.sin(angleSlice * i - Math.PI / 2);
         });
         
        // .call(wrap, cfg.wrapWidth);
@@ -237,7 +237,7 @@ function RadarChart(id, data, options, laVista) {
 	txtPorc.append('tspan')
 		.text(function(d) {
 			
-			var porc = Math.round(d.valor * 100) + '%';
+			var porc = Math.round(d.valor * 1000)/10 + '%';
             return porc;
         })
 		.attr('class', function(d){
@@ -249,7 +249,7 @@ function RadarChart(id, data, options, laVista) {
 		
 	txtPorc.append('tspan')
 		.text(function(d) {
-			var porc = ' '+Math.round(d.valorB * 100) + '%';
+			var porc = ' '+Math.round(d.valorB * 1000)/10 + '%';
             return porc;
         })
 		.attr('class', function(d){
@@ -257,11 +257,11 @@ function RadarChart(id, data, options, laVista) {
 			return 'pgSexo-'+s;
 		})
 		.attr('dy', '9')
-		.attr('dx', function(d){
-			var dx = (d.valor < 0.1 && d.valorB < 0.1) ? '-16' : '-22';  
-		 console.log(d);
-		 return dx;
-		});
+		.attr('dx', function(){
+                var bBox = this.getBBox().width,
+                 dx = -1*(bBox/2+1.4);
+                return dx;
+               });
 	}
 
 
@@ -442,7 +442,7 @@ function RadarChart(id, data, options, laVista) {
     function tooltipBolas(e, circ) {
         
 		var tip = $(circ).closest('.lt-graf').children('.lt-tooltip-est'),
-			porc = Math.round(e.valor * 100) + '%',
+			porc = Math.round(e.valor * 1000)/10 + '%',
 			rta = e.respuesta.toLowerCase(),
 			clave = e.clave.toLowerCase(),
 			xC = parseInt($(circ).attr('cx')),
@@ -455,7 +455,7 @@ function RadarChart(id, data, options, laVista) {
 			
 			tip.css({
             left: xC + 83 + 'px',
-            bottom: 216 - yC + rC - 45 + 'px'
+            bottom: 220 - yC + rC - 45 + 'px'
         	});
         //console.log(e);
         tip.show();

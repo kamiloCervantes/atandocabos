@@ -16,6 +16,7 @@ atandocabos.init = function(){
 
     $('#carousel').css('visibility', 'hidden');
     $('#lt-atando-form input').on('change', function(){
+        $('#selector_tematicas').trigger('changed.bs.select');
         $('#carousel').css('visibility', 'hidden');
         var tematica = $(this).data('id');
         var jqxhr = $.get('/servicios/gettemas', {

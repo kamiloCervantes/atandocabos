@@ -131,7 +131,7 @@ function lanzarBolasLinea(miDiv, miDato, nBolas, interval, vista) {
 	
 	tooltip.append('span')
 			.attr('class', 'tip-dato')
-			.html('Hubo <b>'+miValor+'</b>');
+			.html('<b>'+miValor+'</b>');
 			
 			//.append('i').text(' casos');
 		
@@ -174,9 +174,9 @@ function lanzarBolasLinea(miDiv, miDato, nBolas, interval, vista) {
 
         g.append("circle")
             .data([d])
-            .attr("r", 1e-6)
-            .transition()
-            .ease(Math.sqrt)
+//            .attr("r", 1e-6)
+//            .transition()
+//            .ease(Math.sqrt)
             .attr("r", 2.5);
 
         if (nodes.push(d) > nBolas - 1) {
@@ -185,59 +185,3 @@ function lanzarBolasLinea(miDiv, miDato, nBolas, interval, vista) {
         force.start();
     }, 30);
 }
-/*var cuerpo = tablas.append('tbody');
-	
-	var filas = cuerpo.selectAll('tr')
-		.data(function(d) {
-            return d.values;
-        })
-		.enter()
-		.append('tr')
-		.attr('class', function(d, i) {
-			i = i+1;
-			
-            var clave = (vista == 'edad') ? 'f-linea-'+i+' gEdad-' + d.key.replace(/\+/g, '')  :
-                (vista == 'sexo') ? 'f-linea-'+i+' gSexo-' + d.key.substring(0, 1) :
-                'f-linea-'+i+' gGnrl';
-			
-            return clave;
-
-        });
-	
-	cuerpo.selectAll('.f-linea-1')
-		.append('td')
-		.attr('rowspan', function(){
-			var span = (vista = "edad") ? '6' : (vista = "sexo") ? '2' : '1';
-			return span;
-		})
-		.append('h5')
-        .attr('class', 'lt-linea-tit-des')
-        .text(function(d){
-			return d.values[0].values[0].territorio;
-		});
-	
-	
-		
-	filas.append('td')
-		.append('h5')
-        .attr('class', 'lt-linea-tit-des')
-        .text(function(d){return d.key;});
-	
-	var grafs = filas.selectAll('.lt-graf')
-		.data(function(d) {
-            return d.values;
-        })
-        .enter()
-        .append('td')
-        .attr('class', 'lt-graf')
-        .attr('id', function(d) {
-            var terr = d.values[0].territorio.substring(0, 3),
-
-                fecha = d.values[0].fecha,
-
-                clave = (vista == 'edad') ? d.values[0].edad.replace(/\+/g, '') + '-' :
-                (vista == 'sexo') ? d.values[0].sexo.substring(0, 1) + '-' :
-                '';
-
-            return 'lt-' + elID + '-' + vista + '-' + terr + '-' + clave + fecha + '';
-		 });*/	

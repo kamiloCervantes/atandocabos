@@ -251,10 +251,156 @@ class AtandocabosController extends Zend_Controller_Action
             $query_2->setParameter('indicador', $r[0]['idIndicador']);
             $result_2 = $query_2->getArrayResult();
             $result_1[$key]['subpreguntas'] = $result_2;
+            
+            $this->view->general = 1;
+            $this->view->edad = 1;
+            $this->view->sexo = 1;
+            
+             //fuentes de datos: respuesta, medicina_legal (linea != 38) , policia_nacional (id=38)
+            if($r[0]['idIndicador'] == 38){
+                //policia nacional
+                 $dql_general = "select count(pn.idpolicia_nacional) as total from Application_Model_Policianacional pn join 
+                                pn.ciudad_idciudad c join pn.indicador_idIndicador i
+                                where i.idIndicador = :indicador";
+                  $query_general = $this->_em->createQuery($dql_general); 
+                    $query_general->setParameter('indicador', $r[0]['idIndicador']); 
+                    $general = $query_general->getSingleResult();
+                    $general = $general['total'];
+                    if($general > 0){
+                        $this->view->general = 0;
+                    }
+                    
+//                    var_dump($general);
+                    
+                 $dql_edad = "select pn.grupo_edad, count(pn.idpolicia_nacional) as total from Application_Model_Policianacional pn join 
+                                pn.ciudad_idciudad c join pn.indicador_idIndicador i
+                                where i.idIndicador = :indicador group by pn.grupo_edad";
+                  $query_edad = $this->_em->createQuery($dql_edad); 
+                    $query_edad->setParameter('indicador', $r[0]['idIndicador']); 
+                    $edad = $query_edad->getArrayResult();
+                    $tmp = 0;
+                    foreach($edad as $e){
+                        $tmp += $e['total'];
+                    }
+                    $edad = $tmp;
+                    if($edad > 0){
+                        $this->view->edad = 0;
+                    }
+//                    var_dump($edad);
+                    
+                    $dql_sexo = "select pn.sexo, count(pn.idpolicia_nacional) as total from Application_Model_Policianacional pn join 
+                                pn.ciudad_idciudad c join pn.indicador_idIndicador i
+                                where i.idIndicador = :indicador group by pn.sexo";
+                  $query_sexo = $this->_em->createQuery($dql_sexo); 
+                    $query_sexo->setParameter('indicador', $r[0]['idIndicador']); 
+                    $sexo = $query_sexo->getArrayResult();
+                    $tmp = 0;
+                    foreach($sexo as $s){
+                        $tmp += $s['total'];
+                    }
+                    $sexo = $tmp;
+                    if($sexo > 0){
+                        $this->view->sexo = 0;
+                    }
+//                    var_dump($sexo);
+            }
+            else{
+                if($r[0]['tipo_grafica'] == '3'){
+                    //medicina legal
+                    $dql_general = sprintf("select count(ml.idmedicina_legal) from Application_Model_Medicinalegal ml join ml.indicador_idindicador i join
+                                ml.ciudad_idciudad ciu where i.idIndicador = :indicador and
+                                ml.descripcion = '%s'", 'General');
+                    $query_general = $this->_em->createQuery($dql_general); 
+                    $query_general->setParameter('indicador', $r[0]['idIndicador']); 
+                    $general = $query_general->getSingleResult();
+                    $general = $general[1];
+                    if($general > 0){
+                        $this->view->general = 0;
+                    }
+//                    var_dump($general);
+                    $dql_sexo = sprintf("select count(ml.idmedicina_legal) from Application_Model_Medicinalegal ml join ml.indicador_idindicador i join
+                                ml.ciudad_idciudad ciu where i.idIndicador = :indicador and
+                                ml.descripcion in ('Masculino', 'Femenino')");
+                    $query_sexo = $this->_em->createQuery($dql_sexo); 
+                    $query_sexo->setParameter('indicador', $r[0]['idIndicador']); 
+                    $sexo = $query_sexo->getSingleResult();
+                    $sexo = $sexo[1];
+                    if($sexo > 0){
+                        $this->view->sexo = 0;
+                    }
+//                    var_dump($sexo);
+                    $dql_edad = sprintf("select count(ml.idmedicina_legal) from Application_Model_Medicinalegal ml join ml.indicador_idindicador i join
+                                ml.ciudad_idciudad ciu where i.idIndicador = :indicador and
+                                ml.descripcion in ('Menor a 18', '18-25','26-35','36-45','46-55','Mayor a 55')");
+                    $query_edad = $this->_em->createQuery($dql_edad); 
+                    $query_edad->setParameter('indicador', $r[0]['idIndicador']); 
+                    $edad = $query_edad->getSingleResult();
+                    $edad = $edad[1];
+                    if($edad > 0){
+                        $this->view->edad = 0;
+                    }
+//                    var_dump($edad);
+                }
+                else{
+                    //respuesta
+                    $dql_general = 'select count(res.idRespuesta) as total from
+                            Application_Model_Indicadores ind join ind.pregunta_idPregunta pre join 
+                            pre.subpreguntas sub join sub.respuestas res join sub.escala_idEscala esc 
+                            join res.cod_respuesta opr join res.ciudad_idciudad ciu where ind.idIndicador = :indicador'; 
+                    
+                    $query_general = $this->_em->createQuery($dql_general); 
+                    $query_general->setParameter('indicador', $r[0]['idIndicador']); 
+                    $general = $query_general->getSingleResult();
+                    $general = $general['total'];
+                    if($general > 0){
+                        $this->view->general = 0;
+                    }
+//                    var_dump($general);
+                    
+                    $dql_sexo = sprintf("select res.sexo, count(res.idRespuesta) as total from
+                                Application_Model_Indicadores ind join ind.pregunta_idPregunta pre join 
+                                pre.subpreguntas sub join sub.respuestas res join sub.escala_idEscala esc 
+                                join res.cod_respuesta opr join res.ciudad_idciudad ciu where ind.idIndicador = :indicador 
+                                group by res.sexo");  
+                    $query_sexo = $this->_em->createQuery($dql_sexo); 
+                    $query_sexo->setParameter('indicador', $r[0]['idIndicador']); 
+                    $sexo = $query_sexo->getArrayResult();
+                    $tmp = 0;
+                    foreach($sexo as $s){
+                        $tmp += $s['total'];
+                    }
+                    $sexo = $tmp;
+                    if($sexo > 0){
+                        $this->view->sexo = 0;
+                    }
+//                    var_dump($sexo);
+                    
+                    $dql_edad = sprintf("select res.edad_cat, count(res.idRespuesta) as total from
+                            Application_Model_Indicadores ind join ind.pregunta_idPregunta pre join 
+                            pre.subpreguntas sub join sub.respuestas res join sub.escala_idEscala esc 
+                            join res.cod_respuesta opr join res.ciudad_idciudad ciu where ind.idIndicador = :indicador 
+                            group by res.edad_cat");  
+                    $query_edad = $this->_em->createQuery($dql_edad); 
+                    $query_edad->setParameter('indicador', $r[0]['idIndicador']); 
+                    $edad = $query_edad->getArrayResult();
+                    $tmp = 0;
+                    foreach($edad as $e){
+                        $tmp += $e['total'];
+                    }
+                    $edad = $tmp;
+                    if($edad > 0){
+                        $this->view->edad = 0;
+                    }
+//                    var_dump($edad);
+                    
+                }
+            }
         }
         $this->view->tot_subpreguntas = count($result_2);
         $this->view->data_indicador = $result_1;
-
+        
+       
+       
     }
 
 }

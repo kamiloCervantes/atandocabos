@@ -2,11 +2,11 @@
 //Estrella
 var mEst = {
         top: 30,
-        right: 50,//45
+        right: 55,//45
         bottom: 30,
-        left: 50//45
+        left: 55//45
     },
-    wEst = 180,
+    wEst = 170,
     hEst = 240;
 	
 //Tolerancia

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databases>
+    <database databasemanager="mysql" conf="default">
+        <driver>pdo_mysql</driver>
+        <host>localhost</host>
+        <dbname>atandocabos</dbname>
+        <username>root</username>
+        <pass>root</pass>
+     </database>
+        
+</databases>
+

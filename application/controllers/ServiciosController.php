@@ -1,5 +1,6 @@
 <?php
 
+
 class ServiciosController extends Zend_Controller_Action
 {
     /**
@@ -504,7 +505,7 @@ class ServiciosController extends Zend_Controller_Action
 //        $sexo = $params['sexo'];
         
         $ciudades = array(
-            1 => 'San Andres',
+            1 => 'San Andrés',
             2 => 'Providencia'
 //            3 => 'Nacional'
         );
@@ -862,8 +863,8 @@ class ServiciosController extends Zend_Controller_Action
                             
                             $dql_2 = 'select opr.descripcion as respuesta, sum(res.ponderador) as valor from
                             Application_Model_Indicadores ind join ind.pregunta_idPregunta pre join 
-                            pre.subpreguntas sub join sub.respuestas res join sub.escala_idEscala esc 
-                            join res.cod_respuesta opr join res.ciudad_idciudad ciu where ind.idIndicador = :indicador 
+                            pre.subpreguntas sub left join sub.respuestas res join sub.escala_idEscala esc 
+                            left join res.cod_respuesta opr left join res.ciudad_idciudad ciu where ind.idIndicador = :indicador 
                             and sub.idsubpregunta=:idsubpregunta and ciu.idciudad=:ciudad group by opr.descripcion order by opr.orden';  
 //                            
                             
@@ -1111,7 +1112,7 @@ class ServiciosController extends Zend_Controller_Action
                             foreach($ciudades as $k=>$c){
                                 
                            
-                            $dql = "select i.idIndicador as indicador, c.ciudadcol as territorio, SUBSTRING(pn.fecha, 1, 4) as fecha, count(pn.idpolicia_nacional) as valor from Application_Model_Policianacional pn join 
+                            $dql = "select i.idIndicador as indicador, c.ciudadcol as territorio, SUBSTRING(pn.fecha, 1, 4) as fecha, sum(pn.victimas) as valor from Application_Model_Policianacional pn join 
                                 pn.ciudad_idciudad c join pn.indicador_idIndicador i
                                 where c.idciudad = :ciudad and i.idIndicador = :indicador group by i.idIndicador,territorio,fecha";
                             
@@ -1141,6 +1142,7 @@ class ServiciosController extends Zend_Controller_Action
                             $data = $query->getArrayResult();
                             
                             foreach($data as $d){
+//                                $d['territorio'] = 'Nacional';
 //                                $d['fecha'] = explode('-', $d['fecha']);
 //                                $d['fecha'] = $d['fecha'][0];
                                 $json[] = $d;
@@ -1159,18 +1161,28 @@ class ServiciosController extends Zend_Controller_Action
                                 $query->setParameter('indicador', $indicador); 
                                 $query->setParameter('ciudad', $k); 
                                 $data = $query->getArrayResult();
-                                
-                                var_dump($data);
-                                var_dump($dql);
-                                var_dump($k);
-                                var_dump($indicador);
-                                
-                                $json = $data;
+
+
+                                 foreach($data as $key=>$d){
+                                    $d['territorio'] = $c; 
+                                    $json[] = $d;
+                                }
+                            }
+                            
+                             $dql = sprintf("select i.idIndicador as indicador, ciu.ciudadcol as territorio, ml.anno as fecha, ml.total as valor from Application_Model_Medicinalegal ml join ml.indicador_idindicador i join
+                                ml.ciudad_idciudad ciu where i.idIndicador = :indicador and
+                                ml.descripcion = '%s' and ciu.idciudad = :ciudad", $descripcion_opt[1]);
+
+                                $query = $this->_em->createQuery($dql);
+
+                                $query->setParameter('indicador', $indicador); 
+                                $query->setParameter('ciudad', 3); 
+                                $data = $query->getArrayResult();
+
 
                                  foreach($data as $key=>$d){
                                     $json[] = $d;
                                 }
-                            }
                         }
                         
                         break;
@@ -1191,6 +1203,7 @@ class ServiciosController extends Zend_Controller_Action
                             $data = $query->getArrayResult();
                             
                             foreach($data as $d){
+                                $d['territorio'] = $c;
 //                                $d['fecha'] = explode('-', $d['fecha']);
 //                                $d['fecha'] = $d['fecha'][0];
                                 $json[] = $d;
@@ -1210,6 +1223,7 @@ class ServiciosController extends Zend_Controller_Action
                             $data = $query->getArrayResult();
                             
                             foreach($data as $d){
+//                                $d['territorio'] = $c;
                                 $json[] = $d;
                                 
                             }
@@ -1217,7 +1231,7 @@ class ServiciosController extends Zend_Controller_Action
                         }
                         else{
                             foreach($generos as $g){                         
-//                        echo $g;
+
                                 $dql = sprintf("select i.idIndicador as indicador, ml.descripcion as sexo, ciu.ciudadcol as territorio, ml.anno as fecha, ml.total as valor from Application_Model_Medicinalegal ml join ml.indicador_idindicador i join
                                 ml.ciudad_idciudad ciu where i.idIndicador = :indicador and
                                 ml.descripcion = '%s'", $g);
@@ -1228,6 +1242,7 @@ class ServiciosController extends Zend_Controller_Action
                                 $data = $query->getArrayResult();
 
                                 foreach($data as $d){
+                                    
                                     $json[] = $d;
                                 }
 
@@ -1254,6 +1269,7 @@ class ServiciosController extends Zend_Controller_Action
                             $data = $query->getArrayResult();
                             
                             foreach($data as $d){
+                                $d['territorio'] = $c;
                                 $d['edad'] = $edades_s[$d['edad']];
 //                                foreach($edades as $idx=>$e){
 //                                    if($d['edad'] == $e){
@@ -1277,6 +1293,7 @@ class ServiciosController extends Zend_Controller_Action
                             $data = $query->getArrayResult();
                             
                             foreach($data as $d){
+                                
                                 $d['edad'] = $edades_s[$d['edad']];
                                 $json[] = $d;
                                 

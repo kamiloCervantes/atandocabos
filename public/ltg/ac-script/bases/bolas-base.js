@@ -60,6 +60,10 @@ function bolasEstructura(losDatos, elCont, idInd, vista) {
             ',' + (hBol / 4) + ')');
 
     //Agregar convenciones
+    console.log(losDatos[0].datos);
+    $.each(losDatos[0].datos, function(idx,val){
+        losDatos[0].datos[idx].respuesta = $("<div/>").html(val.respuesta).text(); 
+    });
     var conv = elCont.append("div")
         .attr("class", "row lt-bolas-conv")
         .selectAll("div")
@@ -193,7 +197,7 @@ function bolasSimples(miDiv, miDato, idInd, laVista, escala, carga) {
             p.datos.forEach(function(h, ih) {
                 arrayPlano.push({
                     indicador: p.indicador,
-                    clave: a.key.toLowerCase(),
+                    clave: a.key,
                     territorio: p.territorio,
                     respuesta: h.respuesta,
                     rtaClase: 'rta-bola-' + ih,

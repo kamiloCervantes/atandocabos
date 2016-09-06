@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Atando Cabos Detalle - Living Together</title>
+<title>Atando Cabos Detalle - Living Together </title>
 <!-- Bootstrap -->
 <link href="/ltg/css/bootstrap.css" rel="stylesheet">
 <link href="/ltg/css/bootstrap-theme.css" rel="stylesheet">
@@ -24,7 +24,7 @@
 <!--Estilos para Atando Cabos-->
 <link rel="stylesheet" type="text/css" href="/ltg/css/atando-cabos.css" />
 <!-- D3.js -->
-<script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<script src="/js/d3.v3.min.js" charset="utf-8"></script>
 </head>
 <body class="lt-pg-ind">
 <div class="lt-gran-contenedor">
@@ -43,9 +43,9 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="lt-mainMenu">
         <ul class="nav navbar-nav lt-nav-items">
-          <li><a href="http://livintugeda.co/living-together">Living Together</a></li>
-          <li><a href="http://www.livintugeda.co/cual-es-tu-papel/">¿Cuál es tu papel?</a></li>
-          <li class="active"><a href="http://http://52.42.193.160/atandocabos">Atando Cabos <span class="sr-only">(actual)</span></a></li>
+          <li><a href="http://livintugeda.co/living-together">Livin Tugeda</a></li>
+          <li><a href="http://www.livintugeda.co/juguemos-juntos/">Juguemos juntos</a></li>
+          <li class="active"><a href="http://52.42.193.160/atandocabos">Atando Cabos <span class="sr-only">(actual)</span></a></li>
           <li><a href="http://livintugeda.co/lego-taak">Lego Takk!</a></li>
           <li><a href="http://livintugeda.co/the-wisdom-house">The Wisdom House</a></li>
         </ul>
@@ -60,7 +60,7 @@
   </nav>
   <!-- INFORMACIÓN DE TEMÁTICA -->
   <header class="lt-sidebar-tematica"> <img class="img-responsive center-block" src="/ltg/img/franja-atando-cabos.png" alt="Atando Cabos" title="Atando Cabos"/>
-    <h1 class="sr-only">Atando Cabos</h1>
+    <h1 class="sr-only">Atando Cabos </h1>
    <div class="lt-info-tematica"> <img class="img-tematica img-responsive center-block" src="/ltg/img-tematicas/cargando.png" alt="Ilustración temática" title="Ilustración temática"/>
       <h4></h4>
       <h2></h2>
@@ -106,9 +106,9 @@
                  </div>
                 <?php }  ?>
               <div class="lt-nav-desagregar">
-                <input class="lt-btn-desagregar lt-btn-desagregar-sexo btn" name="botonSexo" type="button" value="sexo" />
-                <input class="lt-btn-desagregar lt-btn-desagregar-gnrl lt-btn-desagregar-gnrl-<?php echo $d[0]["idIndicador"]?> btn" name="botonGnrl" type="button" value="general" />
-                <input class="lt-btn-desagregar lt-btn-desagregar-edad btn" name="botonEdad" type="button" value="edad" />
+                <input class="lt-btn-desagregar lt-btn-desagregar-sexo btn" name="botonSexo" type="button" value="sexo" style="<?php echo ($this->sexo > 0 ? 'visibility:hidden;': '') ?>" />
+                <input class="lt-btn-desagregar lt-btn-desagregar-gnrl lt-btn-desagregar-gnrl-<?php echo $d[0]["idIndicador"]?> btn" name="botonGnrl" type="button" value="general" style="<?php echo ($this->general > 0 ? 'visibility:hidden;': '') ?>" />
+                <input class="lt-btn-desagregar lt-btn-desagregar-edad btn" name="botonEdad" type="button" value="edad" style="<?php echo ($this->edad > 0 ? 'visibility:hidden;': '') ?>"  />
               </div>
             </div>
           </div>
@@ -147,7 +147,7 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-12">
-            <p>Corpovisionarios - 2016</p>
+              <p><a href="http://corpovisionarios.org/" style="color: #fcf573">Corpovisionarios - 2016</a></p>
           </div>
         </div>
       </div>
@@ -249,12 +249,12 @@
                         });
 
                         vio.text(function(){
-                                var v = (datos.idTematica == 1) ? 'Violencia Interpersonal' : (datos.tematica_idtematica == 2) ? 'Violencia Intrafamiliar' : 'Violencia';
+                                var v = (datos.idTematica == 1) ? 'Violencia Interpersonal' : 'Violencia Intrafamiliar';
                                 return v;
                         });
 
                         titTem.text(function(){
-                                return datos.nom_tema;
+                                return $('<textarea/>').html(datos.nom_tema).text();
                         });
                 });//Fin de json
         }
